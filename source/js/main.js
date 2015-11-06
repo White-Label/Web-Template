@@ -1,1 +1,0 @@
-new Vivus('mockup-svg', {duration: 200}, myCallback);

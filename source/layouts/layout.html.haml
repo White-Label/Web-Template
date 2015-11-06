@@ -60,6 +60,14 @@
     %script{:src => "js/plugins.js"}
     %script{:src => "js/main.js"}
 
+    :javascript
+      new Vivus('mockup-svg', {
+          type: 'delayed',
+          start: 'autostart',
+          duration: 200,
+          animTimingFunction: Vivus.EASE
+      });
+
     -# FontDeck Fonts
     :javascript
       WebFontConfig = { fontdeck: { id: '61218' } };
