@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="539px" height="272px" viewBox="0 0 539 272" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>Macbook__ipad__iphone</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="NP-Studio-2" sketch:type="MSArtboardGroup" transform="translate(-646.000000, -859.000000)" stroke-width="1.19999993" stroke="#000000">
+            <g id="Macbook__ipad__iphone" sketch:type="MSLayerGroup" transform="translate(647.000000, 860.000000)">
+                <g id="IPAD-2" sketch:type="MSShapeGroup">
+                    <g id="Page-1">
+                        <g id="IPAD" transform="translate(408.000000, 32.400000)">
+                            <path d="M121.7916,190.2 L7.2582,190.2 C3.2772,190.2 0.0498,186.9738 0.0498,182.994 L0.0498,7.2558 C0.0498,3.276 3.2766,0.0498 7.2582,0.0498 L121.7916,0.0498 C125.7732,0.0498 129,3.276 129,7.2558 L129,182.994 C129,186.9738 125.7732,190.2 121.7916,190.2 L121.7916,190.2 Z" id="bezel" fill="#FDFDFD"></path>
+                            <path d="M121.7916,190.2 L7.2582,190.2 C3.2772,190.2 0.0498,186.9738 0.0498,182.994 L0.0498,7.2558 C0.0498,3.276 3.2766,0.0498 7.2582,0.0498 L121.7916,0.0498 C125.7732,0.0498 129,3.276 129,7.2558 L129,182.994 C129,186.9738 125.7732,190.2 121.7916,190.2 L121.7916,190.2 Z" id="bezel-2" fill="#FDFDFD"></path>
+                            <rect id="screen" fill="#FFFFFF" x="10.2" y="19.2" width="109.1994" height="151.7502"></rect>
+                            <circle id="lock" cx="64.8126" cy="180.0126" r="4.8126"></circle>
+                            <circle id="camera" cx="64.194" cy="10.194" r="1.794"></circle>
+                        </g>
+                        <g id="Laptop">
+                            <path d="M356.4,0 L58.8,0 C50.70249,0 43.8,6.64429104 43.8,14.8740676 L43.8,210.616797 L371.4,210.616791 L371.4,14.8740676 C371.399983,6.64369254 364.522487,0 356.4,0 L356.4,0 Z" id="bezel" fill="#FEFEFE"></path>
+                            <ellipse id="webcam" cx="208.2" cy="11.4" rx="2.4" ry="2.4"></ellipse>
+                            <g id="bottom" transform="translate(0.000000, 210.600000)">
+                                <path d="M384.4872,18.606 L30.7728,18.606 C12.3846,18.606 0,12.2964 0,9.6132 L0,1.4568 C0,0.6504 0.801,0 1.797,0 L413.4624,0 C414.4596,0 415.2618,0.6504 415.2618,1.4568 L415.2618,9.9342 C415.2576,12.0552 405.6672,18.606 384.4872,18.606 L384.4872,18.606 Z" id="Shape" fill="#FDFDFD"></path>
+                                <path d="M0.3,8.4 L414.145606,8.4" id="Line"></path>
+                            </g>
+                            <rect id="screen" fill="#FFFFFF" x="57" y="23.4" width="300.644312" height="175.2054"></rect>
+                            <path d="M252.6,211.2 L252.6,213.0522 C252.6,214.3728 250.000031,214.771628 248.032031,214.771628 L167.289172,214.771628 C165.218572,214.771628 162.6,214.3734 162.6,213.0522 L162.6,211.2" id="touchpad" fill="#FFFFFF"></path>
+                        </g>
+                        <g id="iphone" transform="translate(345.000000, 105.600000)">
+                            <path d="M78,154.7784 C78,160.0782 73.6854,164.3736 68.3628,164.3736 L9.6378,164.3736 C4.3152,164.3736 0.0006,160.0782 0.0006,154.7784 L0.0006,9.6438 C0.0006,4.344 4.3152,0.0486 9.6378,0.0486 L68.3628,0.0486 C73.6854,0.0486 78,4.344 78,9.6438 L78,154.7784 L78,154.7784 L78,154.7784 Z" id="bezel" fill="#FDFDFD"></path>
+                            <rect id="screen" fill="#FFFFFF" x="5.4" y="21.6" width="67.158" height="119.4504"></rect>
+                            <path d="M46.2,15.4476 C46.2,15.8286 45.9366,16.1358 45.612,16.1358 L33.5508,16.1358 C33.2256,16.1358 32.9628,15.828 32.9628,15.4476 L32.9628,13.8996 C32.9628,13.5186 33.2262,13.2114 33.5508,13.2114 L45.612,13.2114 C45.9366,13.2114 46.2,13.5192 46.2,13.8996 L46.2,15.4476 L46.2,15.4476 L46.2,15.4476 Z" id="speaker"></path>
+                            <ellipse id="camera" cx="39.6" cy="7.2" rx="1.8" ry="1.8"></ellipse>
+                            <ellipse id="lock" cx="39.024" cy="152.4006" rx="6.024" ry="6.0006"></ellipse>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

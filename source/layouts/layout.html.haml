@@ -1,0 +1,82 @@
+!!! 5
+/[if lt IE 7]   <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en-us">
+/[if IE 7]      <html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en-us">
+/[if IE 8]      <html class="no-js lt-ie10 lt-ie9" lang="en-us">
+/[if IE 9]      <html class="no-js lt-ie10 lt-ie9" lang="en-us">
+/[if lt IE 10]  <html class="no-js lt-ie10" lang="en-us">
+/[if !IE]>
+%html
+  -# <![endif]
+  %head{prefix: "og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# noon-pacific: http://ogp.me/ns/noon-pacific#"}
+    %title Noon Pacific | Weekly Handpicked Music Mixtape
+    %base{href: "/"}
+    %link{:href => "http://noonpacific.com/", :rel => "canonical"}
+    %meta(http-equiv="content-type" content="text/html" charset="utf-8")
+    %meta(http-equiv="x-ua-compatible" content="ie=edge,chrome=1")
+    %meta(name="description" content="A weekly mixtape of the best songs hand-picked from the best music blogs delivered to your inbox every Monday at Noon (Pacific Time).")
+    %meta(name="author" content="Clark Dinnison")
+    %meta{content: "831502570218024", property: "fb:app_id"}
+    %meta{content: "http://www.noonpacific.com", property: "og:url"}
+    %meta{content: "Weekly mixtape of songs handpicked from the best music blogs, delivered to your inbox every Monday at Noon (Pacific Time). Get the app for iOS and Android.", property: "og:description"}
+    %meta{content: "Listening to Noon Pacific :: a weekly handpicked mixtape", property: "og:title"}
+    %meta{content: "#{image_path('noon_pacific_facebook.png')}", property: "og:image"}
+    %meta{content: "Noon Pacific", property: "og:site_name"}
+    %meta{:content => "app-id=803563983, affiliate-data=10lKmP, app-argument=http://www.noonpacific.com", :name => "apple-itunes-app"}
+    %meta{:content => "app", :name => "twitter:card"}
+    %meta{:content => "@noonpacific", :name => "twitter:site"}
+    %meta{:content => "Noon Pacific is a weekly mixtape of the best songs handpicked from the best music blogs delivered to you every Monday at Noon (Pacific Time).", :name => "twitter:description"}
+    %meta{:content => "US", :name => "twitter:app:country"}
+    %meta{:content => "Noon Pacific", :name => "twitter:app:name:iphone"}
+    %meta{:content => "803563983", :name => "twitter:app:id:iphone"}
+    %meta{:content => "Noon Pacific", :name => "twitter:app:name:ipad"}
+    %meta{:content => "803563983", :name => "twitter:app:id:ipad"}
+    %meta{:content => "Noon Pacificl", :name => "twitter:app:name:googleplay"}
+    %meta{:content => "com.np.noonpacific", :name => "twitter:app:id:googleplay"}
+
+    -# Standard viewport tag to set the viewport to the device's width,
+    -# Android 2.3 devices need this so 100% width works properly and
+    -# doesn't allow children to blow up the viewport width
+    %meta{content: "initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width", name: "viewport"}
+
+    -# Fix for iPhone 5 fullscreen web apps
+    %meta(name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)")
+    %meta(name='apple-mobile-web-app-capable' content='yes')
+    %meta(name='apple-mobile-web-app-status-bar-style' content='black-translucent')
+
+    -# App Icons
+    %link(rel="shortcut icon" href="#{image_path('favicon.png')}")
+
+    -# Stylesheets
+    = stylesheet_link_tag 'main'
+    = stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'
+
+    %body
+      %article
+        = yield
+
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"}
+    :javascript
+      window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')
+    %script{:src => "js/plugins.js"}
+    %script{:src => "js/main.js"}
+
+    -# FontDeck Fonts
+    :javascript
+      WebFontConfig = { fontdeck: { id: '61218' } };
+      
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    
+    -# Google Analytics: change UA-XXXXX-X to be your site's ID.
+    :javascript
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));

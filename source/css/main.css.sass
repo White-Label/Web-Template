@@ -1,0 +1,104 @@
+html, button, input, select, textarea
+  color: #000
+  border-top: 5px solid #000
+
+body
+  font-size: 1em
+  line-height: 1.4
+  font-family: "Apercu Regular", Calibri, Roboto, sans-serif
+  font-size-adjust: 0.508
+  font-weight: normal
+  font-style: normal
+  color: #000
+  margin: 0 
+  padding: 0
+
+h1 
+  font-family: "Apercu Bold", Calibri, Roboto, sans-serif
+  font-size-adjust: 0.508
+  font-weight: bold
+  font-style: normal
+  font-size: 2em
+
+h3
+  font-family: "Apercu Mono Regular", 'Andale Mono', monospace
+  font-size-adjust: 0.5
+  font-weight: normal
+  font-style: normal
+  font-size: 1em
+
+p
+  font-family: "Apercu Regular", Calibri, Roboto, sans-serif
+  font-size-adjust: 0.508
+  font-weight: normal
+  font-style: normal
+
+a 
+  color: #000
+  text-decoration: none
+  &:hover 
+    color: #000
+    text-decoration: underline
+
+::-moz-selection, ::selection
+  background: #ff0000
+  text-shadow: none
+
+
+/* HEADING */
+
+.heading 
+  img 
+    margin: 100px auto
+    display: block
+  h1, h3
+    text-align: center
+    margin-bottom: 0
+
+.portfolio
+  margin-top: 250px
+  .container 
+    width: 80%
+    margin: 0 auto
+    overflow: hidden
+    .clients 
+      width: calc(30% - 1px)
+      float: left
+      border-right: 1px solid #e0e0e0
+      ul 
+        list-style-type: none
+        margin: 0
+        padding: 0
+        li 
+          margin: 30px 0
+          text-align: center
+          &:first-child 
+            margin-top: 0
+    .mockups 
+      width: 70%
+      float: left
+      svg
+        display: block 
+        margin: 0 auto
+
+.cta 
+  margin-top: 250px
+  .contact 
+    padding: 20px 
+    background: #000
+    color: #fff
+    display: block
+    width: 150px
+    margin: 0 auto
+    text-align: center
+    &:hover 
+      text-decoration: none
+
+.footer 
+  margin-top: 250px
+  img 
+    display: block
+    margin: 0 auto 100px auto
+
+  
+  

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="94px" height="94px" viewBox="0 0 94 94" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>Made In CA</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="44.991453" width="94" height="49.008547"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="NP-Studio-2" sketch:type="MSArtboardGroup" transform="translate(-673.000000, -1855.000000)">
+            <g id="Made-In-CA" sketch:type="MSLayerGroup" transform="translate(673.000000, 1855.000000)">
+                <rect id="Rectangle-2" stroke="#CCCCCC" stroke-width="1.20000002" sketch:type="MSShapeGroup" x="0" y="0" width="94" height="94"></rect>
+                <g id="Rectangle-2">
+                    <use stroke="#FFFFFF" stroke-width="1.20000002" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+                    <use stroke="none" xlink:href="#path-1"></use>
+                </g>
+                <g id="waves" transform="translate(1.205128, 41.777778)" fill="#CCCCCC" sketch:type="MSShapeGroup">
+                    <g id="Shape">
+                        <g id="Page-1">
+                            <g id="Letter">
+                                <path d="M83.8027395,0.874276423 C80.8619191,-0.229993329 77.8435093,-0.0513012299 74.9459428,1.21204545 C73.259709,1.94729122 71.5926496,2.72607838 69.9351774,3.52081634 C66.5167803,5.15986908 62.9819989,5.84424474 59.3116589,4.48691766 C57.2771642,3.73464332 55.3171375,2.78082843 53.3613471,1.84425766 C50.0078309,0.238615385 46.5470717,-0.451795706 42.9485243,0.854445695 C40.9104622,1.5944336 38.964036,2.57971899 37.0037864,3.50896102 C33.5811531,5.13163185 30.0523916,5.85997999 26.374694,4.50567063 C24.3401992,3.75641401 22.3754905,2.81294559 20.4288413,1.86257953 C16.7047683,0.0444035856 12.9242869,-0.469686471 9.00713205,1.21010548 C5.91046383,2.53790202 3.13546297,3.78917771 0,5.15512685 C0.299210076,5.71297384 0.390907455,6.46395497 0.689448657,7.14746842 C1.03681773,7.94306858 1.55608768,7.99717198 2.27356758,7.66069627 C4.07150354,6.81745925 21.9906644,6.05850281 24.2588194,7.10996248 C27.3398806,8.53820596 30.5197123,9.25642318 33.8299746,8.13081384 C35.8807453,7.43372066 54.4065757,5.84230477 56.4858851,6.77650448 C59.0280559,7.91871128 61.5922997,8.92102522 64.4847381,8.60653575 C66.9613592,8.33688097 69.1699844,7.33564478 71.3485102,6.2509902 C73.8868908,4.98721242 86.2954597,5.73776231 89.5811966,7.66069623 C89.9093912,7.85275251 90.6680723,7.62448364 91.0627085,7.86741005 C91.6490889,6.75775151 91.0341314,6.20637096 91.5897436,5.15512685 C88.532762,3.81719939 86.7881515,1.99514363 83.8027395,0.874276423 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <rect id="Rectangle-4" fill="#CCCCCC" sketch:type="MSShapeGroup" x="92.7948718" y="44.991453" width="1.20512821" height="2.00854701"></rect>
+                <rect id="Rectangle-4" fill="#CCCCCC" sketch:type="MSShapeGroup" x="0" y="44.991453" width="1.20512821" height="2.00854701"></rect>
+                <rect id="Rectangle-12" fill="#CCCCCC" sketch:type="MSShapeGroup" x="0" y="47" width="94" height="47"></rect>
+                <text id="made-in" sketch:type="MSTextLayer" font-family="Apercu Pro" font-size="17" font-weight="420" letter-spacing="0.777142823" fill="#CCCCCC">
+                    <tspan x="14" y="28">made in</tspan>
+                </text>
+                <text id="CA" sketch:type="MSTextLayer" font-family="Apercu Pro" font-size="27" font-weight="bold" letter-spacing="1.23428571" fill="#FFFFFF">
+                    <tspan x="28" y="80">CA</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
