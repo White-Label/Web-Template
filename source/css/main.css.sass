@@ -68,18 +68,27 @@ a
       ul 
         list-style-type: none
         margin: 0
-        padding: 0
+        padding: 50px 0
         li 
           margin: 30px 0
           text-align: center
           &:first-child 
             margin-top: 0
+          &:last-child
+            margin-bottom: 0
     .mockups 
       width: 70%
       float: left
       svg
         display: block 
         margin: 0 auto
+        width: 65%
+      g#Laptop
+        path#screen 
+          transition: 0.5s all
+      #np-phone-screen, #np-laptop-screen, #np-tablet-screen 
+        opacity: 0
+        transition: 0.5s all
 
 .cta 
   margin-top: 250px
@@ -91,6 +100,7 @@ a
     width: 150px
     margin: 0 auto
     text-align: center
+    transition: 0.2s all
     &:hover 
       text-decoration: none
 
@@ -100,5 +110,27 @@ a
     display: block
     margin: 0 auto 100px auto
 
-  
+@media screen and (max-width: 900px)
+  .heading 
+    h1
+      font-size: 1.7em
+    h3 
+      font-size: 0.7em
+    img 
+      width: 30%
+      max-width: 169px
+  .portfolio
+    margin-top: 100px
+    .container
+      .clients
+        width: 100%
+      .mockups 
+        width: 100%
+  .cta 
+    margin-top: 100px
+  .footer 
+    margin-top: 100px
+    img 
+      width: 50px
+
   
