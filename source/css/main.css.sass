@@ -36,9 +36,10 @@ p
 a 
   color: #000
   text-decoration: none
+  animation: 0.3s all
   &:hover 
     color: #000
-    text-decoration: underline
+    border-bottom: 1px solid #000
 
 ::-moz-selection, ::selection
   background: #ff0000
@@ -72,6 +73,7 @@ a
         li 
           margin: 30px 0
           text-align: center
+          font-size: 1.2em
           &:first-child 
             margin-top: 0
           &:last-child
@@ -83,15 +85,14 @@ a
         display: block 
         margin: 0 auto
         width: 65%
-      g#Laptop
-        path#screen 
-          transition: 0.5s all
-      #np-phone-screen, #np-laptop-screen, #np-tablet-screen 
+      #np-phone-screen, #np-laptop-screen, #np-tablet-screen, #daily-phone-screen, #daily-laptop-screen, #daily-tablet-screen, #cm-phone-screen, #cm-laptop-screen, #cm-tablet-screen
         opacity: 0
         transition: 0.5s all
 
 .cta 
   margin-top: 250px
+  h3
+    text-align: center
   .contact 
     padding: 20px 
     background: #000
@@ -109,6 +110,100 @@ a
   img 
     display: block
     margin: 0 auto 100px auto
+
+/* Outline Out */
+
+.hvr-outline-out
+  vertical-align: middle
+  -webkit-transform: translateZ(0)
+  transform: translateZ(0)
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0)
+  -webkit-backface-visibility: hidden
+  backface-visibility: hidden
+  -moz-osx-font-smoothing: grayscale
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    border: #000 solid 3px
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    -webkit-transition-duration: 0.3s
+    transition-duration: 0.3s
+    -webkit-transition-property: top, right, bottom, left
+    transition-property: top, right, bottom, left
+  &:hover:before, &:focus:before, &:active:before
+    top: -8px
+    right: -8px
+    bottom: -8px
+    left: -8px
+
+.animated
+  -webkit-animation-duration: 1s
+  animation-duration: 1s
+  -webkit-animation-fill-mode: both
+  animation-fill-mode: both
+  &.infinite
+    -webkit-animation-iteration-count: infinite
+    animation-iteration-count: infinite
+  &.hinge
+    -webkit-animation-duration: 2s
+    animation-duration: 2s
+
+.delay
+  -webkit-animation-delay: 0.3s
+  animation-delay: 0.3s
+
+.clients li
+  &:nth-child(1)
+    -webkit-animation-delay: 0.1s
+  &:nth-child(2)
+    -webkit-animation-delay: 0.3s
+  &:nth-child(3)
+    -webkit-animation-delay: 0.5s
+  &:nth-child(4)
+    -webkit-animation-delay: 0.7s
+
+.heading h3 
+  -webkit-animation-delay: 0.3s
+
+@-webkit-keyframes fadeIn
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+
+.fadeIn
+  -webkit-animation-name: fadeIn
+  animation-name: fadeIn
+
+@keyframes fadeInUp
+  0%
+    opacity: 0
+    -webkit-transform: translate3d(0, 100%, 0)
+    transform: translate3d(0, 100%, 0)
+
+  100%
+    opacity: 1
+    -webkit-transform: none
+    transform: none
+
+
+.fadeInUp
+  -webkit-animation-name: fadeInUp
+  animation-name: fadeInUp
 
 @media screen and (max-width: 900px)
   .heading 

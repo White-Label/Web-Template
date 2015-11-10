@@ -1,25 +1,23 @@
 %section.heading
-     %img{alt: "Noon Pacific Studio", src: "#{image_path("noonpacific.svg")}"}
-     %h1
+     %img.animated.fadeIn{alt: "Noon Pacific Studio", src: "#{image_path("noonpacific.svg")}"}
+     %h1.animated.fadeInUp
           NOON PACIFIC STUDIO
-     %h3
+     %h3.animated.fadeInUp
           We build apps + experiences people love
 %section.portfolio
      .container
           .clients
                %ul
-                    %li
-                         %a#project-noon-pacific{href: "#", target: "_blank"} noon pacific
-                    %li
-                         %a#project-colormyx{href: "#", target: "_blank"} colormyx
-                    %li
-                         %a#project-daily-ui{href: "#", target: "_blank"} daily ui
-                    %li
-                         %a#project-four-week-startup{href: "#", target: "_blank"} four week startup
+                    %li.animated.fadeInUp
+                         %a#project-noon-pacific{href: "http://noonpacific.com", target: "_blank"} noon pacific
+                    %li.animated.fadeInUp
+                         %a#project-color-myx{href: "https://itunes.apple.com/us/app/color-myx/id937256071?mt=8", target: "_blank"} color myx
+                    %li.animated.fadeInUp
+                         %a#project-daily-ui{href: "http://dailyui.co", target: "_blank"} daily ui
           .mockups
                = partial 'mockup'
 %section.cta
-     %a.contact{href: "#", target: "_blank"} Let's Talk
+     %a.contact.hvr-outline-out.animated.fadeIn{href: "mailto:clark@noonpacific.com", target: "_blank"} Let's Talk
 
 %section.footer
      %img{alt: "NP Studio Mockups", src: "#{image_path("madeinca.svg")}"}
