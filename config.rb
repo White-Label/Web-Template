@@ -55,8 +55,21 @@ set :js_dir, 'js'
 
 set :images_dir, 'img'
 
+# Use Sprockets
+activate :sprockets
+
+sprockets.append_path File.join root, "node_modules"
+
 # Build-specific configuration
 configure :build do
+
+  ignore 'images/*.psd'
+  ignore 'css/lib/*'
+  ignore 'css/vendor/*'
+  ignore 'js/app/*'
+  ignore 'js/lib/*'
+  ignore 'js/vendor/*'
+
   # For example, change the Compass output style for deployment
   activate :minify_css
 
@@ -74,7 +87,7 @@ configure :build do
 end
 
 activate :s3_sync do |s3_sync|
-  s3_sync.bucket                     = 'studio.noonpacific.com' # The name of the S3 bucket you are targetting. This is globally unique.
+  s3_sync.bucket                     = 'super-secret-beta.noonpacific.com' # The name of the S3 bucket you are targetting. This is globally unique.
   s3_sync.region                     = 'us-west-2'     # The AWS region for your bucket.
   s3_sync.delete                     = false # We delete stray files by default.
   s3_sync.after_build                = false # We do not chain after the build step by default.

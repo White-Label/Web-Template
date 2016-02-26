@@ -1,24 +1,20 @@
-$('#project-noon-pacific').hover(function(){
-    $('#np-phone-screen, #np-laptop-screen, #np-tablet-screen ').css('opacity', '1');
-
-},function(){
-    $('#np-phone-screen, #np-laptop-screen, #np-tablet-screen ').css('opacity', '0');
-});
-
-$('#project-color-myx').hover(function(){
-    $('#cm-phone-screen, #cm-laptop-screen, #cm-tablet-screen ').css('opacity', '1');
-},function(){
-    $('#cm-phone-screen, #cm-laptop-screen, #cm-tablet-screen ').css('opacity', '0');
-});
-
-$('#project-daily-ui').hover(function(){
-    $('#daily-phone-screen, #daily-laptop-screen, #daily-tablet-screen ').css('opacity', '1');
-},function(){
-    $('#daily-phone-screen, #daily-laptop-screen, #daily-tablet-screen ').css('opacity', '0');
-});
-
-// $('#project-four-week-startup').hover(function(){
-//     $('#Laptop path#screen').css('fill', '#6BED82');
-// },function(){
-//     $('#Laptop path#screen').css('fill', '#fff');
-// });
+//= require underscore/underscore-min.js
+//= require jquery/dist/jquery.min.js
+//= require SoundManager2/script/soundmanager2.js
+//= require lib/bootstrap.min
+//= require lib/slider
+//= require lib/jquery.lazyload
+//= require lib/angular.min
+//= require lib/angular-route.min
+//= require lib/micromarkdown.min
+//= require lib/modal.min
+//= require angular-collection/angular-collection.min.js
+//= require app/noonpacific
+//= require services/api-service
+//= require services/audio-service
+//= require services/mix-service
+//= require services/mix-collection
+//= require controllers/playlist-controller
+//= require controllers/mixlist-controller
+//= require controllers/audio-controller
+//= require app/misc

@@ -1,34 +1,68 @@
+/************ FONTS *************/
+
+@font-face
+  font-family: "ApercuReg"
+  src: url("../fonts/ApercuRegular.otf")
+  font-style: normal
+  font-weight: normal
+  font-stretch: normal
+
+
+@font-face
+  font-family: "ApercuMed"
+  src: url("../fonts/ApercuMedium.otf")
+  font-style: normal
+  font-weight: normal
+  font-stretch: normal
+
+
+@font-face
+  font-family: "ApercuBold"
+  src: url("../fonts/ApercuBold.otf")
+  font-style: normal
+  font-weight: bold
+  font-stretch: normal
+
+
+@font-face
+  font-family: "ApercuItalic"
+  src: url("../fonts/ApercuItalic.otf")
+  font-style: normal
+  font-weight: normal
+  font-stretch: normal
+
+/************ GLOBAL STYLES *************/
+
 html, button, input, select, textarea
-  color: #000
-  border-top: 5px solid #000
+  color: #333
 
 body
   font-size: 1em
   line-height: 1.4
-  font-family: "Apercu Regular", Calibri, Roboto, sans-serif
+  font-family: ApercuReg, Arial, sans-serif
   font-size-adjust: 0.508
   font-weight: normal
   font-style: normal
-  color: #000
+  color: #333
   margin: 0 
   padding: 0
 
 h1 
-  font-family: "Apercu Bold", Calibri, Roboto, sans-serif
+  font-family: ApercuBold, Arial, sans-serif
   font-size-adjust: 0.508
   font-weight: bold
   font-style: normal
   font-size: 2em
 
 h3
-  font-family: "Apercu Mono Regular", 'Andale Mono', monospace
+  font-family: ApercuBold, Arial, sans-serif
   font-size-adjust: 0.5
   font-weight: normal
   font-style: normal
   font-size: 1em
 
 p
-  font-family: "Apercu Regular", Calibri, Roboto, sans-serif
+  font-family: ApercuReg, Arial, sans-serif
   font-size-adjust: 0.508
   font-weight: normal
   font-style: normal
@@ -36,199 +70,414 @@ p
 a 
   color: #000
   text-decoration: none
-  animation: 0.3s all
-  &:hover 
-    color: #000
-    border-bottom: 1px solid #000
+  transition: 0.3s all
 
 ::-moz-selection, ::selection
-  background: #ff0000
+  background: #333
   text-shadow: none
 
-// .wf-loading body 
-//   visibility: hidden
+.active 
+  color: #333
 
+.grey
+  color: #adadad
 
-/* HEADING */
+.truncate 
+  width: 100%
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
 
-.heading 
-  img 
-    margin: 100px auto
-    display: block
-  h1, h3
-    text-align: center
-    margin-bottom: 0
-
-.portfolio
-  margin-top: 250px
-  .container 
-    width: 80%
-    margin: 0 auto
-    overflow: hidden
-    .clients 
-      width: calc(30% - 1px)
-      float: left
-      border-right: 1px solid #e0e0e0
-      ul 
-        list-style-type: none
-        margin: 0
-        padding: 50px 0
-        li 
-          margin: 30px 0
-          text-align: center
-          font-size: 1.2em
-          &:first-child 
-            margin-top: 0
-          &:last-child
-            margin-bottom: 0
-    .mockups 
-      width: 70%
-      float: left
-      svg
-        display: block 
-        margin: 0 auto
-        width: 65%
-      #np-phone-screen, #np-laptop-screen, #np-tablet-screen, #daily-phone-screen, #daily-laptop-screen, #daily-tablet-screen, #cm-phone-screen, #cm-laptop-screen, #cm-tablet-screen
-        opacity: 0
-        transition: 0.5s all
-
-.cta 
-  margin-top: 250px
-  h3
-    text-align: center
-  .contact 
-    padding: 20px 
-    background: #000
-    color: #fff
-    display: block
-    width: 150px
-    margin: 0 auto
-    text-align: center
-    transition: 0.2s all
-    &:hover 
-      text-decoration: none
-
-.footer 
-  margin-top: 250px
-  img 
-    display: block
-    margin: 0 auto 100px auto
-
-/* Outline Out */
-
-.hvr-outline-out
+.btn
+  text-decoration: none
+  cursor: pointer
+  display: inline-block
+  padding: 10px 40px
+  margin: 0
+  width: 200px
+  text-align: center
+  height: auto
+  border: 1px solid #333
   vertical-align: middle
-  -webkit-transform: translateZ(0)
-  transform: translateZ(0)
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0)
-  -webkit-backface-visibility: hidden
-  backface-visibility: hidden
-  -moz-osx-font-smoothing: grayscale
-  position: relative
-  &:before
-    content: ''
-    position: absolute
-    border: #000 solid 3px
-    top: 0
-    right: 0
+  -webkit-appearance: none
+  color: inherit
+  background-color: #fff
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(51,51,51,1)
+  -moz-box-shadow: 0px 0px 0px 0px rgba(51,51,51,1)
+  box-shadow: 0px 0px 0px 0px rgba(51,51,51,1)
+  transition: 0.3s all
+  -moz-transition: 0.3s all 
+  -webkit-transition: 0.3s all 
+
+
+  &:hover
+    text-decoration: none
+    -webkit-box-shadow: 5px -5px 0px 0px rgba(51,51,51,1)
+    -moz-box-shadow: 5px -5px 0px 0px rgba(51,51,51,1)
+    box-shadow: 5px -5px 0px 0px rgba(51,51,51,1)
+  &:focus
+    outline: none
+
+.btn-outline
+
+$black: #333
+$grey: #adadad
+$white: #fff
+$facebook: #3b5998
+$twitter: #55acee
+$soundcloud: #ff8800
+$instagram: #3f729b
+$amazon: #FF9900 
+
+/************ LAYOUT *************/
+
+
+.wrapper
+  width: 100%
+
+.sidebar
+  width: 240px
+  height: 100vh
+  position: fixed
+  left: 0
+  top: 0
+  color: #000
+  text-align: center
+  z-index: 2
+  background: #fff
+
+.main
+  margin-left: 240px
+  width: calc(100% - 240px)
+  float: left
+
+.main__content
+  padding: 100px
+
+/************ SIDEBAR *************/
+
+.sidebar__nav 
+  margin-top: 120px
+  font-size: 20px
+  ul
+    a
+      color: #adadad
+      &.active 
+        color: #333
+      &:hover 
+        color: #333
+
+.audio-player
+  position: absolute
+  background: #fff
+  bottom: 0
+  height: 125px
+  width: 240px
+  .audio-player__track-info, .audio-player__current-mixtape
+    font-size: 12px
+
+  .audio-player__track-info
+    padding: 0 20px
+
+  .audio-player__controls
+    .fa-play, .fa-pause
+      vertical-align: sub
+      font-size: 28px
+
+  #progress-bar
+    width: 100%
+    background: #e0e0e0
+    height: 5px  
     bottom: 0
-    left: 0
-    -webkit-transition-duration: 0.3s
-    transition-duration: 0.3s
-    -webkit-transition-property: top, right, bottom, left
-    transition-property: top, right, bottom, left
-  &:hover:before, &:focus:before, &:active:before
-    top: -8px
-    right: -8px
-    bottom: -8px
-    left: -8px
+    position: absolute
 
-.animated
-  -webkit-animation-duration: 1s
-  animation-duration: 1s
-  -webkit-animation-fill-mode: both
-  animation-fill-mode: both
-  &.infinite
-    -webkit-animation-iteration-count: infinite
-    animation-iteration-count: infinite
-  &.hinge
-    -webkit-animation-duration: 2s
-    animation-duration: 2s
-
-.delay
-  -webkit-animation-delay: 0.3s
-  animation-delay: 0.3s
-
-.clients li
-  &:nth-child(1)
-    -webkit-animation-delay: 0.1s
-  &:nth-child(2)
-    -webkit-animation-delay: 0.3s
-  &:nth-child(3)
-    -webkit-animation-delay: 0.5s
-  &:nth-child(4)
-    -webkit-animation-delay: 0.7s
-
-.heading h3 
-  -webkit-animation-delay: 0.3s
-
-@-webkit-keyframes fadeIn
-  0%
-    opacity: 0
-
-  100%
-    opacity: 1
+  #progress
+    height: 3px
+    width: 0
+    position: absolute
+    top: 0px
+    z-index: 999
+    background: #adadad
 
 
-@keyframes fadeIn
-  0%
-    opacity: 0
-
-  100%
-    opacity: 1
 
 
-.fadeIn
-  -webkit-animation-name: fadeIn
-  animation-name: fadeIn
+/************ MAIN CONTENT *************/
 
-@keyframes fadeInUp
-  0%
-    opacity: 0
-    -webkit-transform: translate3d(0, 100%, 0)
-    transform: translate3d(0, 100%, 0)
+.main
+  .main__mixtape
+    .main__cover
+      margin-top: 7%
+      width: 45.5%
+      // img 
+      //   min-width: 500px
+      .mixtape-play
+        display: absolute 
+        top: 0
+        left: 0
+        color: #fff
+        z-index: 999
+    .main__tracklist
+      margin-top: 7%
+      width: 54.5%
+      ol 
+        margin-top: 0
+        list-style-type: none
 
-  100%
-    opacity: 1
-    -webkit-transform: none
-    transform: none
+        > li 
+          margin-bottom: 17px  
+          margin-left: 50px 
+          counter-increment: customlistcounter
+          &:before 
+            content: counter(customlistcounter) " "
+            float: left
+            width: 23px
+            height: 19px
+            font-size: 12px
+            text-align: center
+            margin-right: 20px
+            margin-top: 10px 
+            padding-top: 4px
+          &:first-child
+            counter-reset: customlistcounter
+        li.current-track
+          &:before 
+            background: #333 
+            color: #fff
+            border-radius: 20px
+
+        p 
+          font-size: 14px
+
+        .main__track-info, .main__track-social
+          display: inline-block
+
+        .artist 
+          color: #adadad
+
+        .main__track-social
+          float: right
+          margin-top: 5px
+          margin-right: 70px
+          position: relative
+          .dropdown
+            position: relative
+            text-align: left
+            width: 30px
+
+          .dropdown-text
+            cursor: pointer
+            position: absolute
+            color: #333
+
+          .dropdown-content a
+            color: #333
+            text-shadow: 0 1px #fff
+
+          .dropdown-toggle
+            font-size: 0
+            z-index: 1
+            cursor: pointer
+            position: absolute
+            top: 0
+            border: none
+            padding: 0
+            margin: 0 0 0 1px
+            background: transparent
+            text-indent: -10px
+            height: 34px
+            width: 100%
+            &:focus
+              outline: 0
+
+          .dropdown-content
+            // -webkit-transition: all .25s ease
+            // -moz-transition: all .25s ease
+            // -ms-transition: all .25s ease
+            // -o-transition: all .25s ease
+            // transition: all .25s ease
+            list-style-type: none
+            position: absolute
+            top: 150%
+            right: 0
+            padding: 0
+            margin: 0
+            padding: 10px 0
+            opacity: 0
+            visibility: hidden
+            background-color: #fff
+            border: 2px solid #333
+            width: 220px
+            a
+              display: block
+            li 
+              padding: 10px 5px
+              .left 
+                text-align: center
+                width: 40px
+              .overflow-hidden 
+                text-align: left
+              .fa-facebook 
+                color: $facebook
+              .fa-twitter 
+                color: $twitter
+              .fa-soundcloud
+                color: $soundcloud
+              .fa-amazon
+                color: #000
+            .dropdown-arrow
+              background: #fff
+              border: 2px solid #333
+              border-width: 2px 0 0 2px
+              position: absolute
+              width: 10px
+              height: 10px
+              z-index: 1
+              -webkit-transform: rotate(45deg)
+              transform: rotate(45deg)
+              top: -7px
+              bottom: auto
+              left: auto
+              right: 8px
 
 
-.fadeInUp
-  -webkit-animation-name: fadeInUp
-  animation-name: fadeInUp
+          .dropdown-toggle
+            &:focus ~ .dropdown-text
+              z-index: 2
+              &:after
+                border-width: 0 4px 5px 4px
+                border-color: transparent transparent #555 transparent
 
-@media screen and (max-width: 900px)
-  .heading 
-    h1
-      font-size: 1.7em
-    h3 
-      font-size: 0.7em
-    img 
-      width: 30%
-      max-width: 169px
-  .portfolio
-    margin-top: 100px
-    .container
-      .clients
+          .dropdown-content:hover, .dropdown-toggle:focus ~ .dropdown-content
+            opacity: 1
+            visibility: visible
+            top: 42px
+            
+  .main__archive-hint
+    width: 100%
+    font-size: 20px
+    text-align: center
+    margin-top: 30px
+    p 
+      font-size: 12px
+
+  .main__archive
+    .main__archive-grid
+      list-style: none
+      padding: 0
+      margin: 100px auto 0 auto
+      text-align: center
+      width: 100%
+      li
+        display: inline-block
+        margin: 22px
+        vertical-align: top
+        width: 250px
+        > a
+          width: 100%
+          border: none
+          outline: none
+          display: block
+          position: relative
+          transition: all 0.3s ease-in-out
+          -moz-transition: all 0.3s ease-in-out
+          -webkit-transition: all 0.3s ease-in-out
+          -o-transition: all 0.3s ease-in-out
+          img
+            width: 100%
+            border: none
+            outline: none
+            display: block
+            position: relative
+            transition: all 0.3s ease-in-out
+            -moz-transition: all 0.3s ease-in-out
+            -webkit-transition: all 0.3s ease-in-out
+            -o-transition: all 0.3s ease-in-out
+    .mixtapes
+      position: relative
+      cursor: pointer
+      text-align: center
+      display: block
+      overflow: hidden
+      img
+        vertical-align: top
+      &:after, &:before
+        position: absolute
+        opacity: 0
+        transition: all 0.5s
+        left: 0px
+      &:after
+        content: '\A'
+        width: 250px
+        height: 250px
+        top: 0
+        left: 0
+        background: rgba(0, 0, 0, 0.6)
+      &:before
+        content: attr(data-content)
+        width: 250px
+        color: #fff
+        z-index: 1
+        font-size: 18px
+        bottom: 45%
+        padding: 4px 10px
+        text-align: center
+        box-sizing: border-box
+        -moz-box-sizing: border-box
+      &:hover
+        &:after, &:before
+          opacity: 1
+    ul
+      padding-left: 0
+      margin-left: 0
+    li
+      list-style-type: none
+      text-align: center
+      img
+        width: 250px
+        height: 250px
+
+/*** COLLECTIONS ***/
+
+.main__collections__archive
+  list-style: none
+  padding: 0
+  margin: 50px auto 0 auto
+  text-align: center
+  width: 100%
+  li
+    display: inline-block
+    margin: 40px
+    vertical-align: top
+    width: 400px
+    > a
+      width: 100%
+      border: none
+      outline: none
+      display: block
+      position: relative
+      transition: all 0.3s ease-in-out
+      -moz-transition: all 0.3s ease-in-out
+      -webkit-transition: all 0.3s ease-in-out
+      -o-transition: all 0.3s ease-in-out
+      img
         width: 100%
-      .mockups 
-        width: 100%
-  .cta 
-    margin-top: 100px
-  .footer 
-    margin-top: 100px
-    img 
-      width: 50px
+        border: none
+        outline: none
+        display: block
+        position: relative
+        transition: all 0.3s ease-in-out
+        -moz-transition: all 0.3s ease-in-out
+        -webkit-transition: all 0.3s ease-in-out
+        -o-transition: all 0.3s ease-in-out
 
-  
+/*** ABOUT ***/
+
+.main__about 
+  a 
+    border-bottom: 1px solid #333
+    transition: 0.3s all
+    &:hover 
+      border-color: #adadad
+.main__contact 
+  border-right: 1px solid #adadad

@@ -1,23 +1,14 @@
-%section.heading
-     %img.animated.fadeIn{alt: "Noon Pacific Studio", src: "#{image_path("noonpacific.svg")}"}
-     %h1.animated.fadeInUp
-          NOON PACIFIC STUDIO
-     %h3.animated.fadeInUp
-          We build apps + experiences people love
-%section.portfolio
-     .container
-          .clients
-               %ul
-                    %li.animated.fadeInUp
-                         %a#project-noon-pacific{href: "http://noonpacific.com", target: "_blank"} noon pacific
-                    %li.animated.fadeInUp
-                         %a#project-color-myx{href: "https://itunes.apple.com/us/app/color-myx/id937256071?mt=8", target: "_blank"} color myx
-                    %li.animated.fadeInUp
-                         %a#project-daily-ui{href: "http://dailyui.co", target: "_blank"} daily ui
-          .mockups
-               = partial 'mockup'
-%section.cta
-     %a.contact.hvr-outline-out.animated.fadeIn{href: "mailto:clark@noonpacific.com", target: "_blank"} Let's Talk
+= partial 'partials/sidebar'
 
-%section.footer
-     %img{alt: "NP Studio Mockups", src: "#{image_path("madeinca.svg")}"}
+.main
+     
+     %ng-view
+             
+     .main__archive-hint
+          %p.m0.grey archive
+          %i.fa.fa-angle-down.grey
+     .main__archive
+          %ul.main__archive-grid{"ng-controller" => "MixListCtrl"}
+               %li.currentMix.mix{"ng-repeat" => "mix in Mix.Mixes.array"}
+                    %a{"data-content" => "{{mix.name}}", :href => "#/mix/{{mix.id}}", "ng-class" => "{'mixtapes': true, 'playing': mix.id === Mix.PlayingMixID}"}
+                         %img.lazy{:alt => "{{mix.name}}", "data-original" => "{{mix.cover_large}}?h=250&w=250", :height => "250", :src => "/img/grey.jpg", :width => "250"}
