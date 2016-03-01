@@ -1,133 +1,79 @@
-// FACEBOOK SHARER
-function fbs_click(width, height) {
-    var leftPosition, topPosition;
-    //Allow for borders.
-    leftPosition = (window.screen.width / 2) - ((width / 2) + 10);
-    //Allow for title and status bars.
-    topPosition = (window.screen.height / 2) - ((height / 2) + 50);
-    var windowFeatures = "status=no,height=" + height + ",width=" + width + ",resizable=yes,left=" + leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY=" + topPosition + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no";
-    u=location.href;
-    t=document.title;
-    window.open('https://www.facebook.com/sharer/sharer.php?u=http://www.noonpacific.com','sharer', windowFeatures);
-    return false;
-}
+// Facebook Share
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=570788733024362";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+// Twitter Follow
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
 
 $('#signup_form').on('submit', function() {
   $('#myModal').modal('hide');
 });
+
+// poster frame click event
+$(document).on('click','.js-videoPoster',function(ev) {
+  ev.preventDefault();
+  var $poster = $(this);
+  var $wrapper = $poster.closest('.js-videoWrapper');
+  videoPlay($wrapper);
+});
+
+// play the targeted video (and hide the poster frame)
+function videoPlay($wrapper) {
+  var $iframe = $wrapper.find('.js-videoIframe');
+  var src = $iframe.data('src');
+  // hide poster
+  $wrapper.addClass('videoWrapperActive');
+  // add iframe src in, starting the video
+  $iframe.attr('src',src);
+}
+
+// stop the targeted/all videos (and re-instate the poster frames)
+function videoStop($wrapper) {
+  // if we're stopping all videos on page
+  if (!$wrapper) {
+    var $wrapper = $('.js-videoWrapper');
+    var $iframe = $('.js-videoIframe');
+  // if we're stopping a particular video
+  } else {
+    var $iframe = $wrapper.find('.js-videoIframe');
+  }
+  // reveal poster
+  $wrapper.removeClass('videoWrapperActive');
+  // remove youtube link, stopping the video from playing in the background
+  $iframe.attr('src','');
+}
+
 
 // Cookie for Modal
 $(document).ready(function(){
     //Referances 
     //jQuery Cookie : https://github.com/carhartl/jquery-cookie
     //Modal : http://getbootstrap.com/javascript/#modals
+    $modal = $('.modal-frame-subscribe');
+    $overlay = $('.modal-overlay-subscribe');
+
     var my_cookie = $.cookie($('.modal-check').attr('name'));
+
     if (my_cookie && my_cookie == "true") {
         $(this).prop('checked', my_cookie);
-        console.log('checked checkbox');
     }
     else{
-        $('#myModal').modal('show');
+        $overlay.addClass('state-show');
+        $modal.removeClass('state-leave').addClass('state-appear');
     }
 
     $(".modal-check").change(function() {
         $.cookie($(this).attr("name"), $(this).prop('checked'), {
             path: '/',
-            expires: 30
+            expires: 90
         });
     });
-});
-   
-
-// HAPPY [DAY] 
-$(function(){
-
-    function DateTime() {
-        function getDaySuffix(a) {
-            var b = "" + a,
-                c = b.length,
-                d = parseInt(b.substring(c-2, c-1)),
-                e = parseInt(b.substring(c-1));
-            if (c == 2 && d == 1) return "th";
-            switch(e) {
-                case 1:
-                    return "st";
-                    break;
-                case 2:
-                    return "nd";
-                    break;
-                case 3:
-                    return "rd";
-                    break;
-                default:
-                    return "th";
-                    break;
-            };
-        };
-
-        this.getDoY = function(a) {
-            var b = new Date(a.getFullYear(),0,1);
-        return Math.ceil((a - b) / 86400000);
-        }
-
-        this.date = arguments.length == 0 ? new Date() : new Date(arguments);
-
-        this.weekdays = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
-        this.months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
-        this.daySuf = new Array( "st", "nd", "rd", "th" );
-
-        this.day = {
-            index: {
-                week: "0" + this.date.getDay(),
-                month: (this.date.getDate() < 10) ? "0" + this.date.getDate() : this.date.getDate()
-            },
-            name: this.weekdays[this.date.getDay()],
-            of: {
-                week: ((this.date.getDay() < 10) ? "0" + this.date.getDay() : this.date.getDay()) + getDaySuffix(this.date.getDay()),
-                month: ((this.date.getDate() < 10) ? "0" + this.date.getDate() : this.date.getDate()) + getDaySuffix(this.date.getDate())
-            }
-        }
-
-        this.month = {
-            index: (this.date.getMonth() + 1) < 10 ? "0" + (this.date.getMonth() + 1) : this.date.getMonth() + 1,
-            name: this.months[this.date.getMonth()]
-        };
-
-        this.year = this.date.getFullYear();
-
-        this.sym = {
-            d: {
-                d: this.date.getDate(),
-                dd: (this.date.getDate() < 10) ? "0" + this.date.getDate() : this.date.getDate(),
-                ddd: this.weekdays[this.date.getDay()].substring(0, 3),
-                dddd: this.weekdays[this.date.getDay()],
-                ddddd: ((this.date.getDate() < 10) ? "0" + this.date.getDate() : this.date.getDate()) + getDaySuffix(this.date.getDate()),
-                m: this.date.getMonth() + 1,
-                mm: (this.date.getMonth() + 1) < 10 ? "0" + (this.date.getMonth() + 1) : this.date.getMonth() + 1,
-                mmm: this.months[this.date.getMonth()].substring(0, 3),
-                mmmm: this.months[this.date.getMonth()],
-                yy: (""+this.date.getFullYear()).substr(2, 2),
-                yyyy: this.date.getFullYear()
-            }
-        };
-
-        this.formats = {
-            pretty: {
-              a: this.sym.d.dddd,
-              b: this.sym.d.ddddd,
-              c: this.sym.d.mmmm,
-              d: this.sym.d.yyyy
-            }
-        };
-    };
-
-
-
-    var dt = new DateTime();
-    $('.day').text(dt.formats.pretty.a);
-    $('.date').text(dt.formats.pretty.b);
-    $('.month').text(dt.formats.pretty.c);
-    $('.year').text(dt.formats.pretty.d);
 });
 
 
@@ -163,12 +109,12 @@ $(function(){
   // scroll to top when mixtape is selected
   $('.main__archive-grid').on('click', '.mixtapes', function() {
     $('body, html').animate({scrollTop: "0px"}, 700);
-    setTimeout(function() {
-      var input = document.getElementById('markdown-input').textContent,
-          outputEle = document.getElementById('markdown-output');
-          string = input.replace("\\n", "</h1><p>");
-      outputEle.innerHTML = micromarkdown.parse(string);
-    }, 1500);
+    // setTimeout(function() {
+    //   var input = document.getElementById('markdown-input').textContent,
+    //       outputEle = document.getElementById('markdown-output');
+    //       string = input.replace("\\n", "</h1><p>");
+    //   outputEle.innerHTML = micromarkdown.parse(string);
+    // }, 1500);
   });
 
   // Lazy Load
@@ -188,14 +134,14 @@ $(function(){
   // volume slider
   $('.vslider').slider();
 
-  // Markdown
-  setTimeout(function() {
-    var input = document.getElementById('markdown-input').textContent,
-        outputEle = document.getElementById('markdown-output');
-        string = input.replace("\\n", "</h1><p>");
-    outputEle.innerHTML = micromarkdown.parse(string);
-    console.image("http://i.imgur.com/BTNIDBR.gif");
-  }, 1500);
+  // // Markdown
+  // setTimeout(function() {
+  //   var input = document.getElementById('markdown-input').textContent,
+  //       outputEle = document.getElementById('markdown-output');
+  //       string = input.replace("\\n", "</h1><p>");
+  //   outputEle.innerHTML = micromarkdown.parse(string);
+  //   console.image("http://i.imgur.com/BTNIDBR.gif");
+  // }, 1500);
 
 });
 
@@ -213,6 +159,61 @@ $(function() {
   atvImg();
 });
 
+
+/** Active link checker **/
 $(function() {
   $('.sidebar__nav a[href$="/' + location.pathname.split("/")[1] + '"]').addClass('active');
 });
+
+/** Modals **/
+
+$(document).on('ready', function(){
+    $modal = $('.modal-frame');
+    $overlay = $('.modal-overlay');
+
+    /* Need this to clear out the keyframe classes so they dont clash with each other between ener/leave. Cheers. */
+    $modal.bind('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e){
+      if($modal.hasClass('state-leave')) {
+        $modal.removeClass('state-leave');
+      }
+    });
+
+    $('.close, .modal-frame').on('click', function(){
+      $overlay.removeClass('state-show');
+      $modal.removeClass('state-appear').addClass('state-leave');
+    });
+
+    $('.open').on('click', function(){
+      $overlay.addClass('state-show');
+      $modal.removeClass('state-leave').addClass('state-appear');
+    });
+
+  });
+
+$(document).on('ready', function(){
+    $modal = $('.modal-frame-subscribe');
+    $overlay = $('.modal-overlay-subscribe');
+
+    /* Need this to clear out the keyframe classes so they dont clash with each other between ener/leave. Cheers. */
+    $modal.bind('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e){
+      if($modal.hasClass('state-leave')) {
+        $modal.removeClass('state-leave');
+      }
+    });
+
+    $('.close-subscribe').on('click', function(){
+      $overlay.removeClass('state-show');
+      $modal.removeClass('state-appear').addClass('state-leave');
+    });
+
+    $('#signup_form').on('submit', function(){
+      $overlay.removeClass('state-show');
+      $modal.removeClass('state-appear').addClass('state-leave');
+    });
+
+    $('.open-subscribe').on('click', function(){
+      $overlay.addClass('state-show');
+      $modal.removeClass('state-leave').addClass('state-appear');
+    });
+
+  });

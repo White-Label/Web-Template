@@ -3,6 +3,7 @@ angular.module('NoonPacific')
   function($rootScope, $scope, $document, audio) {
     $scope.audio = audio;
     $scope.muteActive = false;
+    
 
     $scope.playing = function() {
       if($rootScope.currentTrack) {

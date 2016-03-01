@@ -1,3 +1,7 @@
+@import "normalize"
+@import "slider"
+@import "animate"
+
 /************ FONTS *************/
 
 @font-face
@@ -32,6 +36,11 @@
   font-stretch: normal
 
 /************ GLOBAL STYLES *************/
+*
+  box-sizing: border-box
+
+html, body 
+  height: 100%
 
 html, button, input, select, textarea
   color: #333
@@ -94,7 +103,7 @@ a
   display: inline-block
   padding: 10px 40px
   margin: 0
-  width: 200px
+  width: 260px
   text-align: center
   height: auto
   border: 1px solid #333
@@ -118,7 +127,17 @@ a
   &:focus
     outline: none
 
-.btn-outline
+.btn-black 
+  background: #333 
+  color: #fff 
+  padding: 10px
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak
+  display: none !important
+
+#twitter-widget-0
+  vertical-align: middle
+  margin-left: 10px
 
 $black: #333
 $grey: #adadad
@@ -145,14 +164,31 @@ $amazon: #FF9900
   text-align: center
   z-index: 2
   background: #fff
+  transition: 0.3s all
 
 .main
   margin-left: 240px
   width: calc(100% - 240px)
   float: left
+  transition: 0.3s all
 
 .main__content
   padding: 100px
+
+
+#sidebar-toggle 
+  display: none
+
+footer 
+  padding: 20px 0
+  ul
+    a
+      color: #adadad
+      &.active 
+        color: #333
+      &:hover 
+        color: #333
+
 
 /************ SIDEBAR *************/
 
@@ -180,6 +216,9 @@ $amazon: #FF9900
     padding: 0 20px
 
   .audio-player__controls
+    position: absolute
+    left: 58px
+    bottom: 0px
     .fa-play, .fa-pause
       vertical-align: sub
       font-size: 28px
@@ -199,7 +238,17 @@ $amazon: #FF9900
     z-index: 999
     background: #adadad
 
-
+  // volume
+  .volume
+    position: absolute
+    left: -4px
+    bottom: -30px
+    width: 100px !important
+    .slider
+      z-index: 9
+      width: 100px !important
+  .fa-volume-up
+    cursor: pointer
 
 
 /************ MAIN CONTENT *************/
@@ -207,18 +256,24 @@ $amazon: #FF9900
 .main
   .main__mixtape
     .main__cover
-      margin-top: 7%
+      margin-top: 6%
       width: 45.5%
-      // img 
-      //   min-width: 500px
+      position: relative
+      img 
+        min-width: 300px
+        width: 550px
+        -webkit-box-shadow: 2px 2px 18px -4px rgba(173,173,173,0.94)
+        -moz-box-shadow: 2px 2px 18px -4px rgba(173,173,173,0.94)
+        box-shadow: 2px 2px 18px -4px rgba(173,173,173,0.94)
       .mixtape-play
-        display: absolute 
-        top: 0
-        left: 0
+        position: absolute 
+        top: 50%
+        left: 50%
+        font-size: 60px
         color: #fff
         z-index: 999
     .main__tracklist
-      margin-top: 7%
+      margin-top: 6%
       width: 54.5%
       ol 
         margin-top: 0
@@ -352,6 +407,9 @@ $amazon: #FF9900
             opacity: 1
             visibility: visible
             top: 42px
+
+  
+
             
   .main__archive-hint
     width: 100%
@@ -365,12 +423,16 @@ $amazon: #FF9900
     .main__archive-grid
       list-style: none
       padding: 0
-      margin: 100px auto 0 auto
+      display: flex 
+      flex-wrap: wrap 
+      align-content: flex-start
+      justify-content: space-between
+      // margin: 100px auto 0 auto
       text-align: center
       width: 100%
       li
         display: inline-block
-        margin: 22px
+        margin: 20px 40px 20px 0
         vertical-align: top
         width: 250px
         > a
@@ -389,10 +451,16 @@ $amazon: #FF9900
             outline: none
             display: block
             position: relative
+            opacity: 0
             transition: all 0.3s ease-in-out
             -moz-transition: all 0.3s ease-in-out
             -webkit-transition: all 0.3s ease-in-out
             -o-transition: all 0.3s ease-in-out
+          img[data-original]
+            opacity: 1
+          img 
+            opacity: 1
+  
     .mixtapes
       position: relative
       cursor: pointer
@@ -447,9 +515,9 @@ $amazon: #FF9900
   width: 100%
   li
     display: inline-block
-    margin: 40px
+    margin: 20px
     vertical-align: top
-    width: 400px
+    width: 300px
     > a
       width: 100%
       border: none
@@ -460,6 +528,16 @@ $amazon: #FF9900
       -moz-transition: all 0.3s ease-in-out
       -webkit-transition: all 0.3s ease-in-out
       -o-transition: all 0.3s ease-in-out
+      -webkit-box-shadow: 0px 0px 0px 0px rgba(51,51,51,1)
+      -moz-box-shadow: 0px 0px 0px 0px rgba(51,51,51,1)
+      box-shadow: 0px 0px 0px 0px rgba(51,51,51,1)
+      transition: 0.3s all
+      -moz-transition: 0.3s all 
+      -webkit-transition: 0.3s all
+      &:hover 
+        -webkit-box-shadow: 5px -5px 0px 0px rgba(51,51,51,1)
+        -moz-box-shadow: 5px -5px 0px 0px rgba(51,51,51,1)
+        box-shadow: 5px -5px 0px 0px rgba(51,51,51,1)
       img
         width: 100%
         border: none
@@ -479,5 +557,897 @@ $amazon: #FF9900
     transition: 0.3s all
     &:hover 
       border-color: #adadad
+.main__subscribe
+  margin: 0 0 100px 0
+  .subscribe-container
+    margin: 0 auto
+    width: 355px
+    form 
+      margin-top: 10px
+      border-bottom: 3px solid #fff
+      width: 355px
+      input 
+        color: #333
+        border: 2px solid #333
+        width: 300px
+        font-size: 18px
+        padding: 10px
+        &::-webkit-input-placeholder
+          color: #adadad
+        &:focus 
+          outline: 0
+      button 
+        width: 50px
+        background: #333
+        color: #fff
+        border: none
+        vertical-align: bottom
+        height: 45px
+        font-size: 30px
+        -webkit-box-shadow: 0px 0px 0px 0px rgba(51,51,51,1)
+        -moz-box-shadow: 0px 0px 0px 0px rgba(51,51,51,1)
+        box-shadow: 0px 0px 0px 0px rgba(51,51,51,1)
+        transition: 0.3s all
+        -moz-transition: 0.3s all 
+        -webkit-transition: 0.3s all
+        &:focus
+          outline: 0
+        &:hover
+          -webkit-box-shadow: 5px -5px 0px 0px rgba(51,51,51,1)
+          -moz-box-shadow: 5px -5px 0px 0px rgba(51,51,51,1)
+          box-shadow: 5px -5px 0px 0px rgba(51,51,51,1)
+          
+.vex.vex-theme-default .vex-content
+  border: 0 !important
+  background: transparent !important
+  text-align: center !important
+.vex-overlay 
+  background: rgba(255, 255, 255, 0.95) !important
+.vex.vex-theme-default .vex-close:before
+  color: #333 !important
+  font-size: 20px !important
+.vex.vex-theme-default .vex-close:hover:before, .vex.vex-theme-default .vex-close:active:before
+  background: transparent !important
+
 .main__contact 
   border-right: 1px solid #adadad
+
+/*** SUBMIT ***/
+iframe#typeform-full
+  position: absolute
+  top: 0px
+  height: 100%
+
+/*** TV ***/
+.tv-header
+  text-align: center
+  margin-top: 100px
+  img
+    width: 50px
+    display: inline-block
+    margin-right: 10px
+  h3 
+    display: inline-block
+    vertical-align: bottom
+
+.tv-body
+  img 
+    width: 80%
+    margin: 0 auto 
+    display: block
+
+.tv-footer
+  text-align: center
+  margin: 50px 0 200px 0
+  img 
+    width: 50px
+    display: block
+    margin: 50px auto 0 auto
+    padding-bottom: 50px
+
+.atvImg
+  width: 400px
+  height: 240px
+  margin: 50px auto 0 auto
+  border-radius: 5px
+  transform-style: preserve-3d
+  -webkit-tap-highlight-color: rgba(#000, 0)
+  img
+    border-radius: 5px
+    box-shadow: 0 2px 8px rgba(14, 21, 47, 0.25)
+
+.atvImg-container
+  position: relative
+  width: 100%
+  height: 100%
+  border-radius: 5px
+  transition: all 0.2s ease-out
+  &.over .atvImg-shadow
+    box-shadow: 0 45px 100px rgba(14, 21, 47, 0.4), 0 16px 40px rgba(14, 21, 47, 0.4)
+
+.atvImg-layers
+  position: relative
+  width: 100%
+  height: 100%
+  border-radius: 5px
+  overflow: hidden
+  transform-style: preserve-3d
+
+.atvImg-rendered-layer
+  position: absolute
+  width: 104%
+  height: 104%
+  top: -2%
+  left: -2%
+  background-repeat: no-repeat
+  background-position: center
+  background-color: transparent
+  background-size: cover
+  transition: all 0.1s ease-out
+
+.atvImg-shadow
+  position: absolute
+  top: 5%
+  left: 5%
+  width: 90%
+  height: 90%
+  transition: all 0.2s ease-out
+  box-shadow: 0 8px 30px rgba(14, 21, 47, 0.6)
+
+.atvImg-shine
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  border-radius: 5px
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 60%)
+
+@media screen and (max-width: 550px)
+  .tv-header
+    margin-bottom: 50px
+    p
+      display: block
+    img 
+      display: block 
+      margin: 0 auto 
+  .atvImg
+    width: 200px
+    height: 120px
+
+/*** SESSIONS ***/
+
+.videoWrapper
+  position: relative
+  width: 100%
+  height: 0
+  background-color: #000
+
+.videoWrapper43
+  padding-top: 75%
+
+.videoWrapper169
+  padding-top: 56%
+
+.videoIframe
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: transparent
+
+.videoPoster
+  position: absolute
+  top: 0
+  right: 0
+  left: 0
+  width: 100%
+  height: 100%
+  margin: 0
+  padding: 0
+  cursor: pointer
+  border: 0
+  outline: none
+  background-position: 50% 50%
+  background-size: 100% 100%
+  background-size: cover
+  text-indent: -999em
+  overflow: hidden
+  opacity: 1
+  -webkit-transition: opacity 800ms, height 0s
+  -moz-transition: opacity 800ms, height 0s
+  transition: opacity 800ms, height 0s
+  -webkit-transition-delay: 0s, 0s
+  -moz-transition-delay: 0s, 0s
+  transition-delay: 0s, 0s
+  &:before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 80px
+    height: 80px
+    margin: -40px 0 0 -40px
+    border: 5px solid #fff
+    border-radius: 100%
+    -webkit-transition: border-color 300ms
+    -moz-transition: border-color 300ms
+    transition: border-color 300ms
+  &:after
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 0
+    height: 0
+    margin: -20px 0 0 -10px
+    border-left: 40px solid #fff
+    border-top: 25px solid transparent
+    border-bottom: 25px solid transparent
+    -webkit-transition: border-color 300ms
+    -moz-transition: border-color 300ms
+    transition: border-color 300ms
+  &:hover:before, &:focus:before
+    border-color: #fff
+  &:hover:after, &:focus:after
+    border-left-color: #fff
+
+.videoWrapperActive .videoPoster
+  opacity: 0
+  height: 0
+  -webkit-transition-delay: 0s, 800ms
+  -moz-transition-delay: 0s, 800ms
+  transition-delay: 0s, 800ms
+
+/*** CLUB ***/
+
+.main__club
+  h2 
+    font-weight: normal
+  .club-screen
+    margin: 25px 0 0 0
+    background-image: url("/img/water.gif")
+    background-repeat: no-repeat
+    background-size: cover
+    img 
+      margin: 0 auto
+      width: 70%
+      display: block
+      opacity: 0.9
+      padding: 100px 0
+
+
+/*** MODALS ***/
+
+.modal-overlay
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  margin: auto
+  background-color: #fff
+  opacity: 0
+  visibility: hidden
+  z-index: 40
+  -moz-transition: opacity 0.25s ease 0s, visibility 0.35s linear
+  -o-transition: opacity 0.25s ease 0s, visibility 0.35s linear
+  -webkit-transition: opacity 0.25s ease, visibility 0.35s linear
+  -webkit-transition-delay: 0s, 0s
+  transition: opacity 0.25s ease 0s, visibility 0.35s linear
+  &.state-show
+    opacity: .95
+    visibility: visible
+    position: fixed
+    top: 0
+    height: 100%
+    -moz-transition-delay: 0s
+    -o-transition-delay: 0s
+    -webkit-transition-delay: 0s
+    transition-delay: 0s
+    -moz-transition-duration: 0.2s, 0s
+    -o-transition-duration: 0.2s, 0s
+    -webkit-transition-duration: 0.2s, 0s
+    transition-duration: 0.2s, 0s
+
+.modal-overlay-subscribe
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  margin: auto
+  background-color: #fff
+  opacity: 0
+  visibility: hidden
+  z-index: 40
+  -moz-transition: opacity 0.25s ease 0s, visibility 0.35s linear
+  -o-transition: opacity 0.25s ease 0s, visibility 0.35s linear
+  -webkit-transition: opacity 0.25s ease, visibility 0.35s linear
+  -webkit-transition-delay: 0s, 0s
+  transition: opacity 0.25s ease 0s, visibility 0.35s linear
+  &.state-show
+    opacity: .95
+    visibility: visible
+    position: fixed
+    top: 0
+    height: 100%
+    -moz-transition-delay: 0s
+    -o-transition-delay: 0s
+    -webkit-transition-delay: 0s
+    transition-delay: 0s
+    -moz-transition-duration: 0.2s, 0s
+    -o-transition-duration: 0.2s, 0s
+    -webkit-transition-duration: 0.2s, 0s
+    transition-duration: 0.2s, 0s
+
+.modal-frame
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  margin: auto
+  z-index: 50
+  display: -webkit-flex
+  display: flex
+  -webkit-align-items: center
+  align-items: center
+  -moz-box-align: center
+  -webkit-box-pack: center
+  -webkit-justify-content: center
+  justify-content: center
+  -moz-box-pack: center
+  -ms-flex-pack: center
+  width: 100%
+  text-align: center
+  visibility: hidden
+  &.state-appear
+    visibility: visible
+    .modal-inset
+      -moz-animation: modalComeIn 0.25s ease
+      -webkit-animation: modalComeIn 0.25s ease
+      animation: modalComeIn 0.25s ease
+      visibility: visible
+    .modal-body
+      opacity: 1
+      -moz-transform: translateY(0) scale(1, 1)
+      -ms-transform: translateY(0) scale(1, 1)
+      -webkit-transform: translateY(0) scale(1, 1)
+      transform: translateY(0) scale(1, 1)
+  &.state-leave
+    visibility: visible
+    .modal-inset
+      -moz-animation: modalHeadOut 0.35s ease 0.1s
+      -webkit-animation: modalHeadOut 0.35s ease 0.1s
+      animation: modalHeadOut 0.35s ease 0.1s
+      visibility: visible
+    .modal-body
+      opacity: 0
+      -moz-transition-delay: 0s
+      -o-transition-delay: 0s
+      -webkit-transition-delay: 0s
+      transition-delay: 0s
+      -moz-transition-duration: 0.35s
+      -o-transition-duration: 0.35s
+      -webkit-transition-duration: 0.35s
+      transition-duration: 0.35s
+      -moz-transition-timing-function: ease
+      -o-transition-timing-function: ease
+      -webkit-transition-timing-function: ease
+      transition-timing-function: ease
+      -moz-transform: translateY(25px)
+      -ms-transform: translateY(25px)
+      -webkit-transform: translateY(25px)
+      transform: translateY(25px)
+.modal-frame-subscribe
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  margin: auto
+  z-index: 50
+  display: -webkit-flex
+  display: flex
+  -webkit-align-items: center
+  align-items: center
+  -moz-box-align: center
+  -webkit-box-pack: center
+  -webkit-justify-content: center
+  justify-content: center
+  -moz-box-pack: center
+  -ms-flex-pack: center
+  width: 100%
+  text-align: center
+  visibility: hidden
+  &.state-appear
+    visibility: visible
+    .modal-inset
+      -moz-animation: modalComeIn 0.25s ease
+      -webkit-animation: modalComeIn 0.25s ease
+      animation: modalComeIn 0.25s ease
+      visibility: visible
+    .modal-body
+      opacity: 1
+      -moz-transform: translateY(0) scale(1, 1)
+      -ms-transform: translateY(0) scale(1, 1)
+      -webkit-transform: translateY(0) scale(1, 1)
+      transform: translateY(0) scale(1, 1)
+  &.state-leave
+    visibility: visible
+    .modal-inset
+      -moz-animation: modalHeadOut 0.35s ease 0.1s
+      -webkit-animation: modalHeadOut 0.35s ease 0.1s
+      animation: modalHeadOut 0.35s ease 0.1s
+      visibility: visible
+    .modal-body
+      opacity: 0
+      -moz-transition-delay: 0s
+      -o-transition-delay: 0s
+      -webkit-transition-delay: 0s
+      transition-delay: 0s
+      -moz-transition-duration: 0.35s
+      -o-transition-duration: 0.35s
+      -webkit-transition-duration: 0.35s
+      transition-duration: 0.35s
+      -moz-transition-timing-function: ease
+      -o-transition-timing-function: ease
+      -webkit-transition-timing-function: ease
+      transition-timing-function: ease
+      -moz-transform: translateY(25px)
+      -ms-transform: translateY(25px)
+      -webkit-transform: translateY(25px)
+      transform: translateY(25px)
+
+
+@-moz-document url-prefix()
+  .modal-frame
+    height: calc(100% - 55px)
+
+
+.modal
+  display: block
+  vertical-align: middle
+  text-align: center
+
+.modal-inset
+  position: relative
+  padding: 0px
+  min-width: 320px
+  min-height: 126px
+  margin: auto
+  visibility: hidden
+  -moz-backface-visibility: hidden
+  -webkit-backface-visibility: hidden
+  backface-visibility: hidden
+  -moz-transform: translate3d(0, 0, 0)
+  -ms-transform: translate3d(0, 0, 0)
+  -webkit-transform: translate3d(0, 0, 0)
+  transform: translate3d(0, 0, 0)
+  -moz-transform-style: preserve-3d
+  -webkit-transform-style: preserve-3d
+  transform-style: preserve-3d
+.close, .close-subscribe
+  display: block
+  cursor: pointer
+  position: absolute
+  top: 30px
+  right: 30px
+  padding: 10px
+  font-size: 30px
+  &:hover
+    opacity: 1
+
+
+.modal-body
+  margin: auto
+  opacity: 0
+  -moz-transform: translateY(0) scale(0.8, 0.8)
+  -ms-transform: translateY(0) scale(0.8, 0.8)
+  -webkit-transform: translateY(0) scale(0.8, 0.8)
+  transform: translateY(0) scale(0.8, 0.8)
+  -moz-transition-property: opacity, -moz-transform
+  -o-transition-property: opacity, -o-transform
+  -webkit-transition-property: opacity, -webkit-transform
+  transition-property: opacity, transform
+  -moz-transition-duration: 0.25s
+  -o-transition-duration: 0.25s
+  -webkit-transition-duration: 0.25s
+  transition-duration: 0.25s
+  -moz-transition-delay: 0.1s
+  -o-transition-delay: 0.1s
+  -webkit-transition-delay: 0.1s
+  transition-delay: 0.1s
+  h3
+    font-weight: 700
+    padding-bottom: 22px
+    display: block
+    color: #F2594B
+    text-align: center
+  img 
+    width: 140px
+  i 
+    padding-right: 5px
+  .ps
+    font-size: 12px
+    opacity: .3
+  .subscribe-container
+    margin: 50px auto
+    width: 355px
+    form 
+      margin-top: 10px
+      border-bottom: 3px solid #fff
+      width: 355px
+      input 
+        color: #333
+        border: 2px solid #333
+        width: 300px
+        font-size: 18px
+        padding: 10px
+        -webkit-box-shadow: 0px 0px 0px 0px rgba(51,51,51,1)
+        -moz-box-shadow: 0px 0px 0px 0px rgba(51,51,51,1)
+        box-shadow: 0px 0px 0px 0px rgba(51,51,51,1)
+        transition: 0.3s all
+        -moz-transition: 0.3s all 
+        -webkit-transition: 0.3s all 
+        &::-webkit-input-placeholder
+          color: #adadad
+        &:focus 
+          outline: 0
+          -webkit-box-shadow: 5px -5px 0px 0px rgba(51,51,51,1)
+          -moz-box-shadow: 5px -5px 0px 0px rgba(51,51,51,1)
+          box-shadow: 5px -5px 0px 0px rgba(51,51,51,1)
+      button 
+        width: 50px
+        background: #333
+        color: #fff
+        border: none
+        vertical-align: bottom
+        height: 45px
+        font-size: 30px
+        -webkit-box-shadow: 0px 0px 0px 0px rgba(51,51,51,1)
+        -moz-box-shadow: 0px 0px 0px 0px rgba(51,51,51,1)
+        box-shadow: 0px 0px 0px 0px rgba(51,51,51,1)
+        transition: 0.3s all
+        -moz-transition: 0.3s all 
+        -webkit-transition: 0.3s all
+        &:focus
+          outline: 0
+        &:hover
+          -webkit-box-shadow: 5px -5px 0px 0px rgba(51,51,51,1)
+          -moz-box-shadow: 5px -5px 0px 0px rgba(51,51,51,1)
+          box-shadow: 5px -5px 0px 0px rgba(51,51,51,1)
+.modal-footer
+  .checkbox
+    display: flex
+    justify-content: center
+    input[type='checkbox']
+      height: 0
+      width: 0
+      display:  none
+      + label
+        position: relative
+        display: flex
+        margin: .6em 0
+        align-items: center
+        color: #333
+        transition: color 250ms cubic-bezier(0.4, 0, 0.23, 1)
+        >
+          ins
+            position: absolute
+            display: block
+            bottom: 0
+            left: 2em
+            height: 0
+            width: 100%
+            overflow: hidden
+            text-decoration: none
+            transition: height 300ms cubic-bezier(0.4, 0, 0.23, 1)
+            > i
+              position: absolute
+              bottom: 0
+              font-style: normal
+              color: #4FC3F7
+          span
+            display: flex
+            justify-content: center
+            align-items: center
+            margin-right: 1em
+            width: 1em
+            height: 1em
+            background: transparent
+            border: 2px solid #333
+            border-radius: 0
+            cursor: pointer
+            transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1)
+      // &:focus
+      //   + label
+      //     color: #fff
+      //   + label > span
+      //     background: rgba(255, 255, 255, 0.1)
+      // + label:hover > span
+      //   background: rgba(255, 255, 255, 0.1)
+      &:checked + label >
+        ins
+          height: 100%
+        span
+          border: 2px solid 333
+          animation: shrink-bounce 200ms cubic-bezier(0.4, 0, 0.23, 1)
+          &:before
+            content: ""
+            position: absolute
+            top: .6em
+            left: .15em
+            border-right: 2px solid transparent
+            border-bottom: 2px solid transparent
+            transform: rotate(45deg)
+            transform-origin: 0% 100%
+            animation: checkbox-check 125ms 250ms cubic-bezier(0.4, 0, 0.23, 1) forwards
+
+    @keyframes shrink-bounce
+      0%
+        transform: scale(1)
+
+      33%
+        transform: scale(0.85)
+
+      100%
+        transform: scale(1)
+
+
+    @keyframes checkbox-check
+      0%
+        width: 0
+        height: 0
+        border-color: #212121
+        transform: translate3d(0, 0, 0) rotate(45deg)
+
+      33%
+        width: .2em
+        height: 0
+        transform: translate3d(0, 0, 0) rotate(45deg)
+
+      100%
+        width: .2em
+        height: .5em
+        border-color: #212121
+        transform: translate3d(0, -0.5em, 0) rotate(45deg)
+
+
+
+@-webkit-keyframes modalComeIn
+  0%
+    visibility: hidden
+    opacity: 0
+    -moz-transform: scale(0.8, 0.8)
+    -ms-transform: scale(0.8, 0.8)
+    -webkit-transform: scale(0.8, 0.8)
+    transform: scale(0.8, 0.8)
+
+  65.5%
+    -moz-transform: scale(1.03, 1.03)
+    -ms-transform: scale(1.03, 1.03)
+    -webkit-transform: scale(1.03, 1.03)
+    transform: scale(1.03, 1.03)
+
+  100%
+    visibility: visible
+    opacity: 1
+    -moz-transform: scale(1, 1)
+    -ms-transform: scale(1, 1)
+    -webkit-transform: scale(1, 1)
+    transform: scale(1, 1)
+
+
+@-moz-keyframes modalComeIn
+  0%
+    visibility: hidden
+    opacity: 0
+    -moz-transform: scale(0.8, 0.8)
+    -ms-transform: scale(0.8, 0.8)
+    -webkit-transform: scale(0.8, 0.8)
+    transform: scale(0.8, 0.8)
+
+  65.5%
+    -moz-transform: scale(1.03, 1.03)
+    -ms-transform: scale(1.03, 1.03)
+    -webkit-transform: scale(1.03, 1.03)
+    transform: scale(1.03, 1.03)
+
+  100%
+    visibility: visible
+    opacity: 1
+    -moz-transform: scale(1, 1)
+    -ms-transform: scale(1, 1)
+    -webkit-transform: scale(1, 1)
+    transform: scale(1, 1)
+
+
+@keyframes modalComeIn
+  0%
+    visibility: hidden
+    opacity: 0
+    -moz-transform: scale(0.8, 0.8)
+    -ms-transform: scale(0.8, 0.8)
+    -webkit-transform: scale(0.8, 0.8)
+    transform: scale(0.8, 0.8)
+
+  65.5%
+    -moz-transform: scale(1.03, 1.03)
+    -ms-transform: scale(1.03, 1.03)
+    -webkit-transform: scale(1.03, 1.03)
+    transform: scale(1.03, 1.03)
+
+  100%
+    visibility: visible
+    opacity: 1
+    -moz-transform: scale(1, 1)
+    -ms-transform: scale(1, 1)
+    -webkit-transform: scale(1, 1)
+    transform: scale(1, 1)
+
+
+@-webkit-keyframes modalHeadOut
+  0%
+    visibility: visible
+    opacity: 1
+    -moz-transform: translateY(0) scale(1, 1)
+    -ms-transform: translateY(0) scale(1, 1)
+    -webkit-transform: translateY(0) scale(1, 1)
+    transform: translateY(0) scale(1, 1)
+
+  100%
+    visibility: hidden
+    opacity: 0
+    -moz-transform: translateY(35px) scale(0.97, 0.97)
+    -ms-transform: translateY(35px) scale(0.97, 0.97)
+    -webkit-transform: translateY(35px) scale(0.97, 0.97)
+    transform: translateY(35px) scale(0.97, 0.97)
+
+
+@-moz-keyframes modalHeadOut
+  0%
+    visibility: visible
+    opacity: 1
+    -moz-transform: translateY(0) scale(1, 1)
+    -ms-transform: translateY(0) scale(1, 1)
+    -webkit-transform: translateY(0) scale(1, 1)
+    transform: translateY(0) scale(1, 1)
+
+  100%
+    visibility: hidden
+    opacity: 0
+    -moz-transform: translateY(35px) scale(0.97, 0.97)
+    -ms-transform: translateY(35px) scale(0.97, 0.97)
+    -webkit-transform: translateY(35px) scale(0.97, 0.97)
+    transform: translateY(35px) scale(0.97, 0.97)
+
+
+@keyframes modalHeadOut
+  0%
+    visibility: visible
+    opacity: 1
+    -moz-transform: translateY(0) scale(1, 1)
+    -ms-transform: translateY(0) scale(1, 1)
+    -webkit-transform: translateY(0) scale(1, 1)
+    transform: translateY(0) scale(1, 1)
+
+  100%
+    visibility: hidden
+    opacity: 0
+    -moz-transform: translateY(35px) scale(0.97, 0.97)
+    -ms-transform: translateY(35px) scale(0.97, 0.97)
+    -webkit-transform: translateY(35px) scale(0.97, 0.97)
+    transform: translateY(35px) scale(0.97, 0.97)
+
+/** RESPONSIVE STUFF **/
+
+@media screen and (max-width: 768px)
+  .sidebar
+    left: -240px
+  .main 
+    margin-left: 0
+    width: 100%
+
+  #sidebar-label
+    position: absolute
+    top: 20px
+    left: 20px
+    font-size: 30px
+    transition: 0.3s all
+  #sidebar-toggle:checked ~ 
+    .sidebar
+      left: 0px
+    .main 
+      margin-left: 240px
+      width: calc(100% - 240px)
+    #sidebar-label 
+      left: 250px
+  .main 
+    .main__mixtape 
+      .main__cover 
+        margin: 80px auto 0 auto
+        img 
+          max-width: 90%
+      .main__tracklist 
+        ol 
+          .main__track-social
+            margin-right: 10px
+  footer 
+    ul
+      li
+        display: block !important
+        margin: 20px auto
+
+@media screen and (max-width: 1235px)   
+  .main 
+    .main__mixtape 
+      .main__cover 
+        margin-top: 80px
+        width: 90%
+        float: none
+        img 
+          min-width: 300px
+          display: block
+          margin: 0 auto
+      .main__tracklist
+        margin-top: 6%
+        width: 90%
+        clear: both
+
+@media screen and (max-width: 1100px)
+  .main
+    .main__about 
+      padding: 30px
+      margin: 40px 0 0 0
+      
+    .main__contact, .main__apps
+      margin-top: 25px
+    .main__collections__archive
+      margin-top: 80px
+    .main__mixtape
+      min-width: 400px
+      .main__cover
+        .mixtape-play
+          position: absolute 
+          top: 50%
+          left: 50%
+          font-size: 60px
+          color: #fff
+          z-index: 999
+      .main__tracklist
+        ol 
+          > li 
+            margin-bottom: 25px  
+            margin-left: 00px 
+            &:before 
+              width: 23px
+              height: 19px
+              font-size: 12px
+          p 
+            font-size: 14px
+    .main__archive
+      .main__archive-grid
+        justify-content: center
+        li 
+          margin: 20px
+
+
+@media screen and (min-width: 1200px) and (max-width: 1500px)
+
+
+// // Extra small devices (portrait phones, less than 34em)
+// @media (max-width: 33.9em)
+
+// // Small devices (landscape phones, less than 48em)
+// @media (max-width: 47.9em)
+
+// // Medium devices (tablets, less than 62em)
+// @media (max-width: 61.9em)
+
+// // Large devices (desktops, less than 75em)
+// @media (max-width: 74.9em)

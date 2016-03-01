@@ -1,41 +1,81 @@
+= partial 'partials/sidebar-toggle'
 = partial 'partials/sidebar'
+= partial 'partials/app-modal'
+= partial 'partials/subscribe-modal'
 
 .main 
-     .main__about.col-8.ml4.mt3.p4
+     .main__about.sm-col-12.md-col-10.ml4.mt3.p4
           %p 
                Noon Pacific™ is a weekly mixtape of the best songs handpicked from the best music blogs, delivered to your inbox every Monday at Noon (Pacific Time).
           %p
                Curated by <a href="http://clarkdinnison.com" target="_blank">Clark Dinnison</a> in Newport Beach, California.
           %p
-               Built with <a href="whitelabel.cool" target="_blank">White Label</a>.
+               Built with <a href="http://whitelabel.cool" target="_blank">White Label</a>.
+
+          .fb-share-button{"data-href" => "http://noonpacific.com", "data-layout" => "button_count"}
+          %a.twitter-follow-button{"data-show-count" => "false", :href => "https://twitter.com/NoonPacific"} Follow @NoonPacific
 
      / INSERT SUBSCRIBE HERE
-     / INSERT SHARE AND FOLLOW STUFF
-
+     .clearfix 
+          .main__subscribe.col-12
+               %p.center SUBSCRIBE TO WEEKLY MIXTAPES
+               .subscribe-container.subscription_form
+                    %form#signup_form{:action => "https://api.kickofflabs.com/v1/38778/subscribe", :method => "post", :role => "form"}
+                         %input#email{:name => "email", :placeholder => "Your Email Address", :type => "email"}
+                         %button#submit_email{:type => "submit", :value => "subscribe"}
+                              %i.fa.fa-long-arrow-right
      .clearfix
           .main__contact.sm-col.sm-col-12.md-col-6
                %p.center  CONTACT
                %ul.list-reset.center
                     %li
-                         %a.btn.btn-outline.my2{:href => "#"} Submit a Song
+                         %a.btn.btn-outline.my2{:href => "/submit"} Submit a Song
                     %li 
-                         %a.btn.btn-outline.my2{:href => "#"} Partnerships
+                         %a.btn.btn-outline.my2{:href => "mailto:clark@noonpacific.com"} Partnerships
                     %li  
-                         %a.btn.btn-outline.my2{:href => "#"} Become an Ambassador
+                         %a.btn.btn-outline.my2{:href => "/ambassador"} Become an Ambassador
 
           .main__apps.sm-col.sm-col-12.md-col-6
                %p.center  APPS
                %ul.list-reset.center
                     %li
-                         %a.btn.btn-outline.my2{:href => "#"} 
+                         %a.btn.btn-outline.my2{:href => "https://itunes.apple.com/us/app/noon-pacific/id803563983?mt=8&uo=4&at=10lKmP", :target => "_blank"} 
                               %i.fa.fa-apple 
                               Download iOS
                     %li 
-                         %a.btn.btn-outline.my2{:href => "#"} 
+                         %a.btn.btn-outline.my2{:href => "https://play.google.com/store/apps/details?id=com.np.noonpacific&hl=en", :target => "_blank"} 
                               %i.fa.fa-android
                               Download Android
                     %li  
-                         %a.btn.btn-outline.my2{:href => "#"} 
+                         %a.btn.btn-outline.my2{:href => "/tv"} 
                               Available on Apple TV
+     .clearfix 
+          .main__press.sm-col-12.md-col-6.mt4
+               %p.center PRESS
+               %ul.list-reset.center
+                    %li
+                         %a.btn.btn-outline.my2{:href => "http://www.nytimes.com/2015/06/04/technology/personaltech/video-feature-streaming-music-apps-for-a-variety-of-tastes.html?ref=technology", :target => "_blank"} 
+                              The New York Times
+                    %li
+                         %a.btn.btn-outline.my2{:href => "http://lifehacker.com/5950839/noon-pacific-finds-the-best-new-music-and-emails-you-a-playlist-full-every-week", :target => "_blank"} 
+                              Lifehacker
+                    %li
+                         %a.btn.btn-outline.my2{:href => "http://www.theguardian.com/music/musicblog/2014/feb/12/blog-of-the-week-noon-pacific", :target => "_blank"} 
+                              The Guardian
+                    %li
+                         %a.btn.btn-outline.my2{:href => "http://abduzeedo.com/weekly-apps-aviate-noon-pacific-telegram-and-more", :target => "_blank"} 
+                              Abduzeedo
+                    %li
+                         %a.btn.btn-outline.my2{:href => "http://www.usatoday.com/story/tech/columnist/talkingtech/2014/06/05/app-experts-pick-their-favorites-heres-whats-hot/10032697/", :target => "_blank"} 
+                              USA Today
+                    %li
+                         %a.btn.btn-black.my2{:href => "#{image_path("Noon_Press_Pack.zip")}", :target => "_blank"} 
+                              Download Press Kit
 
+-# KOL
+%script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"}
+:javascript
+     window.$kol_jquery = window.jQuery
+%script{:src => "https://kickoffpages-kickofflabs.netdna-ssl.com/widgets/1.2.0/kol_any_form.js"}
+%script{:src => "https://kickoffpages-kickofflabs.netdna-ssl.com/w/40404/49096.js"}
 

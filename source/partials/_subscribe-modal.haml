@@ -1,0 +1,30 @@
+.modal-frame-subscribe
+  .modal
+    .button.close-subscribe
+      %i.fa.fa-close
+    .modal-inset
+      .modal-body
+        .row
+          %h1.mb1
+            HANDPICKED MUSIC 
+          %p.mt0 delivered to your inbox every Monday
+        .row
+          .subscribe-container.subscription_form
+            %form#signup_form{:action => "https://api.kickofflabs.com/v1/38778/subscribe", :method => "post", :role => "form"}
+              %input#email{:name => "email", :placeholder => "Your Email Address", :type => "email"}
+              %button#submit_email{:type => "submit", :value => "subscribe"}
+                %i.fa.fa-long-arrow-right
+
+      .modal-footer
+        .checkbox
+          / %label
+          / %input.modal-check{:type =>"checkbox", :id => "radio01", :name => "modal-check"}
+          /   Don't Show Again
+          %input.modal-check{:type => "checkbox", :id => "radio01", :name => "modal-check"}
+          %label{:for => "radio01"}
+            %span
+            Don't Show Again
+
+
+         
+.modal-overlay-subscribe

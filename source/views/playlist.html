@@ -2,12 +2,15 @@
 directory_index: false
 ---
 <div class="main__mixtape clearfix" ng-controller="PlaylistCtrl">
-  <div class="main__cover left">
-    <img class="fit ml2" ng-click="PlayPauseClick()" ng-src="{{mixService.CurrentMix.cover_large}}"/>
+  <div class="main__cover left animated fadeIn">
+    <img class="" ng-click="PlayPauseClick()" ng-src="{{mixService.CurrentMix.cover_large}}"/>
+    <!-- <div class="mixtape-play" ng-click="PlayPauseClick()" ng-hide="audio.state !== 'playing">
+      <i class="fa fa-play"></i>
+    </div> -->
   </div>
   <div class="main__tracklist left">
     <ol class="ml1">
-      <li ng-repeat="track in mixService.CurrentMix.Tracks.array" ng-class="{true: 'current-track', false: ''}[track.track_id === mixService.PlayingTrackID]">
+      <li ng-repeat="track in mixService.CurrentMix.Tracks.array" ng-class="{true: 'current-track', false: ''}[track.track_id === mixService.PlayingTrackID]" class="animated fadeIn">
         <a href="" ng-click="PlayTrack(track)">
           <div class="main__track-info">
             <p class="song m0">{{track.title}}</p>

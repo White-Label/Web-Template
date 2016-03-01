@@ -9,7 +9,7 @@ angular.module('NoonPacific').controller('PlaylistCtrl',
       var baseURL, hashtags, text, mention;
       if (track) {
         baseURL = "https://twitter.com/intent/tweet?";
-        text = encodeURIComponent("♫ Listening to " + track.title + " by " + track.artist_description + " on @noonpacific");
+        text = encodeURIComponent("♫ Listening to " + track.title + " by " + track.artist_description + " on @noonpacific. Check out noonpacific.com");
         hashtags = "newmusic";
         return baseURL + "text=" + text + "&hashtags=" + hashtags;
       }
@@ -19,8 +19,8 @@ angular.module('NoonPacific').controller('PlaylistCtrl',
       var baseURL, hashtags, text, mention;
       if (mixService.CurrentMix) {
         baseURL = "https://twitter.com/intent/tweet?";
-        text = encodeURIComponent("♫ Listening to " + mixService.CurrentMix.name + " on @noonpacific");
-        hashtags = "newmusic";
+        text = encodeURIComponent("♫ Listening to " + mixService.CurrentMix.name + " on @noonpacific. Check out noonpacific.com");
+        hashtags = "goodmusic";
         return baseURL + "text=" + text + "&hashtags=" + hashtags;
       }
     };

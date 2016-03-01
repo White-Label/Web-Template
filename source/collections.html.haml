@@ -1,32 +1,35 @@
+= partial 'partials/sidebar-toggle'
 = partial 'partials/sidebar'
+= partial 'partials/app-modal'
+= partial 'partials/subscribe-modal'
 
 .main 
      .main__collections__archive
-          %ul.main__archive-grid.list-reset
+          %ul.main__archive-grid.list-reset.animated.fadeIn
                %li
                     %a{:href => "/collections/gramovox", :target => "_blank"}
-                         %img.lazy{:alt => "", :height => "400", :src => "/img/collections/gramovox.jpg", :width => "400"}
+                         %img.lazy{:alt => "", :height => "300", :src => "#{image_path("collections/gramovox.jpg")}", :width => "300"}
                %li
                     %a{:href => "/collections/spacejamstwo", :target => "_blank"}
-                         %img.lazy{:alt => "", :height => "400", :src => "/img/collections/space_jams_2.jpg", :width => "400"}
+                         %img.lazy{:alt => "", :height => "300", :src => "#{image_path("collections/space_jams_2.jpg")}", :width => "300"}
                %li
                     %a{:href => "/collections/summerfade", :target => "_blank"}
-                         %img.lazy{:alt => "", :height => "400", :src => "/img/collections/summer_fade.jpg", :width => "400"}
+                         %img.lazy{:alt => "", :height => "300", :src => "#{image_path("collections/summer_fade.jpg")}", :width => "300"}
                %li
                     %a{:href => "/collections/summa", :target => "_blank"}
-                         %img.lazy{:alt => "", :height => "400", :src => "/img/collections/summa.jpg", :width => "400"}
+                         %img.lazy{:alt => "", :height => "300", :src => "#{image_path("collections/summa.jpg")}", :width => "300"}
                %li
                     %a{:href => "/collections/slowtide", :target => "_blank"}
-                         %img.lazy{:alt => "", :height => "400", :src => "/img/collections/slow_tide.jpg", :width => "400"}
+                         %img.lazy{:alt => "", :height => "300", :src => "#{image_path("collections/slow_tide.jpg")}", :width => "300"}
                %li
                     %a{:href => "/collections/greetings", :target => "_blank"}
-                         %img.lazy{:alt => "", :height => "400", :src => "/img/collections/greetings.jpg", :width => "400"}
+                         %img.lazy{:alt => "", :height => "300", :src => "#{image_path("collections/greetings.jpg")}", :width => "300"}
                %li
                     %a{:href => "/collections/coachella", :target => "_blank"}
-                         %img.lazy{:alt => "", :height => "400", :src => "/img/collections/coachella.jpg", :width => "400"}
+                         %img.lazy{:alt => "", :height => "300", :src => "#{image_path("collections/coachella.jpg")}", :width => "300"}
                %li
                     %a{:href => "/collections/spacejams", :target => "_blank"}
-                         %img.lazy{:alt => "", :height => "400", :src => "/img/collections/space_jams.jpg", :width => "400"}
+                         %img.lazy{:alt => "", :height => "300", :src => "#{image_path("collections/space_jams.jpg")}", :width => "300"}
                %li
                     %a{:href => "/collections/midnightsnack", :target => "_blank"}
-                         %img.lazy{:alt => "", :height => "400", :src => "/img/collections/midnight_snack.jpg", :width => "400"}
+                         %img.lazy{:alt => "", :height => "300", :src => "#{image_path("collections/midnight_snack.jpg")}", :width => "300"}

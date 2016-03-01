@@ -1,0 +1,30 @@
+.modal-frame
+  .modal
+    .button.close
+      %i.fa.fa-close
+    .modal-inset
+      .modal-body
+        .row
+          %img{:src => "#{image_path("iphone.svg")}"}
+        .row
+          .download-buttons.my2
+            %a.btn.btn-black.my2.mx1{:href => "https://itunes.apple.com/us/app/noon-pacific/id803563983?mt=8&uo=4&at=10lKmP", :target => "_blank"} 
+              %i.fa.fa-apple
+              Download iOS
+            %a.btn.btn-black.my2.mx1{:href => "https://play.google.com/store/apps/details?id=com.np.noonpacific&hl=en", :target => "_blank"} 
+              %i.fa.fa-android
+              Download Android
+        .row
+          .stars.my2
+            %i.fa.fa-star
+            %i.fa.fa-star
+            %i.fa.fa-star
+            %i.fa.fa-star
+            %i.fa.fa-star
+        .row 
+          .quote.my2 
+            %p.m0.center "Discover the most interesting new music"
+            %p.m0.center.italic &mdash; The New York Times
+
+         
+.modal-overlay.close

@@ -1,8 +1,8 @@
 .sidebar.clearfix
-     .logo.col-3.mx-auto.mt4
+     .logo.col-3.mx-auto.mt4.animated.fadeIn
           %a{href: "/"}
                %img.fit{alt: "Noon Pacific", src: "#{image_path("noonpacific.svg")}"}
-     .sidebar__nav
+     .sidebar__nav.animated.fadeIn
           %ul.list-reset.center
                %li
                     %a{href: "/"}
@@ -11,34 +11,36 @@
                     %a{href: "/collections"}
                          collections
                %li 
-                    %a{href: "#"}
-                         video
-               %li 
-                    %a{href: "#"}
-                         events
-               %li 
-                    %a{href: "#"}
-                         label
+                    %a{href: "/sessions"}
+                         sessions
+               / %li 
+               /      %a{href: "#"}
+               /           events
                %li 
                     %a{href: "http://shop.noonpacific.com"}
                          shop
                %li 
+                    %a{href: "/club"}
+                         club
+               %li 
                     %a{href: "/about"}
                          about
                %li.mt2
-                    %a.inline-block.px1{href: "#"}
-                         %i.fa.fa-apple
-                    %a.inline-block.px1{href: "#"}
-                         %i.fa.fa-android
-     .audio-player{'ng-controller' => 'AudioCtrl'}
-          .audio-player__track-info.center
+                    %a.inline-block.px1{href: ""}
+                         %i.fa.fa-apple.open
+                    %a.inline-block.px1{href: ""}
+                         %i.fa.fa-android.open
+     .audio-player.animated.fadeIn{'ng-controller' => 'AudioCtrl'}
+          .audio-player__track-info.center.ng-cloak
                .audio-player__artist
                     %p.m0.truncate(ng-bind="currentTrack.title")
                .audio-player__song.mt0
                     %p.m0.grey.truncate(ng-bind="currentTrack.artist_description")
           .audio-player__controls.center.mt3.mb3
                .audio-player__volume.inline-block
-                    %i.fa.fa-volume-up
+                    %i.fa.fa-volume-up(ng-click="show=!show")
+                    .volume(ng-show="show")
+                         %input.vslider(data-slider-orientation="horizontal" data-slider-selection="after" data-slider-step="1" data-slider-tooltip="hide" data-slider-value="")
                .audio-player__play.inline-block
                     %a{href: "", "ng-click" => "PlayPauseClick()"}
                          %i.fa.fa-play.mx3.h1{"ng-class" => "{'fa-play': audio.state !== 'playing', 'fa-pause': audio.state !== 'stopped'}"}
