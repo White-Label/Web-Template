@@ -10,10 +10,10 @@
 // Twitter Follow
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 
-
 $('#signup_form').on('submit', function() {
   $('#myModal').modal('hide');
 });
+
 
 // poster frame click event
 $(document).on('click','.js-videoPoster',function(ev) {
@@ -131,6 +131,12 @@ $(function(){
      }
   });
 
+  $('#submit_email_about').click(function(){
+     if($('#email_about').val().trim() == ''){
+        $('#email_about').addClass("validate");
+     }
+  });
+
   // volume slider
   $('.vslider').slider();
 
@@ -168,52 +174,52 @@ $(function() {
 /** Modals **/
 
 $(document).on('ready', function(){
-    $modal = $('.modal-frame');
-    $overlay = $('.modal-overlay');
+    $appModal = $('.modal-frame');
+    $appOverlay = $('.modal-overlay');
 
     /* Need this to clear out the keyframe classes so they dont clash with each other between ener/leave. Cheers. */
-    $modal.bind('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e){
-      if($modal.hasClass('state-leave')) {
-        $modal.removeClass('state-leave');
+    $appModal.bind('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e){
+      if($appModal.hasClass('state-leave')) {
+        $appModal.removeClass('state-leave');
       }
     });
 
     $('.close, .modal-frame').on('click', function(){
-      $overlay.removeClass('state-show');
-      $modal.removeClass('state-appear').addClass('state-leave');
+      $appOverlay.removeClass('state-show');
+      $appModal.removeClass('state-appear').addClass('state-leave');
     });
 
-    $('.open').on('click', function(){
-      $overlay.addClass('state-show');
-      $modal.removeClass('state-leave').addClass('state-appear');
+    $('.open-app').on('click', function(){
+      $appOverlay.addClass('state-show');
+      $appModal.removeClass('state-leave').addClass('state-appear');
     });
 
   });
 
 $(document).on('ready', function(){
-    $modal = $('.modal-frame-subscribe');
-    $overlay = $('.modal-overlay-subscribe');
+    $subscribeModal = $('.modal-frame-subscribe');
+    $subscribeOverlay = $('.modal-overlay-subscribe');
 
     /* Need this to clear out the keyframe classes so they dont clash with each other between ener/leave. Cheers. */
-    $modal.bind('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e){
-      if($modal.hasClass('state-leave')) {
-        $modal.removeClass('state-leave');
+    $subscribeModal.bind('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e){
+      if($subscribeModal.hasClass('state-leave')) {
+        $subscribeModal.removeClass('state-leave');
       }
     });
 
     $('.close-subscribe').on('click', function(){
-      $overlay.removeClass('state-show');
-      $modal.removeClass('state-appear').addClass('state-leave');
+      $subscribeOverlay.removeClass('state-show');
+      $subscribeModal.removeClass('state-appear').addClass('state-leave');
     });
 
     $('#signup_form').on('submit', function(){
-      $overlay.removeClass('state-show');
-      $modal.removeClass('state-appear').addClass('state-leave');
+      $subscribeOverlay.removeClass('state-show');
+      $subscribeModal.removeClass('state-appear').addClass('state-leave');
     });
 
     $('.open-subscribe').on('click', function(){
-      $overlay.addClass('state-show');
-      $modal.removeClass('state-leave').addClass('state-appear');
+      $subscribeOverlay.addClass('state-show');
+      $subscribeModal.removeClass('state-leave').addClass('state-appear');
     });
 
   });

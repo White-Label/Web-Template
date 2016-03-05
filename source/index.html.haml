@@ -14,7 +14,7 @@
                %li.currentMix.mix{"ng-repeat" => "mix in Mix.Mixes.array"}
                     %a{"data-content" => "{{mix.name}}", :href => "#/mix/{{mix.id}}", "ng-class" => "{'mixtapes': true, 'playing': mix.id === Mix.PlayingMixID}"}
                          %img.lazy{:alt => "{{mix.name}}", "data-original" => "{{mix.cover_large}}?h=250&w=250", :height => "250", :src => "/img/grey.jpg", :width => "250"}
-                         
+= partial 'partials/mobile-player'                        
 = partial 'partials/footer'
 
 -# KOL

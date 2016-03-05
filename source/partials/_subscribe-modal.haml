@@ -1,8 +1,8 @@
 .modal-frame-subscribe
   .modal
-    .button.close-subscribe
-      %i.fa.fa-close
     .modal-inset
+      .button.close-subscribe
+        %i.fa.fa-close
       .modal-body
         .row
           %h1.mb1
@@ -17,9 +17,6 @@
 
       .modal-footer
         .checkbox
-          / %label
-          / %input.modal-check{:type =>"checkbox", :id => "radio01", :name => "modal-check"}
-          /   Don't Show Again
           %input.modal-check{:type => "checkbox", :id => "radio01", :name => "modal-check"}
           %label{:for => "radio01"}
             %span

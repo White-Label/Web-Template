@@ -4,9 +4,19 @@ directory_index: false
 <div class="main__mixtape clearfix" ng-controller="PlaylistCtrl">
   <div class="main__cover left animated fadeIn">
     <img class="" ng-click="PlayPauseClick()" ng-src="{{mixService.CurrentMix.cover_large}}"/>
-    <!-- <div class="mixtape-play" ng-click="PlayPauseClick()" ng-hide="audio.state !== 'playing">
-      <i class="fa fa-play"></i>
-    </div> -->
+    <div class="cover__description center" ng-controller="AudioCtrl">
+      <h1 ng-bind="mixService.CurrentMix.name" class="mb0"></h1>
+      <a href="" ng-click="PlayPauseClick()">
+           <i class="fa fa-play my3" ng-class="{'fa-play': audio.state !== 'playing', 'fa-pause': audio.state !== 'stopped'}"></i>
+      </a>
+      <div ng-if="mixService.CurrentMix.cover_description != null" class="attribution">
+            <p class="mt0">Cover by: <a href="{{mixService.CurrentMix.cover_url}}" target="_blank"><span ng-bind="mixService.CurrentMix.cover_description"></span></a></p>
+          </div>
+      <!-- <div class="mixtape-share center mt3">
+        <a href="{{fbFeedMix(mixService)}}" target="_blank"><i class="fa fa-facebook mx1"></i></a>
+        <a href="{{tweetMix(mixService)}}"><i class="fa fa-twitter mx2"></i></a>
+      </div> -->
+    </div>
   </div>
   <div class="main__tracklist left">
     <ol class="ml1">

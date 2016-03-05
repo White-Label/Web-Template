@@ -1,5 +1,5 @@
 = partial 'partials/sidebar-toggle'
-= partial 'partials/sidebar'
+= partial 'partials/sidebar-no-audio'
 = partial 'partials/app-modal'
 = partial 'partials/subscribe-modal'
 
@@ -11,18 +11,19 @@
                Curated by <a href="http://clarkdinnison.com" target="_blank">Clark Dinnison</a> in Newport Beach, California.
           %p
                Built with <a href="http://whitelabel.cool" target="_blank">White Label</a>.
+          .main__about__social
+               .fb-share-button{"data-href" => "http://noonpacific.com", "data-layout" => "button_count"}
+               %a.twitter-follow-button{"data-show-count" => "false",:href => "https://twitter.com/NoonPacific"} Follow @NoonPacific
+               %a.ig-b-.ig-b-v-24{:href => "https://www.instagram.com/noonpacific/?ref=badge", :target => "_blank"}
+                    %img{:alt => "Instagram", :src => "//badges.instagram.com/static/images/ig-badge-view-24.png"}
 
-          .fb-share-button{"data-href" => "http://noonpacific.com", "data-layout" => "button_count"}
-          %a.twitter-follow-button{"data-show-count" => "false", :href => "https://twitter.com/NoonPacific"} Follow @NoonPacific
-
-     / INSERT SUBSCRIBE HERE
      .clearfix 
           .main__subscribe.col-12
                %p.center SUBSCRIBE TO WEEKLY MIXTAPES
                .subscribe-container.subscription_form
                     %form#signup_form{:action => "https://api.kickofflabs.com/v1/38778/subscribe", :method => "post", :role => "form"}
-                         %input#email{:name => "email", :placeholder => "Your Email Address", :type => "email"}
-                         %button#submit_email{:type => "submit", :value => "subscribe"}
+                         %input#email_about{:name => "email", :placeholder => "Your Email Address", :type => "email"}
+                         %button#submit_email_about{:type => "submit", :value => "subscribe"}
                               %i.fa.fa-long-arrow-right
      .clearfix
           .main__contact.sm-col.sm-col-12.md-col-6
