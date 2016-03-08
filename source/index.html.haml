@@ -6,10 +6,10 @@
 
      %ng-view
              
-     .main__archive-hint
-          %p.m0.grey archive
-          %i.fa.fa-angle-down.grey
-     .main__archive
+     .main__archive-hint.ng-cloak.animatedLong.fadeIn
+          %p.m0.grey.animatedLong.fadeIn archive
+          %i.fa.fa-angle-down.grey.animatedLong.fadeIn
+     .main__archive.ng-cloak.animatedLong.fadeIn
           %ul.main__archive-grid{"ng-controller" => "MixListCtrl"}
                %li.currentMix.mix{"ng-repeat" => "mix in Mix.Mixes.array"}
                     %a{"data-content" => "{{mix.name}}", :href => "#/mix/{{mix.id}}", "ng-class" => "{'mixtapes': true, 'playing': mix.id === Mix.PlayingMixID}"}

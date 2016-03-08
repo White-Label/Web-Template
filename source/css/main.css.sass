@@ -135,9 +135,11 @@ a
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak
   display: none !important
 
-#twitter-widget-0
+#twitter-widget-0, .spotify
   vertical-align: middle
   margin-left: 10px
+.spotify 
+  width: 92px
 
 $black: #333
 $grey: #adadad
@@ -185,7 +187,7 @@ $amazon: #FF9900
 .audio-player-mobile 
   display: none
   background: #fff
-  z-index: 9999
+  z-index: 30
 
 footer 
   padding: 20px 0
@@ -268,15 +270,14 @@ footer
       width: 45.5%
       position: relative
       img 
-        min-width: 300px
         width: 550px
         -webkit-box-shadow: 2px 2px 18px -4px rgba(173,173,173,0.94)
         -moz-box-shadow: 2px 2px 18px -4px rgba(173,173,173,0.94)
         box-shadow: 2px 2px 18px -4px rgba(173,173,173,0.94)
       .cover__description
         position: absolute
-        width: 50%
-        height: 50%
+        width: 300px  
+        height: 300px
         overflow: auto
         margin: auto
         top: 0
@@ -290,7 +291,7 @@ footer
         opacity: 0
         transition: 0.3s all
         h1 
-          margin-top: 60px
+          margin-top: 65px
         i 
           font-size: 25px
         a:focus 
@@ -319,9 +320,10 @@ footer
           margin-bottom: 17px  
           margin-left: 50px 
           counter-increment: customlistcounter
+          position: relative
           &:before 
             content: counter(customlistcounter) " "
-            float: left
+            position: absolute
             width: 23px
             height: 19px
             font-size: 12px
@@ -336,9 +338,11 @@ footer
             background: #333 
             color: #fff
             border-radius: 20px
-
         p 
           font-size: 14px
+
+        .main__track-info 
+          margin-left: 40px
 
         .main__track-info, .main__track-social
           display: inline-block
@@ -347,10 +351,9 @@ footer
           color: #adadad
 
         .main__track-social
-          float: right
-          margin-top: 5px
-          margin-right: 70px
-          position: relative
+          position: absolute
+          top: 5px
+          right: 20px
           z-index: 10
           .dropdown
             position: relative
@@ -867,6 +870,8 @@ iframe#typeform-full
 .main__club
   h2 
     font-weight: normal
+  .club-sign-in 
+    text-decoration: underline
   .club-screen
     margin: 25px 0 0 0
     background-image: url("/img/water.gif")
@@ -1453,21 +1458,15 @@ iframe#typeform-full
   .main 
     margin-left: 0
     width: 100%
-    .main__mixtape
-      .main__cover
-        .cover__description
-          font-size: 60%
-          h1
-            margin-top: 25px
     .main__about
       .main__about__social
         margin-top: 30px
-        .fb-share-button, .twitter-follow-button, .ig-b-
+        .fb-share-button, .twitter-follow-button, .ig-b-, .spotify
           display: block 
           margin: 20px auto
           float: none
           text-align: center
-  #twitter-widget-0
+  #twitter-widget-0, .spotify
     margin: auto
 
   #mobile-logo 
@@ -1477,7 +1476,7 @@ iframe#typeform-full
     top: 15px 
     left: calc(50% - 25px)
     opacity: 1 
-    transition: 0.5s
+    transition: 0.3s
   #sidebar-label
     position: absolute
     top: 20px
@@ -1495,6 +1494,18 @@ iframe#typeform-full
     #mobile-logo 
       opacity: 0
       left: 400px
+    .main 
+      .main__mixtape
+        .main__cover 
+          img 
+            min-width: 300px
+        .main__tracklist
+          min-width: 300px
+      .main__about 
+        min-width: 300px
+      .main__subscribe 
+        min-width: 300px
+
   .main 
     .main__mixtape 
       .main__cover 
@@ -1520,6 +1531,16 @@ iframe#typeform-full
       .fa-volume-up
         visibility: hidden
 
+  .close-subscribe 
+    left: calc(50% - 25px)
+    top: -100px
+    border: 1px solid #333
+    border-radius: 30px
+    width: 50px
+    transition: 0.3s all
+    &:hover 
+      color: #fff 
+      background: #333
 
   footer 
     margin-bottom: 150px
@@ -1527,6 +1548,39 @@ iframe#typeform-full
       li
         display: block !important
         margin: 20px auto
+
+@media screen and (max-width: 420px)
+  .modal-inset 
+    font-size: 80%
+    .modal-body 
+      .subscribe-container
+        width: 250px
+        form 
+          width: 250px
+          input 
+            width: 180px 
+            font-size: 14px
+            height: 45px
+          button 
+            i 
+              padding: 0
+  .main__subscribe 
+    .subscribe-container
+      width: 250px
+      form 
+        width: 250px
+        input 
+          width: 180px 
+          font-size: 14px
+          height: 45px
+        button 
+          i 
+            padding: 0
+@media screen and (max-width: 1235px) and (min-width: 768px)
+  .main 
+    .main__mixtape
+      .main__cover 
+        margin-top: 50px
 
 @media screen and (max-width: 1235px)   
   .main 
@@ -1536,7 +1590,6 @@ iframe#typeform-full
         width: 90%
         float: none
         img 
-          min-width: 300px
           display: block
           margin: 0 auto
       .main__tracklist
@@ -1558,7 +1611,6 @@ iframe#typeform-full
     .main__collections__archive
       margin-top: 80px
     .main__mixtape
-      min-width: 400px
       .main__cover
         h1 
           margin-top: 28px
@@ -1569,8 +1621,6 @@ iframe#typeform-full
           font-size: 60px
           color: #fff
           z-index: 999
-        .cover__description i 
-          margin: 1rem 0
       .main__tracklist
         ol 
           > li 
@@ -1588,17 +1638,36 @@ iframe#typeform-full
         li 
           margin: 20px
 
+@media screen and (min-width: 1440px)
+  .main 
+    .main__mixtape 
+      .main__cover 
+        width: 550px
+      .main__tracklist 
+        width: calc(100% - 550px)
+        
+        ol 
+          li 
+            position: relative
+          .main__track-social
+            position: absolute 
+            left: 450px
+            top: 5px
+            float: none
 
-
-
-// // Extra small devices (portrait phones, less than 34em)
-// @media (max-width: 33.9em)
-
-// // Small devices (landscape phones, less than 48em)
-// @media (max-width: 47.9em)
-
-// // Medium devices (tablets, less than 62em)
-// @media (max-width: 61.9em)
-
-// // Large devices (desktops, less than 75em)
-// @media (max-width: 74.9em)
+@media screen and (min-width: 2300px)
+  .main 
+    .main__mixtape
+      width: 1500px
+      margin: 40px auto 0 auto
+      .main__cover
+        width: 800px
+        img 
+          width: 800px
+      .main__tracklist 
+        width: 700px
+        ol > li
+          margin-bottom: 31px
+          .main__track-info
+            p 
+              font-size: 120%

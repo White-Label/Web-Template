@@ -50,7 +50,7 @@ function videoStop($wrapper) {
 }
 
 
-// Cookie for Modal
+// Cookie for Subscribe Modal
 $(document).ready(function(){
     //Referances 
     //jQuery Cookie : https://github.com/carhartl/jquery-cookie

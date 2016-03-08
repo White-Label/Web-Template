@@ -2,7 +2,7 @@
 directory_index: false
 ---
 <div class="main__mixtape clearfix" ng-controller="PlaylistCtrl">
-  <div class="main__cover left animated fadeIn">
+  <div class="main__cover left animatedLong fadeIn">
     <img class="" ng-click="PlayPauseClick()" ng-src="{{mixService.CurrentMix.cover_large}}"/>
     <div class="cover__description center" ng-controller="AudioCtrl">
       <h1 ng-bind="mixService.CurrentMix.name" class="mb0"></h1>
@@ -20,12 +20,13 @@ directory_index: false
   </div>
   <div class="main__tracklist left">
     <ol class="ml1">
-      <li ng-repeat="track in mixService.CurrentMix.Tracks.array" ng-class="{true: 'current-track', false: ''}[track.track_id === mixService.PlayingTrackID]" class="animated fadeIn">
+      <li ng-repeat="track in mixService.CurrentMix.Tracks.array" ng-class="{true: 'current-track', false: ''}[track.track_id === mixService.PlayingTrackID]" class="animatedLong fadeIn">
         <a href="" ng-click="PlayTrack(track)">
           <div class="main__track-info">
             <p class="song m0">{{track.title}}</p>
             <p class="artist m0">{{track.artist_description}}</p>
-          </div></a>
+          </div>
+        </a>
         <div class="main__track-social" ng-show="track.track_id === mixService.PlayingTrackID">
           <div class="dropdown">
             <input class="dropdown-toggle" type="text" />

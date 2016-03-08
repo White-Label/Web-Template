@@ -1,8 +1,8 @@
 .sidebar.clearfix
-     .logo.col-3.mx-auto.mt4.animated.fadeIn
+     .logo.col-3.mx-auto.mt4.animatedLong.fadeIn
           %a{href: "/"}
                %img.fit{alt: "Noon Pacific", src: "#{image_path("noonpacific.svg")}"}
-     .sidebar__nav.animated.fadeIn
+     .sidebar__nav.animatedMed.fadeIn
           %ul.list-reset.center
                %li
                     %a{href: "/"}
@@ -30,7 +30,7 @@
                          %i.fa.fa-apple.open-app
                     %a.inline-block.px1{href: ""}
                          %i.fa.fa-android.open-app
-     .audio-player.animated.fadeIn{'ng-controller' => 'AudioCtrl'}
+     .audio-player.animatedLong.fadeIn{'ng-controller' => 'AudioCtrl'}
           .audio-player__track-info.center.ng-cloak
                .audio-player__artist
                     %p.m0.truncate(ng-bind="currentTrack.title")
