@@ -271,6 +271,7 @@ footer
       position: relative
       img 
         width: 550px
+        max-width: 100%
         -webkit-box-shadow: 2px 2px 18px -4px rgba(173,173,173,0.94)
         -moz-box-shadow: 2px 2px 18px -4px rgba(173,173,173,0.94)
         box-shadow: 2px 2px 18px -4px rgba(173,173,173,0.94)
@@ -398,6 +399,8 @@ footer
             background-color: #fff
             border: 2px solid #333
             width: 220px
+            z-index: 9999999999999
+
             a
               display: block
             li 
@@ -884,6 +887,21 @@ iframe#typeform-full
       opacity: 0.9
       padding: 100px 0
 
+/*** FOR ARTISTS ***/
+.main__for-artists
+  h2 
+    font-weight: normal
+  .label-services 
+    margin-top: 50px
+    img 
+      width: 150px
+      display: block
+      margin: 0 auto
+    ul 
+      text-align: left
+      color: #adadad 
+      li 
+        padding: 5px 0
 
 /*** MODALS ***/
 
@@ -1466,6 +1484,11 @@ iframe#typeform-full
           margin: 20px auto
           float: none
           text-align: center
+    .main__for-artists
+      .label-services 
+        margin-top: 50px
+        .sm-col
+          float: none
   #twitter-widget-0, .spotify
     margin: auto
 

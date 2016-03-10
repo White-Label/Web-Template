@@ -1,9 +1,9 @@
 ---
 directory_index: false
 ---
-<div class="main__mixtape clearfix" ng-controller="PlaylistCtrl">
+<div class="main__mixtape clearfix">
   <div class="main__cover left animatedLong fadeIn">
-    <img class="" ng-click="PlayPauseClick()" ng-src="{{mixService.CurrentMix.cover_large}}"/>
+    <img class="" ng-click="PlayPauseClick()" ng-src="{{mixService.CurrentMix.cover_large}}" src="/img/grey.jpg"/>
     <div class="cover__description center" ng-controller="AudioCtrl">
       <h1 ng-bind="mixService.CurrentMix.name" class="mb0"></h1>
       <a href="" ng-click="PlayPauseClick()">
@@ -41,7 +41,7 @@ directory_index: false
                       <div class="left">
                         <i class="fa fa-facebook"></i>
                       </div>
-                      <div class="overflow-hidden">
+                      <div class="">
                         Share on Facebook
                       </div>
                     </div></a>
@@ -52,7 +52,7 @@ directory_index: false
                       <div class="left">
                         <i class="fa fa-twitter"></i>
                       </div>
-                      <div class="overflow-hidden">
+                      <div class="">
                         Share on Twitter
                       </div>
                     </div></a>
