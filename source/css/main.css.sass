@@ -672,6 +672,8 @@ footer
 .vex.vex-theme-default .vex-close:before
   color: #333 !important
   font-size: 20px !important
+  top: -20px !important
+  right: -20px !important
 .vex.vex-theme-default .vex-close:hover:before, .vex.vex-theme-default .vex-close:active:before
   background: transparent !important
 
@@ -884,11 +886,12 @@ iframe#typeform-full
       margin: 0 auto
       width: 70%
       display: block
-      opacity: 0.9
+      opacity: 1.0
       padding: 100px 0
 
 /*** FOR ARTISTS ***/
 .main__for-artists
+  margin-top: 80px
   h2 
     font-weight: normal
   .label-services 
@@ -897,11 +900,27 @@ iframe#typeform-full
       width: 150px
       display: block
       margin: 0 auto
+    h3 
+      text-align: left
     ul 
       text-align: left
       color: #adadad 
+      max-width: 430px
+      margin: 10px auto
+      padding-left: 18px
       li 
         padding: 5px 0
+.label-songs
+  margin-top: 50px
+  list-style: none
+  padding: 0
+  display: flex 
+  flex-wrap: wrap 
+  align-content: flex-start
+  justify-content: space-between
+  text-align: center
+  width: 100%
+
 
 /*** MODALS ***/
 
@@ -1487,6 +1506,16 @@ iframe#typeform-full
     .main__for-artists
       .label-services 
         margin-top: 50px
+        .label-service-icon
+          float: none
+          margin: 0 auto
+        .label-service-info
+          padding-top: 0
+          h3
+            text-align: center
+          ul 
+            margin: 10px auto
+            width: 80%
         .sm-col
           float: none
   #twitter-widget-0, .spotify
@@ -1627,7 +1656,7 @@ iframe#typeform-full
       margin: 80px 0 0 0
     .main__subscribe 
       margin: 50px auto
-    .main__club
+    .main__club, .main__for-artists
       margin: 100px 0 0 0
     .main__contact, .main__apps
       margin-top: 25px
