@@ -33,3 +33,17 @@ function NoonPacific($scope, $location, $window) {
     $window.ga('send', 'pageview', { page: $location.url() });
   });
 }
+
+$(function() {
+  $('body').on('click', '.dropdown-text', function(e) {
+    $(this).next('.dropdown-content').toggle();
+  });
+  $('body').on('click', function(e) {
+    // if e does not have any parents with class dropdown
+    if(!$(e.target).parents('.dropdown').length) {
+      console.log('closing');
+      // $('.dropdown-content').hide();
+    }
+  });
+});
+

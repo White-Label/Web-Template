@@ -316,7 +316,9 @@ footer
         list-style-type: none
         position: relative
         z-index: 1
-        > li 
+        > li
+          > div
+            display: block
           margin-bottom: 17px  
           margin-left: 50px 
           counter-increment: customlistcounter
@@ -344,26 +346,14 @@ footer
         .main__track-info 
           margin-left: 40px
 
-        .main__track-info, .main__track-social
+        .main__track-info
           display: inline-block
 
         .artist 
           color: #adadad
 
         .main__track-social
-          position: absolute
-          top: 5px
-          right: 20px
-          z-index: 10
-          .dropdown
-            position: relative
-            text-align: left
-            width: 30px
-
-          .dropdown-text
-            cursor: pointer
-            position: absolute
-            color: #333
+          float: right
 
           .dropdown-content a
             color: #333
@@ -386,18 +376,18 @@ footer
               outline: 0
 
           .dropdown-content
+            display: none
             list-style-type: none
             position: absolute
-            top: 150%
             right: 0
             padding: 0
             margin: 0
             padding: 10px 0
-            opacity: 0
-            visibility: hidden
             background-color: #fff
             border: 2px solid #333
             width: 220px
+            z-index: 9999
+            top: 28px
             a
               display: block
             li 
@@ -1649,11 +1639,6 @@ iframe#typeform-full
         ol 
           li 
             position: relative
-          .main__track-social
-            position: absolute 
-            left: 450px
-            top: 5px
-            float: none
 
 @media screen and (min-width: 2300px)
   .main 
