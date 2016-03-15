@@ -21,65 +21,69 @@ directory_index: false
   <div class="main__tracklist left">
     <ol class="ml1">
       <li ng-repeat="track in mixService.CurrentMix.Tracks.array" ng-class="{true: 'current-track', false: ''}[track.track_id === mixService.PlayingTrackID]" class="animatedLong fadeIn">
-        <a href="" ng-click="PlayTrack(track)">
+
+        <div class="main__track-social" ng-show="track.track_id === mixService.PlayingTrackID">
+          <div class="dropdown">
+            <div class="dropdown-text" data-toggle="dropdown">
+              <img src="/img/social.svg" alt="Share This Song"/>
+            </div>
+            <ul class="dropdown-content dropdown-menu">
+              <div class="dropdown-arrow"></div>
+              <li>
+                <a href="{{fbFeed(track)}}" target="_blank" alt="Share on Facebook">
+                  <div class="clearfix">
+                    <div class="left">
+                      <i class="fa fa-facebook"></i>
+                    </div>
+                    <div class="overflow-hidden">
+                      Share on Facebook
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="{{tweetSong(track)}}" target="_blank" alt="Share on Twitter">
+                  <div class="clearfix">
+                    <div class="left">
+                      <i class="fa fa-twitter"></i>
+                    </div>
+                    <div class="overflow-hidden">
+                      Share on Twitter
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="{{track.soundcloud_permalink_url}}" target="_blank" alt="Listen on Soundcloud">
+                  <div class="clearfix">
+                    <div class="left">
+                      <i class="fa fa-soundcloud"></i>
+                    </div>
+                    <div class="overflow-hidden">
+                      Listen on Soundcloud
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="{{amazonURL(track)}}" target="_blank" alt="Buy on Amazon">
+                  <div class="clearfix">
+                    <div class="left">
+                      <i class="fa fa-amazon"></i>
+                    </div>
+                    <div class="overflow-hidden">
+                      Buy on Amazon
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div href="" ng-click="PlayTrack(track)">
           <div class="main__track-info">
             <p class="song m0">{{track.title}}</p>
             <p class="artist m0">{{track.artist_description}}</p>
-          </div>
-        </a>
-        <div class="main__track-social" ng-show="track.track_id === mixService.PlayingTrackID">
-          <div class="dropdown">
-            <input class="dropdown-toggle" type="text" />
-              <div class="dropdown-text">
-                <img src="/img/social.svg" alt="Share This Song"/>
-              </div>
-              <ul class="dropdown-content">
-                <div class="dropdown-arrow"></div>
-                <li>
-                  <a href="{{fbFeed(track)}}" target="_blank" alt="Share on Facebook">
-                    <div class="clearfix">
-                      <div class="left">
-                        <i class="fa fa-facebook"></i>
-                      </div>
-                      <div class="">
-                        Share on Facebook
-                      </div>
-                    </div></a>
-                </li>
-                <li>
-                  <a href="{{tweetSong(track)}}" target="_blank" alt="Share on Twitter">
-                    <div class="clearfix">
-                      <div class="left">
-                        <i class="fa fa-twitter"></i>
-                      </div>
-                      <div class="">
-                        Share on Twitter
-                      </div>
-                    </div></a>
-                </li>
-                <li>
-                  <a href="{{track.soundcloud_permalink_url}}" target="_blank" alt="Listen on Soundcloud">
-                    <div class="clearfix">
-                      <div class="left">
-                        <i class="fa fa-soundcloud"></i>
-                      </div>
-                      <div class="overflow-hidden">
-                        Listen on Soundcloud
-                      </div>
-                    </div></a>
-                </li>
-                <li>
-                  <a href="{{amazonURL(track)}}" target="_blank" alt="Buy on Amazon">
-                    <div class="clearfix">
-                      <div class="left">
-                        <i class="fa fa-amazon"></i>
-                      </div>
-                      <div class="overflow-hidden">
-                        Buy on Amazon
-                      </div>
-                    </div></a>
-                </li>
-              </ul>
           </div>
         </div>
       </li>
