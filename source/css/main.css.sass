@@ -350,12 +350,17 @@ footer
         .main__track-info
           display: inline-block
 
+        .song, .artist
+          cursor: pointer
         .artist 
           color: #adadad
 
         .main__track-social
           float: right
+          margin-right: 40px
 
+          .dropdown-text 
+            cursor: pointer
           .dropdown-content a
             color: #333
             text-shadow: 0 1px #fff
@@ -377,23 +382,16 @@ footer
               outline: 0
 
           .dropdown-content
-            display: none
             list-style-type: none
             position: absolute
-            right: 0
-            padding: 0
+            right: 38px
             margin: 0
             padding: 10px 0
             background-color: #fff
             border: 2px solid #333
             width: 220px
-<<<<<<< HEAD
-            z-index: 9999999999999
-
-=======
             z-index: 9999
             top: 28px
->>>>>>> a31f4023dea83e9dbdbc0356f54e05b6430565cd
             a
               display: block
             li 
@@ -1561,6 +1559,8 @@ iframe#typeform-full
         ol 
           .main__track-social
             margin-right: 10px
+            .dropdown-content 
+              right: 8px
   .audio-player-mobile 
     display: block 
     position: fixed

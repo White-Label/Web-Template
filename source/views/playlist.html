@@ -38,7 +38,8 @@ directory_index: false
                     <div class="overflow-hidden">
                       Share on Facebook
                     </div>
-                  </div></a>
+                  </div>
+                </a>
               </li>
               <li>
                 <a href="{{tweetSong(track)}}" target="_blank" alt="Share on Twitter">
@@ -49,7 +50,8 @@ directory_index: false
                     <div class="overflow-hidden">
                       Share on Twitter
                     </div>
-                  </div></a>
+                  </div>
+                </a>
               </li>
               <li>
                 <a href="{{track.soundcloud_permalink_url}}" target="_blank" alt="Listen on Soundcloud">
@@ -60,7 +62,8 @@ directory_index: false
                     <div class="overflow-hidden">
                       Listen on Soundcloud
                     </div>
-                  </div></a>
+                  </div>
+                </a>
               </li>
               <li>
                 <a href="{{amazonURL(track)}}" target="_blank" alt="Buy on Amazon">
@@ -71,79 +74,18 @@ directory_index: false
                     <div class="overflow-hidden">
                       Buy on Amazon
                     </div>
-                  </div></a>
+                  </div>
+                </a>
               </li>
             </ul>
           </div>
         </div>
         <div href="" ng-click="PlayTrack(track)">
-          
-
           <div class="main__track-info">
             <p class="song m0">{{track.title}}</p>
             <p class="artist m0">{{track.artist_description}}</p>
           </div>
-<<<<<<< HEAD
-        </a>
-        <div class="main__track-social" ng-show="track.track_id === mixService.PlayingTrackID">
-          <div class="dropdown">
-            <input class="dropdown-toggle" type="text" />
-              <div class="dropdown-text">
-                <img src="/img/social.svg" alt="Share This Song"/>
-              </div>
-              <ul class="dropdown-content">
-                <div class="dropdown-arrow"></div>
-                <li>
-                  <a href="{{fbFeed(track)}}" target="_blank" alt="Share on Facebook">
-                    <div class="clearfix">
-                      <div class="left">
-                        <i class="fa fa-facebook"></i>
-                      </div>
-                      <div class="">
-                        Share on Facebook
-                      </div>
-                    </div></a>
-                </li>
-                <li>
-                  <a href="{{tweetSong(track)}}" target="_blank" alt="Share on Twitter">
-                    <div class="clearfix">
-                      <div class="left">
-                        <i class="fa fa-twitter"></i>
-                      </div>
-                      <div class="">
-                        Share on Twitter
-                      </div>
-                    </div></a>
-                </li>
-                <li>
-                  <a href="{{track.soundcloud_permalink_url}}" target="_blank" alt="Listen on Soundcloud">
-                    <div class="clearfix">
-                      <div class="left">
-                        <i class="fa fa-soundcloud"></i>
-                      </div>
-                      <div class="overflow-hidden">
-                        Listen on Soundcloud
-                      </div>
-                    </div></a>
-                </li>
-                <li>
-                  <a href="{{amazonURL(track)}}" target="_blank" alt="Buy on Amazon">
-                    <div class="clearfix">
-                      <div class="left">
-                        <i class="fa fa-amazon"></i>
-                      </div>
-                      <div class="overflow-hidden">
-                        Buy on Amazon
-                      </div>
-                    </div></a>
-                </li>
-              </ul>
-          </div>
-=======
-
->>>>>>> a31f4023dea83e9dbdbc0356f54e05b6430565cd
         </div>
-
       </li>
     </ol>
   </div>
