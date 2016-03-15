@@ -41,8 +41,7 @@ $(function() {
   $('body').on('click', function(e) {
     // if e does not have any parents with class dropdown
     if(!$(e.target).parents('.dropdown').length) {
-      console.log('closing');
-      // $('.dropdown-content').hide();
+      $('.dropdown-content').hide();
     }
   });
 });
