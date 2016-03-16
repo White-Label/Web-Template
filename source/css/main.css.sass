@@ -1,4 +1,5 @@
 @import "normalize"
+@import "bass"
 @import "slider"
 @import "animate"
 
@@ -425,18 +426,18 @@ footer
               right: 8px
 
 
-          .dropdown-toggle
-            &:focus ~ .dropdown-text
-              z-index: 999
-              &:after
-                border-width: 0 4px 5px 4px
-                border-color: transparent transparent #555 transparent
+          // .dropdown-toggle
+          //   &:focus ~ .dropdown-text
+          //     z-index: 999
+          //     &:after
+          //       border-width: 0 4px 5px 4px
+          //       border-color: transparent transparent #555 transparent
 
-          .dropdown-toggle:focus ~ .dropdown-content
-            opacity: 1
-            visibility: visible
-            top: 42px
-            z-index: 99999
+          // .dropdown-toggle:focus ~ .dropdown-content
+          //   opacity: 1
+          //   visibility: visible
+          //   top: 42px
+          //   z-index: 99999
 
   
 
@@ -674,6 +675,10 @@ footer
 .main__contact 
   border-right: 1px solid #adadad
 
+.main__contact, .main__apps, .main__press
+  .btn 
+    margin: 1rem 0
+
 /*** SUBMIT ***/
 iframe#typeform-full
   position: absolute
@@ -880,7 +885,7 @@ iframe#typeform-full
       margin: 0 auto
       width: 70%
       display: block
-      opacity: 1.0
+      opacity: 0.9
       padding: 100px 0
 
 /*** FOR ARTISTS ***/
@@ -1187,7 +1192,7 @@ iframe#typeform-full
   img 
     width: 140px
   i 
-    padding-right: 5px
+    text-align: center
   .ps
     font-size: 12px
     opacity: .3
@@ -1204,6 +1209,7 @@ iframe#typeform-full
         width: 300px
         font-size: 18px
         padding: 10px
+        border-radius: 0
         -webkit-box-shadow: 0px 0px 0px 0px rgba(51,51,51,1)
         -moz-box-shadow: 0px 0px 0px 0px rgba(51,51,51,1)
         box-shadow: 0px 0px 0px 0px rgba(51,51,51,1)
@@ -1316,7 +1322,7 @@ iframe#typeform-full
             content: ""
             position: absolute
             top: .62em
-            left: .15em
+            left: .165em
             border-right: 2px solid transparent
             border-bottom: 2px solid transparent
             transform: rotate(45deg)

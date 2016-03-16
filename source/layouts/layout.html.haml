@@ -49,7 +49,6 @@
 
         -# Stylesheets
         = stylesheet_link_tag 'main'
-        = stylesheet_link_tag 'bass'
         = stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'
 
         %body{"ng-app" => "NoonPacific"}
@@ -59,11 +58,7 @@
         :javascript
             window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')
             
-        = javascript_include_tag 'plugins'
         = javascript_include_tag 'main'
-
-        %script{:src => "//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"}
-
         
         -# Google Analytics
         :javascript

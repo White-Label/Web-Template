@@ -34,6 +34,7 @@ function NoonPacific($scope, $location, $window) {
   });
 }
 
+// Social dropdown for tracklist
 $(function() {
   $('body').on('click', '.dropdown-text', function(e) {
     $(this).next('.dropdown-content').toggle();
