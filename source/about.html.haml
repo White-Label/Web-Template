@@ -4,7 +4,7 @@
 = partial 'partials/subscribe-modal'
 
 .main 
-     .main__about.sm-col-12.md-col-10.ml4.mt3.p4
+     .main__about.sm-col-12.md-col-10.ml4.mt3.p4.animated.fadeIn
           %p 
                Noon Pacific™ is a weekly mixtape of the best songs handpicked from the best music blogs, delivered to your inbox every Monday at Noon (Pacific Time).
           %p
@@ -19,7 +19,7 @@
                %iframe.spotify{:allowtransparency => "true", :frameborder => "0", :height => "25", :scrolling => "no", :src => "https://embed.spotify.com/follow/1/?uri=spotify:user:noonpacific&size=basic&theme=light&show-count=0", :style => "border:none; overflow:hidden;", :width => "200"}
 
      .clearfix 
-          .main__subscribe.col-12
+          .main__subscribe.col-12.animated.fadeIn
                %p.center SUBSCRIBE TO WEEKLY MIXTAPES
                .subscribe-container.subscription_form
                     %form#signup_form{:action => "https://api.kickofflabs.com/v1/38778/subscribe", :method => "post", :role => "form"}
@@ -27,7 +27,7 @@
                          %button#submit_email_about{:type => "submit", :value => "subscribe"}
                               %i.fa.fa-long-arrow-right
      .clearfix
-          .main__contact.sm-col.sm-col-12.md-col-6
+          .main__contact.sm-col.sm-col-12.md-col-6.animated.fadeIn
                %p.center  CONTACT
                %ul.list-reset.center
                     %li
@@ -37,7 +37,7 @@
                     %li  
                          %a.btn.btn-outline.my2{:href => "/ambassador"} Become an Ambassador
 
-          .main__apps.sm-col.sm-col-12.md-col-6
+          .main__apps.sm-col.sm-col-12.md-col-6.animated.fadeIn
                %p.center  APPS
                %ul.list-reset.center
                     %li
@@ -52,7 +52,7 @@
                          %a.btn.btn-outline.my2{:href => "/tv"} 
                               Available on Apple TV
      .clearfix 
-          .main__press.sm-col-12.md-col-6.mt4
+          .main__press.sm-col-12.md-col-6.mt4.animated.fadeIn
                %p.center PRESS
                %ul.list-reset.center
                     %li

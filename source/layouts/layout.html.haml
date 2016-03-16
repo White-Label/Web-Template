@@ -58,8 +58,9 @@
         %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"}
         :javascript
             window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')
-        %script{:src => "js/plugins.js"}
-        %script{:src => "js/main.js"}
+            
+        = javascript_include_tag 'plugins'
+        = javascript_include_tag 'main'
 
         %script{:src => "//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"}
 

@@ -285,7 +285,7 @@ footer
         left: 0
         bottom: 0
         right: 0
-        background: rgba(255, 255, 255, 0.72)
+        background: rgba(255, 255, 255, 1)
         border: 5px solid #333
         color: #333
         visibility: hidden 
@@ -510,16 +510,19 @@ footer
         height: 250px
         top: 0
         left: 0
-        background: rgba(0, 0, 0, 0.6)
+        background: rgba(0, 0, 0, 0.3)
       &:before
         content: attr(data-content)
-        width: 250px
-        color: #fff
+        width: 170px
+        color: #333
+        background: #fff
+        border: 2px solid #333
         z-index: 1
         font-size: 18px
         letter-spacing: 2px
         bottom: 45%
-        padding: 4px 10px
+        left: calc(50% - 85px)
+        padding: 5px 10px
         text-align: center
         box-sizing: border-box
         -moz-box-sizing: border-box
@@ -1526,6 +1529,9 @@ iframe#typeform-full
     left: 20px
     font-size: 30px
     transition: 0.3s all
+    img 
+      width: 31px
+      cursor: pointer
   #sidebar-toggle:checked ~ 
     .sidebar
       left: 0px
