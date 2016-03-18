@@ -1,7 +1,16 @@
 @import "normalize"
-@import "bass"
 @import "slider"
 @import "animate"
+
+$black: #333
+$grey: #adadad
+$white: #fff
+$facebook: #3b5998
+$twitter: #55acee
+$soundcloud: #ff8800
+$instagram: #3f729b
+$amazon: #FF9900 
+$spotify: #24CF5F
 
 /************ FONTS *************/
 
@@ -128,6 +137,35 @@ a
   &:focus
     outline: none
 
+.btn-social 
+  padding: 5px 20px
+  width: 110px
+  margin: 0 5px
+  &.spotify 
+    border-color: $spotify
+    &:hover 
+      background: $spotify
+      border-color: $spotify
+      color: #fff
+  &.twitter 
+    border-color: $twitter 
+    &:hover 
+      background: $twitter
+      border-color: $twitter
+      color: #fff
+  &.facebook
+    border-color: $facebook
+    &:hover 
+      background: $facebook
+      border-color: $facebook
+      color: #fff
+  &.instagram
+    border-color: $instagram
+    &:hover 
+      background: $instagram
+      border-color: $instagram
+      color: #fff
+
 .btn-black 
   background: #333 
   color: #fff 
@@ -135,21 +173,6 @@ a
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak
   display: none !important
-
-#twitter-widget-0, .spotify
-  vertical-align: middle
-  margin-left: 10px
-.spotify 
-  width: 92px
-
-$black: #333
-$grey: #adadad
-$white: #fff
-$facebook: #3b5998
-$twitter: #55acee
-$soundcloud: #ff8800
-$instagram: #3f729b
-$amazon: #FF9900 
 
 /************ LAYOUT *************/
 
@@ -233,6 +256,8 @@ footer
     .fa-play, .fa-pause
       vertical-align: sub
       font-size: 28px
+    .audio-player__share 
+      display: none
 
   #progress-bar
     width: 100%
@@ -267,7 +292,7 @@ footer
 .main
   .main__mixtape
     .main__cover
-      margin-top: 6%
+      margin-top: 5%
       width: 45.5%
       position: relative
       img 
@@ -311,7 +336,7 @@ footer
 
 
     .main__tracklist
-      margin-top: 6%
+      margin-top: 5%
       width: 54.5%
       ol 
         margin-top: 0
@@ -447,7 +472,7 @@ footer
     width: 100%
     font-size: 20px
     text-align: center
-    margin-top: 30px
+    margin-top: 40px
     p 
       font-size: 12px
 
@@ -461,7 +486,7 @@ footer
       justify-content: space-between
       text-align: center
       width: 100%
-      margin-top: 130px
+      margin-top: 30px
       li
         display: inline-block
         margin: 30px 0
@@ -522,7 +547,7 @@ footer
         z-index: 1
         font-size: 18px
         letter-spacing: 2px
-        bottom: 45%
+        bottom: calc(50% - 20px)
         left: calc(50% - 85px)
         padding: 5px 10px
         text-align: center
@@ -584,6 +609,9 @@ footer
         -moz-transition: all 0.3s ease-in-out
         -webkit-transition: all 0.3s ease-in-out
         -o-transition: all 0.3s ease-in-out
+        -webkit-box-shadow: 2px 2px 18px -4px rgba(173,173,173,0.94)
+        -moz-box-shadow: 2px 2px 18px -4px rgba(173,173,173,0.94)
+        box-shadow: 2px 2px 18px -4px rgba(173,173,173,0.94)
 
 /*** ABOUT ***/
 
@@ -617,7 +645,7 @@ footer
       background-image: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24@2x.png)
       background-size: 160px 178px
 .main__subscribe
-  margin: 0 0 100px 0
+  margin: 0
   .subscribe-container
     margin: 0 auto
     width: 355px
@@ -673,12 +701,12 @@ footer
 .vex.vex-theme-default .vex-close:hover:before, .vex.vex-theme-default .vex-close:active:before
   background: transparent !important
 
+.main__about__social 
+  margin: 50px auto
+  text-align: center
+
 .main__contact 
   border-right: 1px solid #adadad
-
-.main__contact, .main__apps, .main__press
-  .btn 
-    margin: 1rem 0
 
 /*** SUBMIT ***/
 iframe#typeform-full
@@ -924,7 +952,38 @@ iframe#typeform-full
 
 /*** MODALS ***/
 
-.modal-overlay
+.modal-overlay-apple
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  margin: auto
+  background-color: #fff
+  opacity: 0
+  visibility: hidden
+  z-index: 40
+  -moz-transition: opacity 0.25s ease 0s, visibility 0.35s linear
+  -o-transition: opacity 0.25s ease 0s, visibility 0.35s linear
+  -webkit-transition: opacity 0.25s ease, visibility 0.35s linear
+  -webkit-transition-delay: 0s, 0s
+  transition: opacity 0.25s ease 0s, visibility 0.35s linear
+  &.state-show
+    opacity: .95
+    visibility: visible
+    position: fixed
+    top: 0
+    height: 100%
+    -moz-transition-delay: 0s
+    -o-transition-delay: 0s
+    -webkit-transition-delay: 0s
+    transition-delay: 0s
+    -moz-transition-duration: 0.2s, 0s
+    -o-transition-duration: 0.2s, 0s
+    -webkit-transition-duration: 0.2s, 0s
+    transition-duration: 0.2s, 0s
+
+.modal-overlay-android
   position: fixed
   top: 0
   left: 0
@@ -986,7 +1045,7 @@ iframe#typeform-full
     -webkit-transition-duration: 0.2s, 0s
     transition-duration: 0.2s, 0s
 
-.modal-frame
+.modal-frame-apple
   position: fixed
   top: 0
   left: 0
@@ -1047,6 +1106,69 @@ iframe#typeform-full
       transform: translateY(25px)
     .close 
       opacity: 0
+
+.modal-frame-android
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  margin: auto
+  z-index: 50
+  display: -webkit-flex
+  display: flex
+  -webkit-align-items: center
+  align-items: center
+  -moz-box-align: center
+  -webkit-box-pack: center
+  -webkit-justify-content: center
+  justify-content: center
+  -moz-box-pack: center
+  -ms-flex-pack: center
+  width: 100%
+  text-align: center
+  visibility: hidden
+  &.state-appear
+    visibility: visible
+    .modal-inset
+      -moz-animation: modalComeIn 0.25s ease
+      -webkit-animation: modalComeIn 0.25s ease
+      animation: modalComeIn 0.25s ease
+      visibility: visible
+    .modal-body, .close
+      opacity: 1
+      -moz-transform: translateY(0) scale(1, 1)
+      -ms-transform: translateY(0) scale(1, 1)
+      -webkit-transform: translateY(0) scale(1, 1)
+      transform: translateY(0) scale(1, 1)
+  &.state-leave
+    visibility: visible
+    .modal-inset
+      -moz-animation: modalHeadOut 0.35s ease 0.1s
+      -webkit-animation: modalHeadOut 0.35s ease 0.1s
+      animation: modalHeadOut 0.35s ease 0.1s
+      visibility: visible
+    .modal-body
+      opacity: 0
+      -moz-transition-delay: 0s
+      -o-transition-delay: 0s
+      -webkit-transition-delay: 0s
+      transition-delay: 0s
+      -moz-transition-duration: 0.35s
+      -o-transition-duration: 0.35s
+      -webkit-transition-duration: 0.35s
+      transition-duration: 0.35s
+      -moz-transition-timing-function: ease
+      -o-transition-timing-function: ease
+      -webkit-transition-timing-function: ease
+      transition-timing-function: ease
+      -moz-transform: translateY(25px)
+      -ms-transform: translateY(25px)
+      -webkit-transform: translateY(25px)
+      transform: translateY(25px)
+    .close 
+      opacity: 0
+
 .modal-frame-subscribe
   position: fixed
   top: 0
@@ -1497,14 +1619,15 @@ iframe#typeform-full
   .main 
     margin-left: 0
     width: 100%
-    .main__about
-      .main__about__social
-        margin-top: 30px
-        .fb-share-button, .twitter-follow-button, .ig-b-, .spotify
-          display: block 
-          margin: 20px auto
-          float: none
-          text-align: center
+    .main__about__social
+      margin-top: 30px
+      .btn-social
+        display: block 
+        margin: 20px auto
+        float: none
+        text-align: center
+        width: 260px
+        padding: 10px 40px
     .main__for-artists
       .label-services 
         margin-top: 50px
@@ -1520,8 +1643,6 @@ iframe#typeform-full
             width: 80%
         .sm-col
           float: none
-  #twitter-widget-0, .spotify
-    margin: auto
 
   #mobile-logo 
     position: absolute
@@ -1589,6 +1710,8 @@ iframe#typeform-full
       font-size: 25px
       .fa-volume-up
         visibility: hidden
+      .audio-player__share 
+        display: inline-block
 
   .close-subscribe 
     left: calc(50% - 25px)
@@ -1635,11 +1758,6 @@ iframe#typeform-full
         button 
           i 
             padding: 0
-@media screen and (max-width: 1235px) and (min-width: 768px)
-  .main 
-    .main__mixtape
-      .main__cover 
-        margin-top: 50px
 
 @media screen and (max-width: 1235px)   
   .main 
@@ -1656,6 +1774,12 @@ iframe#typeform-full
         width: 90%
         clear: both
 
+@media screen and (min-width: 768px) and (max-width: 1235px)
+  .main 
+    .main__mixtape
+      .main__cover 
+        margin-top: 50px
+
 @media screen and (max-width: 1100px)
   .main
     .main__about 
@@ -1665,7 +1789,7 @@ iframe#typeform-full
       margin: 50px auto
     .main__club, .main__for-artists
       margin: 100px 0 0 0
-    .main__contact, .main__apps
+    .main__contact, .main__apps, .main__press
       margin-top: 25px
     .main__collections__archive
       margin-top: 80px
@@ -1697,7 +1821,7 @@ iframe#typeform-full
         li 
           margin: 20px
 
-@media screen and (min-width: 1440px)
+@media screen and (min-width: 1236px)
   .main 
     .main__mixtape 
       .main__cover 
@@ -1725,3 +1849,5 @@ iframe#typeform-full
           .main__track-info
             p 
               font-size: 120%
+
+@import "bass"

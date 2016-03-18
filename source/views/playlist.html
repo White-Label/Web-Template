@@ -19,7 +19,7 @@ directory_index: false
     </div>
   </div>
   <div class="main__tracklist left">
-    <ol class="ml1">
+    <ol>
       <li ng-repeat="track in mixService.CurrentMix.Tracks.array" ng-class="{true: 'current-track', false: ''}[track.track_id === mixService.PlayingTrackID]" class="animatedLong fadeIn">
 
         <div class="main__track-social" ng-show="track.track_id === mixService.PlayingTrackID">

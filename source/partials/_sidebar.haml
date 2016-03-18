@@ -1,8 +1,8 @@
 .sidebar.clearfix
-     .logo.col-3.mx-auto.mt4.animatedLong.fadeIn
+     .logo.col-3.mx-auto.mt4
           %a{href: "/"}
                %img.fit{alt: "Noon Pacific", src: "#{image_path("noonpacific.svg")}"}
-     .sidebar__nav.animatedMed.fadeIn
+     .sidebar__nav
           %ul.list-reset.center
                %li
                     %a{href: "/"}
@@ -27,19 +27,19 @@
                          about
                %li.mt2
                     %a.inline-block.px1{href: ""}
-                         %i.fa.fa-apple.open-app
+                         %i.fa.fa-apple.open-apple-app
                     %a.inline-block.px1{href: ""}
-                         %i.fa.fa-android.open-app
-     .audio-player.animatedLong.fadeIn{'ng-controller' => 'AudioCtrl'}
+                         %i.fa.fa-android.open-android-app
+     .audio-player{'ng-controller' => 'AudioCtrl'}
           .audio-player__track-info.center.ng-cloak
-               .audio-player__artist
+               .audio-player__artist.animatedMed.fadeIn
                     %p.m0.truncate(ng-bind="currentTrack.title")
-               .audio-player__song.mt0
+               .audio-player__song.mt0.animatedMed.fadeIn
                     %p.m0.grey.truncate(ng-bind="currentTrack.artist_description")
           .audio-player__controls.center.mt3.mb3
                .audio-player__volume.inline-block
                     %i.fa.fa-volume-up(ng-click="show=!show")
-                    .volume(ng-show="show")
+                    .volume.ng-cloak(ng-show="show")
                          %input.vslider(data-slider-orientation="horizontal" data-slider-selection="after" data-slider-step="1" data-slider-tooltip="hide" data-slider-value="")
                .audio-player__play.inline-block
                     %a{href: "", "ng-click" => "PlayPauseClick()"}

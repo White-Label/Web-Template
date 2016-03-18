@@ -100,8 +100,9 @@ $(function(){
   setTimeout(function() {
     $("img.lazy").lazyload({
         threshold : 100,
+        effect : "fadeIn",
     });
-  }, 2000);
+  }, 1500);
 
 
   $('#submit_email').click(function(){
@@ -153,24 +154,47 @@ $(function() {
 /** Modals **/
 
 $(document).on('ready', function(){
-    $appModal = $('.modal-frame');
-    $appOverlay = $('.modal-overlay');
+    $appModalApple = $('.modal-frame-apple');
+    $appOverlayApple = $('.modal-overlay-apple');
 
     /* Need this to clear out the keyframe classes so they dont clash with each other between ener/leave. Cheers. */
-    $appModal.bind('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e){
-      if($appModal.hasClass('state-leave')) {
-        $appModal.removeClass('state-leave');
+    $appModalApple.bind('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e){
+      if($appModalApple.hasClass('state-leave')) {
+        $appModalApple.removeClass('state-leave');
       }
     });
 
-    $('.close, .modal-frame').on('click', function(){
-      $appOverlay.removeClass('state-show');
-      $appModal.removeClass('state-appear').addClass('state-leave');
+    $('.close, .modal-frame-apple').on('click', function(){
+      $appOverlayApple.removeClass('state-show');
+      $appModalApple.removeClass('state-appear').addClass('state-leave');
     });
 
-    $('.open-app').on('click', function(){
-      $appOverlay.addClass('state-show');
-      $appModal.removeClass('state-leave').addClass('state-appear');
+    $('.open-apple-app').on('click', function(){
+      $appOverlayApple.addClass('state-show');
+      $appModalApple.removeClass('state-leave').addClass('state-appear');
+    });
+
+  });
+
+$(document).on('ready', function(){
+    $appModalAndroid = $('.modal-frame-android');
+    $appOverlayAndroid = $('.modal-overlay-android');
+
+    /* Need this to clear out the keyframe classes so they dont clash with each other between ener/leave. Cheers. */
+    $appModalAndroid.bind('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e){
+      if($appModalAndroid.hasClass('state-leave')) {
+        $appModalAndroid.removeClass('state-leave');
+      }
+    });
+
+    $('.close, .modal-frame-android').on('click', function(){
+      $appOverlayAndroid.removeClass('state-show');
+      $appModalAndroid.removeClass('state-appear').addClass('state-leave');
+    });
+
+    $('.open-android-app').on('click', function(){
+      $appOverlayAndroid.addClass('state-show');
+      $appModalAndroid.removeClass('state-leave').addClass('state-appear');
     });
 
   });

@@ -1,19 +1,20 @@
 = partial 'partials/sidebar-toggle'
 = partial 'partials/sidebar'
-= partial 'partials/app-modal'
+= partial 'partials/apple-modal'
+= partial 'partials/android-modal'
 = partial 'partials/subscribe-modal'
 .main
 
      %ng-view
              
-     .main__archive-hint.ng-cloak.animatedLong.fadeIn
-          %p.m0.grey.animatedLong.fadeIn archive
-          %i.fa.fa-angle-down.grey.animatedLong.fadeIn
+     .main__archive-hint.ng-cloak.animated.fadeIn
+          %p.m0.grey.animated.fadeIn archive
+          %i.fa.fa-angle-down.grey.animated.fadeIn
      .main__archive.ng-cloak.animatedLong.fadeIn
           %ul.main__archive-grid{"ng-controller" => "MixListCtrl"}
                %li.currentMix.mix{"ng-repeat" => "mix in Mix.Mixes.array"}
                     %a{"data-content" => "{{mix.name}}", :href => "#/mix/{{mix.id}}", "ng-class" => "{'mixtapes': true, 'playing': mix.id === Mix.PlayingMixID}"}
-                         %img.lazy{:alt => "{{mix.name}}", "data-original" => "{{mix.cover_large}}?h=250&w=250", :height => "250", :src => "/img/grey.jpg", :width => "250"}
+                         %img.lazy.animated.fadeIn{:alt => "{{mix.name}}", "data-original" => "{{mix.cover_large}}?h=250&w=250", :height => "250", :src => "/img/grey.jpg", :width => "250"}
 = partial 'partials/mobile-player'                        
 = partial 'partials/footer'
 
