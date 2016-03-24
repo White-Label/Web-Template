@@ -338,6 +338,8 @@ footer
     .main__tracklist
       margin-top: 5%
       width: 54.5%
+      max-height: 550px
+      overflow-y: scroll
       ol 
         margin-top: 0
         list-style-type: none
@@ -645,7 +647,7 @@ footer
       background-image: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24@2x.png)
       background-size: 160px 178px
 .main__subscribe
-  margin: 0
+  margin: 40px 0 0 0
   .subscribe-container
     margin: 0 auto
     width: 355px
@@ -713,6 +715,21 @@ iframe#typeform-full
   position: absolute
   top: 0px
   height: 100%
+
+/*** FRIENDS ***/
+
+.main__friends 
+  h2 
+    font-weight: normal
+    margin-bottom: 100px
+  ul 
+    margin-bottom: 100px
+    li 
+      margin: 50px 0
+      h4
+        margin: 0
+      p 
+        margin: 0
 
 /*** TV ***/
 .tv-header
@@ -1609,6 +1626,384 @@ iframe#typeform-full
     -webkit-transform: translateY(35px) scale(0.97, 0.97)
     transform: translateY(35px) scale(0.97, 0.97)
 
+
+
+
+.cd-container
+  width: 90%
+  max-width: 1170px
+  margin: 0 auto
+  &::after
+    content: ''
+    display: table
+    clear: both
+
+.cd-timeline
+  position: relative
+  padding: 2em 0
+  margin-top: 0
+  margin-bottom: 2em
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 18px
+    height: 100%
+    width: 2px
+    background: #e0e0e0
+
+@media only screen and (min-width: 1170px)
+  .cd-timeline
+    margin-top: 0
+    margin-bottom: 3em
+    &::before
+      left: 50%
+      margin-left: -1px
+
+.cd-timeline-block
+  position: relative
+  margin: 2em 0
+  &::after
+    clear: both
+    content: ""
+    display: table
+  &:first-child
+    margin-top: 0
+  &:last-child
+    margin-bottom: 0
+
+@media only screen and (min-width: 1170px)
+  .cd-timeline-block
+    margin: 4em 0
+    &:first-child
+      margin-top: 0
+    &:last-child
+      margin-bottom: 0
+
+.cd-timeline-img
+  position: absolute
+  top: 20px
+  left: 15px
+  width: 10px
+  height: 10px
+  border-radius: 50%
+  border: 1px solid #333
+  background: #333
+
+
+@media only screen and (min-width: 1170px)
+  .cd-timeline-img
+    width: 10px
+    height: 10px
+    top: 28px
+    left: calc(50% - 5px)
+    background: #333
+    -webkit-transform: translateZ(0)
+    -webkit-backface-visibility: hidden
+  .cssanimations .cd-timeline-img
+    &.is-hidden
+      visibility: hidden
+    &.bounce-in
+      visibility: visible
+      -webkit-animation: cd-bounce-1 0.6s
+      -moz-animation: cd-bounce-1 0.6s
+      animation: cd-bounce-1 0.6s
+
+@-webkit-keyframes cd-bounce-1
+  0%
+    opacity: 0
+    -webkit-transform: scale(0.5)
+
+  60%
+    opacity: 1
+    -webkit-transform: scale(1.2)
+
+  100%
+    -webkit-transform: scale(1)
+
+
+@-moz-keyframes cd-bounce-1
+  0%
+    opacity: 0
+    -moz-transform: scale(0.5)
+
+  60%
+    opacity: 1
+    -moz-transform: scale(1.2)
+
+  100%
+    -moz-transform: scale(1)
+
+
+@keyframes cd-bounce-1
+  0%
+    opacity: 0
+    -webkit-transform: scale(0.5)
+    -moz-transform: scale(0.5)
+    -ms-transform: scale(0.5)
+    -o-transform: scale(0.5)
+    transform: scale(0.5)
+
+  60%
+    opacity: 1
+    -webkit-transform: scale(1.2)
+    -moz-transform: scale(1.2)
+    -ms-transform: scale(1.2)
+    -o-transform: scale(1.2)
+    transform: scale(1.2)
+
+  100%
+    -webkit-transform: scale(1)
+    -moz-transform: scale(1)
+    -ms-transform: scale(1)
+    -o-transform: scale(1)
+    transform: scale(1)
+
+.divider 
+  height: 100px
+
+
+.cd-timeline-content
+  position: relative
+  margin-left: 60px
+  background: #ffffff
+  padding: 10px
+  border: 3px solid #333
+  &::after
+    clear: both
+    content: ""
+    display: table
+  h2
+    font-weight: bold
+    margin-top: 0
+  p, .cd-read-more, .cd-date
+    font-size: 13px
+    font-size: 0.8125rem
+  .cd-read-more, .cd-date
+    display: inline-block
+  p
+    margin: 1em 0
+    line-height: 1.6
+  .cd-read-more
+    float: right
+    padding: .8em 1em
+    background: #acb7c0
+    color: #ffffff
+    border-radius: 0.25em
+
+.no-touch .cd-timeline-content .cd-read-more:hover
+  background-color: #bac4cb
+
+.cd-timeline-content
+  .cd-date
+    float: left
+    padding: .8em 0
+    opacity: .7
+  &::before
+    content: ''
+    position: absolute
+    top: 16px
+    right: 100%
+    height: 0
+    width: 0
+    border: 7px solid transparent
+    border-right: 7px solid #333
+
+@media only screen and (min-width: 768px)
+  .cd-timeline-content
+    h2
+      font-size: 20px
+      font-size: 1.25rem
+    p
+      font-size: 16px
+      font-size: 1rem
+    .cd-read-more, .cd-date
+      font-size: 14px
+      font-size: 0.875rem
+
+@media only screen and (min-width: 1170px)
+  .cd-timeline-content
+    margin-left: 0
+    padding: 1.6em
+    width: 45%
+    &::before
+      top: 24px
+      left: 100%
+      border-color: transparent
+      border-left-color: #333
+    .cd-read-more
+      float: left
+    .cd-date
+      position: absolute
+      width: 100%
+      left: 122%
+      top: 6px
+      font-size: 16px
+      font-size: 1rem
+  .cd-timeline-block:nth-child(even) .cd-timeline-content
+    float: right
+    &::before
+      top: 24px
+      left: auto
+      right: 100%
+      border-color: transparent
+      border-right-color: #333
+    .cd-read-more
+      float: right
+    .cd-date
+      left: auto
+      right: 122%
+      text-align: right
+  .cssanimations .cd-timeline-content
+    &.is-hidden
+      visibility: hidden
+    &.bounce-in
+      visibility: visible
+      -webkit-animation: cd-bounce-2 0.6s
+      -moz-animation: cd-bounce-2 0.6s
+      animation: cd-bounce-2 0.6s
+
+@media only screen and (min-width: 1170px)
+  .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in
+    -webkit-animation: cd-bounce-2-inverse 0.6s
+    -moz-animation: cd-bounce-2-inverse 0.6s
+    animation: cd-bounce-2-inverse 0.6s
+
+@-webkit-keyframes cd-bounce-2
+  0%
+    opacity: 0
+    -webkit-transform: translateX(-100px)
+
+  60%
+    opacity: 1
+    -webkit-transform: translateX(20px)
+
+  100%
+    -webkit-transform: translateX(0)
+
+
+@-moz-keyframes cd-bounce-2
+  0%
+    opacity: 0
+    -moz-transform: translateX(-100px)
+
+  60%
+    opacity: 1
+    -moz-transform: translateX(20px)
+
+  100%
+    -moz-transform: translateX(0)
+
+
+@keyframes cd-bounce-2
+  0%
+    opacity: 0
+    -webkit-transform: translateX(-100px)
+    -moz-transform: translateX(-100px)
+    -ms-transform: translateX(-100px)
+    -o-transform: translateX(-100px)
+    transform: translateX(-100px)
+
+  60%
+    opacity: 1
+    -webkit-transform: translateX(20px)
+    -moz-transform: translateX(20px)
+    -ms-transform: translateX(20px)
+    -o-transform: translateX(20px)
+    transform: translateX(20px)
+
+  100%
+    -webkit-transform: translateX(0)
+    -moz-transform: translateX(0)
+    -ms-transform: translateX(0)
+    -o-transform: translateX(0)
+    transform: translateX(0)
+
+
+@-webkit-keyframes cd-bounce-2-inverse
+  0%
+    opacity: 0
+    -webkit-transform: translateX(100px)
+
+  60%
+    opacity: 1
+    -webkit-transform: translateX(-20px)
+
+  100%
+    -webkit-transform: translateX(0)
+
+
+@-moz-keyframes cd-bounce-2-inverse
+  0%
+    opacity: 0
+    -moz-transform: translateX(100px)
+
+  60%
+    opacity: 1
+    -moz-transform: translateX(-20px)
+
+  100%
+    -moz-transform: translateX(0)
+
+
+@keyframes cd-bounce-2-inverse
+  0%
+    opacity: 0
+    -webkit-transform: translateX(100px)
+    -moz-transform: translateX(100px)
+    -ms-transform: translateX(100px)
+    -o-transform: translateX(100px)
+    transform: translateX(100px)
+
+  60%
+    opacity: 1
+    -webkit-transform: translateX(-20px)
+    -moz-transform: translateX(-20px)
+    -ms-transform: translateX(-20px)
+    -o-transform: translateX(-20px)
+    transform: translateX(-20px)
+
+  100%
+    -webkit-transform: translateX(0)
+    -moz-transform: translateX(0)
+    -ms-transform: translateX(0)
+    -o-transform: translateX(0)
+    transform: translateX(0)
+
+
+.main__coachella 
+  img 
+    width: 40%
+    margin: 30px auto
+  h3 
+    text-align: center
+    margin-bottom: 100px
+  h1 
+    font-size: 1.5rem
+    background: #333
+    color: #fff
+    width: 40%
+    padding: 10px
+    margin: 0 auto
+  .share-coachella 
+    margin: 100px auto
+    .btn 
+      margin: 20px 10px 20px 10px
+      &.facebook 
+        background: $facebook
+        border: 0
+      &.twitter 
+        background: $twitter
+        border: 0
+
+
+@media screen and (max-width: 768px)
+  .main__coachella 
+    h1
+      width: 90%
+      font-size: 20px
+
+
 /** RESPONSIVE STUFF **/
 
 @media screen and (max-width: 768px)
@@ -1748,11 +2143,11 @@ iframe#typeform-full
               padding: 0
   .main__subscribe 
     .subscribe-container
-      width: 250px
+      width: 260px
       form 
-        width: 250px
+        width: 260px
         input 
-          width: 180px 
+          width: 205px 
           font-size: 14px
           height: 45px
         button 
