@@ -246,3 +246,38 @@ jQuery(document).ready(function($){
     });
   });
 });
+
+$(document).ready(function(){
+  
+  $('#ambassador-check').click(function(e){
+    $.ajax({
+      url: 'https://api.kickofflabs.com/v1/38778/subscribe', 
+      data: $('#ambassador_form').serialize(), 
+      dataType: 'jsonp', 
+      jsonp: 'jsonp', 
+      jsonpCallback: 'subscribe_callback', 
+      timeout: 2000, 
+      error: function() {
+        message = 'Could not verify the email address ' + $('#email').val();
+        alert(message);
+      }
+      });
+    e.preventDefault();
+  });
+
+});
+
+function subscribe_callback(data)
+{
+  $('.ambassador-results').css("visibility","visible");
+  var socialMsg = (data.social_url);
+  var directMsg = (data.influence.direct);
+  var indirectMsg = (data.influence.indirect);
+  var shareUrl = $('#ambassador-share-url');
+  var directReferrals = $('#ambassador-direct-referrals');
+  var indirectReferrals = $('#ambassador-indirect-referrals');
+
+  shareUrl.html(socialMsg);
+  directReferrals.html(directMsg);
+  indirectReferrals.html(indirectMsg);
+}
