@@ -223,6 +223,11 @@ footer
       &:hover 
         color: #333
 
+.announcement 
+  background: #333
+  color: #fff
+  z-index: 10
+
 
 /************ SIDEBAR *************/
 
@@ -338,9 +343,9 @@ footer
     .main__tracklist
       margin-top: 5%
       width: 54.5%
-      max-height: 550px
-      overflow-y: scroll
-      overflow: visible
+      // max-height: 550px
+      // overflow-y: scroll
+      // overflow: visible
       ol 
         margin-top: 0
         list-style-type: none
@@ -619,6 +624,7 @@ footer
 /*** ABOUT ***/
 
 .main__about 
+  line-height: 25px
   a 
     border-bottom: 1px solid #333
     transition: 0.3s all
@@ -663,6 +669,7 @@ footer
         font-size: 18px
         padding: 10px
         transition: 0.3s all
+        border-radius: 0
         &::-webkit-input-placeholder
           color: #adadad
         &:focus 
@@ -2040,7 +2047,7 @@ iframe#typeform-full
     margin: 30px auto
   h3 
     text-align: center
-    margin-bottom: 100px
+    margin-bottom: 70px
   h1 
     font-size: 1.5rem
     background: #333
@@ -2048,6 +2055,12 @@ iframe#typeform-full
     width: 40%
     padding: 10px
     margin: 0 auto
+  .intro 
+    margin-bottom: 70px
+  .drink
+    margin: 100px auto
+  .art 
+    margin: 100px auto
   .share-coachella 
     margin: 100px auto
     .btn 
@@ -2183,10 +2196,10 @@ iframe#typeform-full
     border: 1px solid #333
     border-radius: 30px
     width: 50px
-    transition: 0.3s all
-    &:hover 
-      color: #fff 
-      background: #333
+    // transition: 0.3s all
+    // &:hover 
+    //   color: #fff 
+    //   background: #333
 
   footer 
     margin-bottom: 150px
@@ -2220,6 +2233,7 @@ iframe#typeform-full
           font-size: 14px
           height: 45px
         button 
+          padding: 0
           i 
             padding: 0
 
