@@ -5,15 +5,22 @@
 = partial 'partials/subscribe-modal'
 
 .main 
-     .main__video.col-9.mx-auto.mt4
-          %h1.center NICO YARYAN &mdash; NOON PACIFIC SESSION // 001
-          .videoWrapper.videoWrapper169.js-videoWrapper
-               %iframe.videoIframe.js-videoIframe{:allowTransparency => "true", :allowfullscreen => "", "data-src" => "https://www.youtube.com/embed/HrXWMZ_Zybg?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0", :frameborder => "0", :src => ""}
-               / the poster frame - in the form of a button to make it keyboard accessible
-               %button.videoPoster.js-videoPoster{:style => "background-image:url(#{image_path("npsession_001.jpg")});"} Play video
-          %h3 
-               Scribe Winery, Sonoma, California
-          %p 
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum nisi vitae ligula fermentum, in porttitor enim porttitor. Sed ultricies ipsum bibendum, ultricies lectus eget, venenatis libero. Proin vitae purus nec dui malesuada tempor eu nec turpis.
-
-
+     .main__sessions__archive.animated.fadeIn
+          %ul.main__sessions-grid.list-reset.animated.fadeIn
+               %li
+                    %a{:href => "/sessions/001-nico-yaryan", "data-content" => "SESSION // 001"}
+                         %img.lazy{:alt => "", :height => "300", :src => "#{image_path("sessions/nico_yaryan.jpg")}", :width => "300"}
+               %li
+                    %a{:href => "/sessions", "data-content" => "Coming Soon"}
+                         %img.lazy{:alt => "", :height => "300", :src => "#{image_path("sessions/new_york.jpg")}", :width => "300"}
+               %li
+                    %a{:href => "/sessions", "data-content" => "Coming Soon"}
+                         %img.lazy{:alt => "", :height => "300", :src => "#{image_path("sessions/miami.jpg")}", :width => "300"}
+               %li
+                    %a{:href => "/sessions", "data-content" => "Coming Soon"}
+                         %img.lazy{:alt => "", :height => "300", :src => "#{image_path("sessions/los_angeles.jpg")}", :width => "300"}
+               %li
+                    %a{:href => "mailto:sessions@noonpacific.com", "data-content" => "Request A City"}
+                         %img.lazy{:alt => "", :height => "300", :src => "#{image_path("sessions/request.jpg")}", :width => "300"}
+               %li
+                    // Invisible child element cuz flexbox 

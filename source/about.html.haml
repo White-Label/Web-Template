@@ -11,7 +11,7 @@
           %p
                Curated by <a href="http://clarkdinnison.com" target="_blank">Clark Dinnison</a>.
           %p
-               Built with <a href="http://whitelabel.cool" target="_blank">White Label</a> by <a href="/friends">friends</a>. Powered by <a href="http://www.soundcloud.com" target="_blank">Soundcloud</a>.
+               Built with <a href="http://whitelabel.cool" target="_blank">White Label</a>. Powered by <a href="http://www.soundcloud.com" target="_blank">Soundcloud</a>.
 
      .clearfix 
           .main__subscribe.col-12.animated.fadeIn
@@ -19,21 +19,21 @@
                .subscribe-container.subscription_form
                     %form#signup_form{:action => "https://api.kickofflabs.com/v1/38778/subscribe", :method => "post", :role => "form"}
                          %input#email_about{:name => "email", :placeholder => "Your Email Address", :type => "email"}
-                         %button#submit_email_about{:type => "submit", :value => "subscribe"}
+                         %button#submit_email_about{:type => "submit", :value => "subscribe", :onClick => "ga('send', 'event’, subscribe, click, aboutPage);"}
                               %i.fa.fa-long-arrow-right
      .clearfix 
           .main__about__social
                / .fb-share-button{"data-href" => "http://noonpacific.com", "data-layout" => "button"}
-               %a.btn.btn-social.facebook{:href => "https://www.facebook.com/sharer/sharer.php?app_id=570788733024362&sdk=joey&u=http%3A%2F%2Fnoonpacific.com%2F&display=popup&ref=plugin&src=share_button", :target => "_blank"}
+               %a.btn.btn-social.facebook{:href => "https://www.facebook.com/sharer/sharer.php?app_id=570788733024362&sdk=joey&u=http%3A%2F%2Fnoonpacific.com%2F&display=popup&ref=plugin&src=share_button", :target => "_blank", :target => "ga('send', 'event’, social, click, aboutPageFacebook);"}
                     %i.fa.fa-facebook 
                     Share
-               %a.btn.btn-social.twitter{:href => "https://twitter.com/NoonPacific", :target => "_blank"} 
+               %a.btn.btn-social.twitter{:href => "https://twitter.com/NoonPacific", :target => "_blank", :target => "ga('send', 'event’, social, click, aboutPageTwitter);"} 
                     %i.fa.fa-twitter
                     Follow
-               %a.btn.btn-social.instagram{:href => "https://www.instagram.com/noonpacific/?ref=badge", :target => "_blank"}
+               %a.btn.btn-social.instagram{:href => "https://www.instagram.com/noonpacific/?ref=badge", :target => "_blank", :target => "ga('send', 'event’, social, click, aboutPageInstagram);"}
                     %i.fa.fa-instagram
                     Follow
-               %a.btn.btn-social.spotify{:href => "https://open.spotify.com/user/noonpacific", :target => "_blank"}
+               %a.btn.btn-social.spotify{:href => "https://open.spotify.com/user/noonpacific", :target => "_blank", :target => "ga('send', 'event’, social, click, aboutPageSpotify);"}
                     %i.fa.fa-spotify 
                     Follow
      .clearfix

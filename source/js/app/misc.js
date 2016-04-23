@@ -7,6 +7,14 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
+$(document).ready(function() {
+    $('.fb-share').click(function(e) {
+        e.preventDefault();
+        window.open($(this).attr('href'), 'fbShareWindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 275) + ', left=' + ($(window).width() / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+        return false;
+    });
+});
+
 // Twitter Follow
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 
@@ -227,25 +235,6 @@ $(document).on('ready', function(){
 
   });
 
-jQuery(document).ready(function($){
-  var $timeline_block = $('.cd-timeline-block');
-
-  //hide timeline blocks which are outside the viewport
-  $timeline_block.each(function(){
-    if($(this).offset().top > $(window).scrollTop()+$(window).height()*0.75) {
-      $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
-    }
-  });
-
-  //on scolling, show/animate timeline blocks when enter the viewport
-  $(window).on('scroll', function(){
-    $timeline_block.each(function(){
-      if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.75 && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) {
-        $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
-      }
-    });
-  });
-});
 
 $(document).ready(function(){
   

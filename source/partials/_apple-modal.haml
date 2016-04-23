@@ -8,7 +8,7 @@
           %img{:src => "#{image_path("iphone.svg")}"}
         .row
           .download-buttons.my2
-            %a.btn.btn-black.my2.mx1{:href => "https://itunes.apple.com/us/app/noon-pacific/id803563983?mt=8&uo=4&at=10lKmP", :target => "_blank"} 
+            %a.btn.btn-black.my2.mx1{:href => "https://itunes.apple.com/us/app/noon-pacific/id803563983?mt=8&uo=4&at=10lKmP", :target => "_blank", :target => "ga('send', 'event’, download, click, appleModal);"} 
               %i.fa.fa-apple
               Download iOS
         .row

@@ -12,7 +12,7 @@
           .subscribe-container.subscription_form
             %form#signup_form{:action => "https://api.kickofflabs.com/v1/38778/subscribe", :method => "post", :role => "form"}
               %input#email{:name => "email", :placeholder => "Your Email Address", :type => "email"}
-              %button#submit_email{:type => "submit", :value => "subscribe"}
+              %button#submit_email{:type => "submit", :value => "subscribe", :onClick => "ga('send', 'event’, subscribe, click, modal);"}
                 %i.fa.fa-long-arrow-right
 
       .modal-footer

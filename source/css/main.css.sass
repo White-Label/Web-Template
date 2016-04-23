@@ -574,9 +574,49 @@ footer
         width: 250px
         height: 250px
 
+/*** SESSIONS ***/
+
+.main__sessions__archive 
+  li 
+    a 
+      &:after, &:before
+        position: absolute
+        opacity: 0
+        transition: all 0.5s
+        left: 0px
+      &:after
+        content: '\A'
+        width: 300px
+        height: 300px
+        top: 0
+        left: 0
+        background: rgba(0, 0, 0, 0.3)
+      &:before
+        content: attr(data-content)
+        width: 190px
+        color: #333
+        background: #fff
+        border: 2px solid #333
+        z-index: 1
+        font-size: 18px
+        letter-spacing: 2px
+        bottom: calc(50% - 20px)
+        left: calc(50% - 95px)
+        padding: 5px 10px
+        text-align: center
+        box-sizing: border-box
+        -moz-box-sizing: border-box
+    a:hover 
+      &:after, &:before 
+        opacity: 1
+    &:last-child 
+      &:hover 
+        &:after, &:before
+          opacity: 0
+
 /*** COLLECTIONS ***/
 
-.main__collections__archive
+.main__collections__archive, .main__sessions__archive
   list-style: none
   padding: 0
   margin: 50px auto 0 auto
@@ -922,6 +962,76 @@ iframe#typeform-full
   -webkit-transition-delay: 0s, 800ms
   -moz-transition-delay: 0s, 800ms
   transition-delay: 0s, 800ms
+
+.main__video 
+  h3 
+    font-size: 1.4em 
+    font-weight: normal
+    font-family: 'ApercuReg'
+  .share
+    margin: 10px
+    display: block
+    position: relative
+    span
+      width: 200px
+      line-height: 50px
+      display: inline-block
+      font-weight: 700
+      color: #333 
+      background: #fff 
+      border: 2px solid #333
+      text-align: center
+      text-transform: uppercase
+      position: absolute
+      left: 50%
+      margin-left: -100px
+      opacity: 1
+      -webkit-transition: opacity 0.3s ease-in-out
+      transition: opacity 0.3s ease-in-out
+      pointer-events: none
+    nav
+      font-size: 0
+    a
+      line-height: 50px
+      width: 50px
+      text-align: center
+      display: inline-block
+      background-color: #fff
+      color: #333
+      border: 1px solid #333
+      overflow: hidden
+      opacity: 1
+      -webkit-transition: all 0.3s ease-in-out
+      transition: all 0.3s ease-in-out
+      margin: 0 -20px
+      &:nth-child(1)
+        margin-left: 0
+        background-color: #61c5ec
+        &:hover
+          background-color: #61c5ec
+      &:nth-child(2)
+        background-color: #3B5998
+        &:hover
+          background-color: #3B5998
+      &:nth-child(3)
+        background-color: #ea4335
+        &:hover
+          background-color: #ea4335
+      &:nth-child(4)
+        margin-right: 0
+        background-color: #000000
+        &:hover
+          background-color: #000000
+    &:hover
+      span
+        opacity: 0
+      a
+        border-radius: 0%
+        margin: 0 10px
+        color: #fff
+        font-size: 20px
+        &:hover
+          color: #fff
 
 /*** CLUB ***/
 
@@ -1698,356 +1808,14 @@ iframe#typeform-full
 
 
 
-
-.cd-container
-  width: 90%
-  max-width: 1170px
-  margin: 0 auto
-  &::after
-    content: ''
-    display: table
-    clear: both
-
-.cd-timeline
-  position: relative
-  padding: 2em 0
-  margin-top: 0
-  margin-bottom: 2em
-  &::before
-    content: ''
-    position: absolute
-    top: 0
-    left: 18px
-    height: 100%
-    width: 2px
-    background: #e0e0e0
-
-@media only screen and (min-width: 1170px)
-  .cd-timeline
-    margin-top: 0
-    margin-bottom: 3em
-    &::before
-      left: 50%
-      margin-left: -1px
-
-.cd-timeline-block
-  position: relative
-  margin: 2em 0
-  &::after
-    clear: both
-    content: ""
-    display: table
-  &:first-child
-    margin-top: 0
-  &:last-child
-    margin-bottom: 0
-
-@media only screen and (min-width: 1170px)
-  .cd-timeline-block
-    margin: 4em 0
-    &:first-child
-      margin-top: 0
-    &:last-child
-      margin-bottom: 0
-
-.cd-timeline-img
-  position: absolute
-  top: 20px
-  left: 15px
-  width: 10px
-  height: 10px
-  border-radius: 50%
-  border: 1px solid #333
-  background: #333
-
-
-@media only screen and (min-width: 1170px)
-  .cd-timeline-img
-    width: 10px
-    height: 10px
-    top: 28px
-    left: calc(50% - 5px)
-    background: #333
-    -webkit-transform: translateZ(0)
-    -webkit-backface-visibility: hidden
-  .cssanimations .cd-timeline-img
-    &.is-hidden
-      visibility: hidden
-    &.bounce-in
-      visibility: visible
-      -webkit-animation: cd-bounce-1 0.6s
-      -moz-animation: cd-bounce-1 0.6s
-      animation: cd-bounce-1 0.6s
-
-@-webkit-keyframes cd-bounce-1
-  0%
-    opacity: 0
-    -webkit-transform: scale(0.5)
-
-  60%
-    opacity: 1
-    -webkit-transform: scale(1.2)
-
-  100%
-    -webkit-transform: scale(1)
-
-
-@-moz-keyframes cd-bounce-1
-  0%
-    opacity: 0
-    -moz-transform: scale(0.5)
-
-  60%
-    opacity: 1
-    -moz-transform: scale(1.2)
-
-  100%
-    -moz-transform: scale(1)
-
-
-@keyframes cd-bounce-1
-  0%
-    opacity: 0
-    -webkit-transform: scale(0.5)
-    -moz-transform: scale(0.5)
-    -ms-transform: scale(0.5)
-    -o-transform: scale(0.5)
-    transform: scale(0.5)
-
-  60%
-    opacity: 1
-    -webkit-transform: scale(1.2)
-    -moz-transform: scale(1.2)
-    -ms-transform: scale(1.2)
-    -o-transform: scale(1.2)
-    transform: scale(1.2)
-
-  100%
-    -webkit-transform: scale(1)
-    -moz-transform: scale(1)
-    -ms-transform: scale(1)
-    -o-transform: scale(1)
-    transform: scale(1)
-
-.divider 
-  height: 100px
-
-
-.cd-timeline-content
-  position: relative
-  margin-left: 60px
-  background: #ffffff
-  padding: 10px
-  border: 3px solid #333
-  &::after
-    clear: both
-    content: ""
-    display: table
-  h2
-    font-weight: bold
-    margin-top: 0
-  p, .cd-read-more, .cd-date
-    font-size: 13px
-    font-size: 0.8125rem
-  .cd-read-more, .cd-date
-    display: inline-block
-  p
-    margin: 1em 0
-    line-height: 1.6
-  .cd-read-more
-    float: right
-    padding: .8em 1em
-    background: #acb7c0
-    color: #ffffff
-    border-radius: 0.25em
-
-.no-touch .cd-timeline-content .cd-read-more:hover
-  background-color: #bac4cb
-
-.cd-timeline-content
-  .cd-date
-    float: left
-    padding: .8em 0
-    opacity: .7
-  &::before
-    content: ''
-    position: absolute
-    top: 16px
-    right: 100%
-    height: 0
-    width: 0
-    border: 7px solid transparent
-    border-right: 7px solid #333
-
-@media only screen and (min-width: 768px)
-  .cd-timeline-content
-    h2
-      font-size: 20px
-      font-size: 1.25rem
-    p
-      font-size: 16px
-      font-size: 1rem
-    .cd-read-more, .cd-date
-      font-size: 14px
-      font-size: 0.875rem
-
-@media only screen and (min-width: 1170px)
-  .cd-timeline-content
-    margin-left: 0
-    padding: 1.6em
-    width: 45%
-    &::before
-      top: 24px
-      left: 100%
-      border-color: transparent
-      border-left-color: #333
-    .cd-read-more
-      float: left
-    .cd-date
-      position: absolute
-      width: 100%
-      left: 122%
-      top: 6px
-      font-size: 16px
-      font-size: 1rem
-  .cd-timeline-block:nth-child(even) .cd-timeline-content
-    float: right
-    &::before
-      top: 24px
-      left: auto
-      right: 100%
-      border-color: transparent
-      border-right-color: #333
-    .cd-read-more
-      float: right
-    .cd-date
-      left: auto
-      right: 122%
-      text-align: right
-  .cssanimations .cd-timeline-content
-    &.is-hidden
-      visibility: hidden
-    &.bounce-in
-      visibility: visible
-      -webkit-animation: cd-bounce-2 0.6s
-      -moz-animation: cd-bounce-2 0.6s
-      animation: cd-bounce-2 0.6s
-
-@media only screen and (min-width: 1170px)
-  .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in
-    -webkit-animation: cd-bounce-2-inverse 0.6s
-    -moz-animation: cd-bounce-2-inverse 0.6s
-    animation: cd-bounce-2-inverse 0.6s
-
-@-webkit-keyframes cd-bounce-2
-  0%
-    opacity: 0
-    -webkit-transform: translateX(-100px)
-
-  60%
-    opacity: 1
-    -webkit-transform: translateX(20px)
-
-  100%
-    -webkit-transform: translateX(0)
-
-
-@-moz-keyframes cd-bounce-2
-  0%
-    opacity: 0
-    -moz-transform: translateX(-100px)
-
-  60%
-    opacity: 1
-    -moz-transform: translateX(20px)
-
-  100%
-    -moz-transform: translateX(0)
-
-
-@keyframes cd-bounce-2
-  0%
-    opacity: 0
-    -webkit-transform: translateX(-100px)
-    -moz-transform: translateX(-100px)
-    -ms-transform: translateX(-100px)
-    -o-transform: translateX(-100px)
-    transform: translateX(-100px)
-
-  60%
-    opacity: 1
-    -webkit-transform: translateX(20px)
-    -moz-transform: translateX(20px)
-    -ms-transform: translateX(20px)
-    -o-transform: translateX(20px)
-    transform: translateX(20px)
-
-  100%
-    -webkit-transform: translateX(0)
-    -moz-transform: translateX(0)
-    -ms-transform: translateX(0)
-    -o-transform: translateX(0)
-    transform: translateX(0)
-
-
-@-webkit-keyframes cd-bounce-2-inverse
-  0%
-    opacity: 0
-    -webkit-transform: translateX(100px)
-
-  60%
-    opacity: 1
-    -webkit-transform: translateX(-20px)
-
-  100%
-    -webkit-transform: translateX(0)
-
-
-@-moz-keyframes cd-bounce-2-inverse
-  0%
-    opacity: 0
-    -moz-transform: translateX(100px)
-
-  60%
-    opacity: 1
-    -moz-transform: translateX(-20px)
-
-  100%
-    -moz-transform: translateX(0)
-
-
-@keyframes cd-bounce-2-inverse
-  0%
-    opacity: 0
-    -webkit-transform: translateX(100px)
-    -moz-transform: translateX(100px)
-    -ms-transform: translateX(100px)
-    -o-transform: translateX(100px)
-    transform: translateX(100px)
-
-  60%
-    opacity: 1
-    -webkit-transform: translateX(-20px)
-    -moz-transform: translateX(-20px)
-    -ms-transform: translateX(-20px)
-    -o-transform: translateX(-20px)
-    transform: translateX(-20px)
-
-  100%
-    -webkit-transform: translateX(0)
-    -moz-transform: translateX(0)
-    -ms-transform: translateX(0)
-    -o-transform: translateX(0)
-    transform: translateX(0)
-
-
 .main__coachella 
   img 
     width: 40%
     margin: 30px auto
-  h3 
+  .coachella-heading 
     text-align: center
-    margin-bottom: 70px
+    h3
+      margin-bottom: 70px
   h1 
     font-size: 1.5rem
     background: #333
@@ -2063,6 +1831,7 @@ iframe#typeform-full
     margin: 100px auto
   .share-coachella 
     margin: 100px auto
+    text-align: center
     .btn 
       margin: 20px 10px 20px 10px
       &.facebook 
@@ -2071,6 +1840,43 @@ iframe#typeform-full
       &.twitter 
         background: $twitter
         border: 0
+  .intro 
+    margin: 50px auto
+    text-align: center
+  h2 
+    text-align: center
+    border: 3px solid $black
+    width: 220px
+    color: $black
+    display: block
+    margin: 110px auto 60px auto
+    padding: 5px
+  ol 
+    padding-left: 20px
+  li 
+    margin-bottom: 50px
+    h4 
+      font-weight: bold
+      margin-bottom: 5px
+    p 
+      margin-top: 0
+    p.sub-title 
+      color: #adadad
+    iframe 
+      margin-top: 10px
+
+  .taste
+    margin: 40px auto
+  .see
+    margin: 40px auto
+    a 
+      color: $black 
+      text-decoration: underline
+  .follow-us 
+    img 
+      width: 300px
+      margin: 0 auto 100px auto
+      display: block
 
 
 @media screen and (max-width: 768px)
@@ -2269,8 +2075,8 @@ iframe#typeform-full
       margin: 100px 0 0 0
     .main__contact, .main__apps, .main__press
       margin-top: 25px
-    .main__collections__archive
-      margin-top: 80px
+    .main__collections__archive, .main__sessions__archive
+      margin-top: 100px
     .main__mixtape
       .main__cover
         h1 

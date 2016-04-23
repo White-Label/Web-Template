@@ -1,0 +1,38 @@
+= partial 'partials/sidebar-toggle'
+= partial 'partials/sidebar-no-audio'
+= partial 'partials/apple-modal'
+= partial 'partials/android-modal'
+= partial 'partials/subscribe-modal'
+
+.main 
+     .main__video.col-9.mx-auto.mt4.mb4
+          %h1.center SESSION // 001 &mdash; NICO YARYAN 
+          .videoWrapper.videoWrapper169.js-videoWrapper
+               %iframe.videoIframe.js-videoIframe{:allowTransparency => "true", :allowfullscreen => "", "data-src" => "https://www.youtube.com/embed/HrXWMZ_Zybg?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0", :frameborder => "0", :src => ""}
+               / the poster frame - in the form of a button to make it keyboard accessible
+               %button.videoPoster.js-videoPoster{:style => "background-image:url(#{image_path("npsession_001.jpg")});"} Play video
+          .clearfix
+               .col.sm-col-12.col-md-6.mx-auto
+                    %h3.mt3.center
+                         Scribe Winery | Sonoma, California
+               .col.sm.col-12.col-md-6.mx-auto
+                    .share.center
+                         %span Share
+                         %nav
+                              %a{:href => "https://twitter.com/home?status=Watch%20Noon%20Pacific%20SESSION%20//%20001%20with%20%40Nico_Yaryan.%20Powered%20by%20%40beoplay%20%2B%20%40PourThisWine%20http%3A//bit.ly/np-session-001", :target => "_blank"}
+                                   %i.fa.fa-twitter
+                              %a.fb-share{:href => "https://www.facebook.com/sharer/sharer.php?u=http%3A//noonpacific.com/sessions/001-nico-yaryan", :target => "_blank"}
+                                   %i.fa.fa-facebook
+                              %a{:href => "https://plus.google.com/share?url=http%3A//noonpacific.com/sessions/001-nico-yaryan", :target => "_blank"}
+                                   %i.fa.fa-google
+                              %a{:href => "mailto:?&Subject=Watch%20Noon%20Pacific%20SESSION%20//%20001%20with%20Nico%20Yaryan&Body=Loving%20this%20video...%20%0A%0Ahttp%3A//noonpacific.com/sessions/001-nico-yaryan", :target => "_blank"}
+                                   %i.fa.fa-envelope
+          .clearfix 
+               .col.col-12
+                    %p.mt3
+                         We've partnered with iconic Danish audiomaker B&amp;O PLAY to bring you the very first Noon Pacific Session. A series of musical + culinary experiences to support emerging musicians and culinary creators in some of the most beautiful locations in the world.
+                    %p.mb4
+                         For Session // 001, we traveled up the coast of California with Nico Yaryan to Scribe Winery in the Sonoma Valley, where we captured an amazing and intimate performance in front of friends and family.
+               .col.col-4
+
+
