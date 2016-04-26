@@ -915,6 +915,7 @@ iframe#typeform-full
   background-position: 50% 50%
   background-size: 100% 100%
   background-size: cover
+  background: #fafafa
   text-indent: -999em
   overflow: hidden
   opacity: 1
@@ -924,6 +925,9 @@ iframe#typeform-full
   -webkit-transition-delay: 0s, 0s
   -moz-transition-delay: 0s, 0s
   transition-delay: 0s, 0s
+  -webkit-box-shadow: 2px 2px 18px -4px rgba(173,173,173,0.94)
+  -moz-box-shadow: 2px 2px 18px -4px rgba(173,173,173,0.94)
+  box-shadow: 2px 2px 18px -4px rgba(173,173,173,0.94)
   &:before
     content: ''
     position: absolute
@@ -1032,6 +1036,12 @@ iframe#typeform-full
         font-size: 20px
         &:hover
           color: #fff
+.sponsors 
+  text-align: center
+.sponsor
+  width: 75px
+  vertical-align: middle
+
 
 /*** CLUB ***/
 
@@ -1879,12 +1889,6 @@ iframe#typeform-full
       display: block
 
 
-@media screen and (max-width: 768px)
-  .main__coachella 
-    h1
-      width: 90%
-      font-size: 20px
-
 /** RESPONSIVE STUFF **/
 
 @media screen and (max-width: 768px)
@@ -1919,6 +1923,13 @@ iframe#typeform-full
             width: 80%
         .sm-col
           float: none
+  .main__coachella 
+    h1
+      width: 90%
+      font-size: 20px
+
+  .main__video.mt4
+    margin-top: 100px
 
   #mobile-logo 
     position: absolute
@@ -2006,6 +2017,24 @@ iframe#typeform-full
     // &:hover 
     //   color: #fff 
     //   background: #333
+
+  .main__video 
+    .video-location
+      float: none
+      h3 
+        font-size: 16px
+
+      
+    .share 
+      span
+        opacity: 0
+      a
+        border-radius: 0%
+        margin: 0 5px
+        color: #fff
+        font-size: 20px
+        color: #fff
+
 
   footer 
     margin-bottom: 150px
