@@ -2,13 +2,10 @@
 //= require jquery/dist/jquery.min.js
 //= require SoundManager2/script/soundmanager2.js
 //= require lib/bootstrap.min
-//= require lib/cookie
 //= require lib/slider
 //= require lib/jquery.lazyload
 //= require lib/angular.min
 //= require lib/angular-route.min
-//= require lib/micromarkdown.min
-//= require lib/modal.min
 //= require angular-collection/angular-collection.min.js
 //= require app/noonpacific
 //= require services/api-service
