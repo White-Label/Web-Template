@@ -18,12 +18,12 @@ $(function(){
   });
 
   // Lazy Load
-  setTimeout(function() {
-    $("img.lazy").lazyload({
-        threshold : 100,
-        effect : "fadeIn",
-    });
-  }, 1500);
+  // setTimeout(function() {
+  //   $("img.lazy").lazyload({
+  //       threshold : 100,
+  //       effect : "fadeIn",
+  //   });
+  // }, 1000);
 
   // volume slider
   $('.vslider').slider();

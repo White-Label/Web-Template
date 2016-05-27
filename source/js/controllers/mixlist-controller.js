@@ -13,6 +13,15 @@ angular.module('NoonPacific')
       }
     };
 
-    mixService.GetAllPlaylists();
+    var lazyLoad = function() {
+        $("img.lazy").lazyload({
+            threshold : 100,
+            effect : "fadeIn",
+        });
+    }
+
+    mixService.GetAllPlaylists().then(function(mixtapes) {
+        lazyLoad();
+    });
   }
 ]);

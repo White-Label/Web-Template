@@ -6,6 +6,7 @@
 //= require lib/jquery.lazyload
 //= require lib/angular.min
 //= require lib/angular-route.min
+//= require lib/WhiteLabel.min.js
 //= require angular-collection/angular-collection.min.js
 //= require app/noonpacific
 //= require services/api-service

@@ -6,7 +6,8 @@ angular.module('np.services').service('mixService', ['$rootScope', '$location', 
       Tracks: TrackCollection,
       PlayingMixID: null,
       PlayingTrackID: null,
-      PlayingTrack: null
+      PlayingTrack: null,
+      wl: new WhiteLabel('***REMOVED***')
     }
 
     mixService.SelectMix = function(playlistID) {
@@ -119,12 +120,12 @@ angular.module('np.services').service('mixService', ['$rootScope', '$location', 
     mixService.GetAllPlaylists = function() {
       var self = this;
 
-      return api.get('/noon-pacific/playlists/')
-      .then(function(res) {
-        self.Mixes.addAll(res.data);
-
-        return res.data
-      });
+      return this.wl.getCollectionMixtapes('weekly', {all: true, results: true})
+        .then(function(mixtapes) {
+          self.Mixes.addAll(mixtapes);
+          $rootScope.$apply();
+          return mixtapes;
+        });
     }
 
     return mixService
