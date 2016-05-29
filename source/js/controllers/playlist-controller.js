@@ -1,4 +1,4 @@
-angular.module('NoonPacific').controller('PlaylistCtrl', 
+angular.module('NoonPacific').controller('PlaylistCtrl',
   ['$rootScope', '$scope', '$q', '$routeParams', 'mixService', 'audio',
   function($rootScope, $scope, $q, $routeParams, mixService, audio) {
     $scope.mixService = mixService;
@@ -9,7 +9,7 @@ angular.module('NoonPacific').controller('PlaylistCtrl',
       var baseURL, hashtags, text, mention;
       if (track) {
         baseURL = "https://twitter.com/intent/tweet?";
-        text = encodeURIComponent("♫ Listening to " + track.title + " by " + track.artist_description + " on @noonpacific. Check out noonpacific.com");
+        text = encodeURIComponent("♫ Listening to " + track.title + " by " + track.artist + " on @noonpacific. Check out noonpacific.com");
         hashtags = "newmusic";
         return baseURL + "text=" + text + "&hashtags=" + hashtags;
       }
@@ -19,7 +19,7 @@ angular.module('NoonPacific').controller('PlaylistCtrl',
       var baseURL, hashtags, text, mention;
       if (mixService.CurrentMix) {
         baseURL = "https://twitter.com/intent/tweet?";
-        text = encodeURIComponent("♫ Listening to " + mixService.CurrentMix.name + " on @noonpacific. Check out noonpacific.com");
+        text = encodeURIComponent("♫ Listening to " + mixService.CurrentMix.title + " on @noonpacific. Check out noonpacific.com");
         hashtags = "goodmusic";
         return baseURL + "text=" + text + "&hashtags=" + hashtags;
       }
@@ -32,8 +32,8 @@ angular.module('NoonPacific').controller('PlaylistCtrl',
         baseURL = "https://www.facebook.com/dialog/feed?";
         redirect = "http://www.noonpacific.com";
         link = "http://www.noonpacific.com";
-        picture = encodeURIComponent(mixService.CurrentMix.cover_large);
-        caption = encodeURIComponent("♫ Listening to " + track.title + " by " + track.artist_description + " on @noonpacific");
+        picture = encodeURIComponent(mixService.CurrentMix.artwork_url);
+        caption = encodeURIComponent("♫ Listening to " + track.title + " by " + track.artist + " on @noonpacific");
         return baseURL + "app_id=" + appID + "&redirect_uri=" + redirect + "&link=" + link + "&picture=" + picture +"&caption=" + caption;
       }
     }
@@ -45,8 +45,8 @@ angular.module('NoonPacific').controller('PlaylistCtrl',
         baseURL = "https://www.facebook.com/dialog/feed?";
         redirect = "http://www.noonpacific.com";
         link = "http://www.noonpacific.com";
-        picture = encodeURIComponent(mixService.CurrentMix.cover_large);
-        caption = encodeURIComponent("Listening to " + mixService.CurrentMix.name + " on Noon Pacific.");
+        picture = encodeURIComponent(mixService.CurrentMix.artwork_url);
+        caption = encodeURIComponent("Listening to " + mixService.CurrentMix.title + " on Noon Pacific.");
         return baseURL + "app_id=" + appID + "&redirect_uri=" + redirect + "&link=" + link + "&picture=" + picture +"&caption=" + caption;
       }
     }
@@ -54,7 +54,7 @@ angular.module('NoonPacific').controller('PlaylistCtrl',
     $scope.amazonURL = function(track) {
     var baseUrl, searchStr;
     if (track) {
-      searchStr = encodeURIComponent(track.artist_description + " " + track.title);
+      searchStr = encodeURIComponent(track.artist + " " + track.title);
       baseUrl = "https://www.amazon.com/s/?_encoding=UTF8&camp=1789&creative=390957&linkCode=ur2&tag=noonpaci-20&url=search-alias%3Ddigital-music&field-keywords=";
       return baseUrl + searchStr;
     }

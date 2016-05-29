@@ -3,22 +3,22 @@ directory_index: false
 ---
 <div class="main__mixtape clearfix">
   <div class="main__cover left animatedLong fadeIn">
-    <img class="" ng-click="PlayPauseClick()" ng-src="{{mixService.CurrentMix.cover_large}}" src="/img/grey.jpg"/>
+    <img class="" ng-click="PlayPauseClick()" ng-src="{{mixService.CurrentMix.artwork_url}}" src="/img/grey.jpg"/>
     <div class="cover__description center" ng-controller="AudioCtrl">
-      <h1 ng-bind="mixService.CurrentMix.name" class="mb0"></h1>
+      <h1 ng-bind="mixService.CurrentMix.title" class="mb0"></h1>
       <a href="" ng-click="PlayPauseClick()">
            <i class="fa fa-play my3" ng-class="{'fa-play': audio.state !== 'playing', 'fa-pause': audio.state !== 'stopped'}"></i>
       </a>
-      <div ng-if="mixService.CurrentMix.cover_description != null" class="attribution">
-            <p class="mt0">Cover by: <a href="{{mixService.CurrentMix.cover_url}}" target="_blank"><span ng-bind="mixService.CurrentMix.cover_description"></span></a></p>
+      <div ng-if="mixService.CurrentMix.artwork_credit != null" class="attribution">
+            <p class="mt0">Cover by: <a href="{{mixService.CurrentMix.artwork_url}}" target="_blank"><span ng-bind="mixService.CurrentMix.artwork_credit"></span></a></p>
           </div>
     </div>
   </div>
   <div class="main__tracklist left">
     <ol>
-      <li ng-repeat="track in mixService.CurrentMix.Tracks.array" ng-class="{true: 'current-track', false: ''}[track.track_id === mixService.PlayingTrackID]" class="animatedLong fadeIn">
+      <li ng-repeat="track in mixService.CurrentMix.Tracks.array" ng-class="{true: 'current-track', false: ''}[track.id === mixService.PlayingTrackID]" class="animatedLong fadeIn">
 
-        <div class="main__track-social" ng-show="track.track_id === mixService.PlayingTrackID">
+        <div class="main__track-social" ng-show="track.id === mixService.PlayingTrackID">
           <div class="dropdown">
             <div class="dropdown-text" data-toggle="dropdown">
               <img src="/img/social.svg" alt="Share This Song"/>
@@ -50,7 +50,7 @@ directory_index: false
                 </a>
               </li>
               <li>
-                <a href="{{track.soundcloud_permalink_url}}" target="_blank" alt="Listen on Soundcloud">
+                <a href="{{track.permalink_url}}" target="_blank" alt="Listen on Soundcloud">
                   <div class="clearfix">
                     <div class="left">
                       <i class="fa fa-soundcloud"></i>
@@ -79,7 +79,7 @@ directory_index: false
         <div href="" ng-click="PlayTrack(track)">
           <div class="main__track-info">
             <p class="song m0">{{track.title}}</p>
-            <p class="artist m0">{{track.artist_description}}</p>
+            <p class="artist m0">{{track.artist}}</p>
           </div>
         </div>
       </li>

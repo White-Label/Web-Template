@@ -3,7 +3,7 @@
           .audio-player__artist
                %p.m0.truncate(ng-bind="currentTrack.title")
           .audio-player__song.mt0
-               %p.m0.grey.truncate(ng-bind="currentTrack.artist_description")
+               %p.m0.grey.truncate(ng-bind="currentTrack.artist")
      .audio-player__controls.center.mt1.mb2
           .audio-player__volume.inline-block
                %i.fa.fa-volume-up(ng-click="show=!show")

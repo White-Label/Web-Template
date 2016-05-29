@@ -13,7 +13,7 @@
                .audio-player__artist.animatedMed.fadeIn
                     %p.m0.truncate(ng-bind="currentTrack.title")
                .audio-player__song.mt0.animatedMed.fadeIn
-                    %p.m0.grey.truncate(ng-bind="currentTrack.artist_description")
+                    %p.m0.grey.truncate(ng-bind="currentTrack.artist")
           .audio-player__controls.center.mt3.mb3
                .audio-player__volume.inline-block
                     %i.fa.fa-volume-up(ng-click="show=!show")

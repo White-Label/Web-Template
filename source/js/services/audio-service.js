@@ -67,15 +67,15 @@ angular.module('np.services').service('audio', ['$http', '$rootScope', 'mixServi
         currentTrack.destruct();
       }
 
-      var url = song.soundcloud_stream_url + '?client_id=***REMOVED***';
+      var url = song.stream_url + '?client_id=***REMOVED***';
       currentTrack = soundManager.createSound({
-        id: song.track_id,
+        id: song.id,
         url: url,
         consumer_key: '***REMOVED***',
         whileplaying: progress
       });
       soundManager.setVolume(currentTrack.id, $rootScope.volume);
-      mixService.SetPlaying(song.playlist_id, song);
+      mixService.SetPlaying(mixService.CurrentMix.id, song);
       currentTrack.play();
       $('.play-mix-button').toggle();
     }

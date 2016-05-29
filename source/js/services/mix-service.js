@@ -1,5 +1,5 @@
-angular.module('np.services').service('mixService', ['$rootScope', '$location', '$q', 'api', 'MixCollection', 'TrackCollection',
-  function($rootScope, $location, $q, api, MixCollection, TrackCollection) {
+angular.module('np.services').service('mixService', ['$rootScope', '$location', '$q', 'MixCollection', 'TrackCollection',
+  function($rootScope, $location, $q, MixCollection, TrackCollection) {
     var mixService = {
       Mixes: MixCollection,
       CurrentMixID: null,
@@ -18,7 +18,7 @@ angular.module('np.services').service('mixService', ['$rootScope', '$location', 
       .then(function(mix) {
         self.CurrentMix = mix;
         self.CurrentMixID = mix.id;
-        return self.GetMixTracks(mix.id);
+        return self.GetMixTracks(mix);
       });
 
       return deferred.promise;
@@ -33,17 +33,15 @@ angular.module('np.services').service('mixService', ['$rootScope', '$location', 
         deferred.resolve(mix);
       }
 
-      var url = '/noon-pacific/playlists/current/'
-      if (mixID) {
-        this.CurrentMixID = mixID;
-        url = '/noon-pacific/playlists/' + mixID + '/';
+      // TODO
+      if (!mixID) {
+        mixID = 287;
       }
 
-      return api.get(url)
-      .then(function(res) {
-        self.Mixes.add(res.data);
-        return self.Mixes.get(res.data.id);
-      })
+      return this.wl.getMixtape(mixID).then(function(mixtape) {
+        self.Mixes.add(mixtape);
+        return self.Mixes.get(mixtape.id);
+      });
 
       return deferred.promise;
     }
@@ -52,21 +50,24 @@ angular.module('np.services').service('mixService', ['$rootScope', '$location', 
       return this.Mixes.get(this.PlayingMixID);
     }
 
-    mixService.GetMixTracks = function(mixID) {
+    mixService.GetMixTracks = function(mix) {
       var deferred = $q.defer();
       var self = this;
 
-      var mix = this.Mixes.get(mixID);
+      var mix = this.Mixes.get(mix.id);
       if (!mix.Tracks) {
-        api.get('/noon-pacific/playlists/' + mixID + '/tracks/?detail=true')
-        .then(function(res) {
-          self.Mixes.AddTracks(mixID, res.data);
-          deferred.resolve(self.Mixes.get(mixID));
+        var slug = mix.slug;
+
+        // TODO
+        if (mix.id > 251) slug = 251;
+
+        this.wl.getMixtapeTracks(slug, {results: true}).then(function(tracks) {
+          self.Mixes.AddTracks(mix.id, tracks);
+          deferred.resolve(self.Mixes.get(mix.id));
         }).then(function() {
           self.GetFirstTrack();
         });
-      }
-      else {
+      } else {
         deferred.resolve(mix);
       }
 
@@ -76,7 +77,7 @@ angular.module('np.services').service('mixService', ['$rootScope', '$location', 
     mixService.GetFirstTrack = function() {
       track = this.CurrentMix.Tracks.at(0);
       $rootScope.currentTrack = track;
-      mixService.PlayingTrackID = track.track_id;
+      mixService.PlayingTrackID = track.id;
       $rootScope.play();
       return track;
     }
@@ -89,12 +90,12 @@ angular.module('np.services').service('mixService', ['$rootScope', '$location', 
 
       if (!track) {
         var mix = this.Mixes.MoveUpDownMix(this.PlayingMixID, increment*-1);
-        self.GetMixTracks(mix.id)
+        self.GetMixTracks(mix)
         .then(function(mix) {
-          deferred.resolve(mix.Tracks.at(0));
           self.CurrentMix = mix;
           self.CurrentMixID = mix.id;
-        })
+          deferred.resolve(mix.Tracks.at(0));
+        });
       }
       else {
         deferred.resolve(track);
@@ -113,7 +114,7 @@ angular.module('np.services').service('mixService', ['$rootScope', '$location', 
 
     mixService.SetPlaying = function(mixID, track) {
       $rootScope.currentTrack = track;
-      mixService.PlayingTrackID = track.track_id;
+      mixService.PlayingTrackID = track.id;
       mixService.PlayingMixID = mixID;
     }
 
