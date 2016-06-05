@@ -3,7 +3,10 @@ angular.module('NoonPacific').controller('PlaylistCtrl',
   function($rootScope, $scope, $q, $routeParams, mixService, audio) {
     $scope.mixService = mixService;
 
-    $scope.mixService.SelectMix($routeParams.mixID);
+    $scope.mixService.SelectMix($routeParams.mixID).then(function(mix) {
+        var track = $scope.mixService.getTrackFromSlug($routeParams.trackSlug);
+        if (track) $scope.PlayTrack(track);
+    });
 
     $scope.tweetSong = function(track) {
       var baseURL, hashtags, text, mention;

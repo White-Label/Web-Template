@@ -10,9 +10,13 @@ NoonPacific.config(['$routeProvider', '$httpProvider',
     .when('/mix/:mixID', {
       controller: 'PlaylistCtrl',
       templateUrl: '/views/playlist.html'
+    })
+    .when('/mix/:mixID/track/:trackSlug', {
+      controller: 'PlaylistCtrl',
+      templateUrl: '/views/playlist.html'
     });
   }
-  ]);
+]);
 
 NoonPacific.run(['$rootScope', 'audio', function($rootScope, audio) {
   $rootScope.currentTrack = null;

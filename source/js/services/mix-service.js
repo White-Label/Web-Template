@@ -11,17 +11,14 @@ angular.module('np.services').service('mixService', ['$rootScope', '$location', 
     }
 
     mixService.SelectMix = function(playlistID) {
-      var deferred = $q.defer();
       var self = this;
 
-      this.GetMix(playlistID)
+      return this.GetMix(playlistID)
       .then(function(mix) {
         self.CurrentMix = mix;
         self.CurrentMixID = mix.id;
         return self.GetMixTracks(mix);
       });
-
-      return deferred.promise;
     }
 
     mixService.GetMix = function(mixID) {
@@ -35,7 +32,7 @@ angular.module('np.services').service('mixService', ['$rootScope', '$location', 
 
       // TODO
       if (!mixID) {
-        mixID = 287;
+        mixID = 296;
       }
 
       return this.wl.getMixtape(mixID).then(function(mixtape) {
@@ -72,6 +69,15 @@ angular.module('np.services').service('mixService', ['$rootScope', '$location', 
       }
 
       return deferred.promise;
+    }
+
+    // Returns track obj from slug
+    // Searches current mixtape
+    mixService.getTrackFromSlug = function(slug) {
+        var matchingTracks = this.CurrentMix.Tracks.array.filter(function(t) {
+            return t.slug === slug;
+        });
+        return matchingTracks.length === 0 ? null : matchingTracks[0];
     }
 
     mixService.GetFirstTrack = function() {
