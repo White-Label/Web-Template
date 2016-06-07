@@ -1,5 +1,5 @@
-angular.module('np.services').service('audio', ['$http', '$rootScope', 'mixService',
-  function($http, $rootScope, mixService) {
+angular.module('np.services').service('audio', ['$http', '$rootScope', '$location', 'mixService',
+  function($http, $rootScope, $location, mixService) {
 
     var constant = {
       STOPPED: 'stopped',
@@ -78,6 +78,9 @@ angular.module('np.services').service('audio', ['$http', '$rootScope', 'mixServi
       mixService.SetPlaying(mixService.CurrentMix.id, song);
       currentTrack.play();
       $('.play-mix-button').toggle();
+
+      // Change the url to match the song
+      $location.path(mixService.CurrentCollection + '/' + mixService.CurrentMix.slug + '/' + song.slug, false);
     }
 
     Audio.PlayNextSong = function() {

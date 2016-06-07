@@ -11,7 +11,7 @@ angular.module('np.services')
       if (this.length === 0) { return; }
 
       var number = this.get(mixID).id
-      return this.GetPlaylistNumber(id + amount);
+      return this.GetPlaylistNumber(number + amount);
     };
 
     MixCollection.AddTracks = function(mixID, rawTracks) {

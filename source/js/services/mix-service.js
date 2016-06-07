@@ -55,9 +55,6 @@ angular.module('np.services').service('mixService', ['$rootScope', '$location', 
       if (!mix.Tracks) {
         var slug = mix.slug;
 
-        // TODO
-        if (mix.id > 251) slug = 251;
-
         this.wl.getMixtapeTracks(slug, {results: true}).then(function(tracks) {
           self.Mixes.AddTracks(mix.id, tracks);
           deferred.resolve(self.Mixes.get(mix.id));
@@ -124,10 +121,11 @@ angular.module('np.services').service('mixService', ['$rootScope', '$location', 
       mixService.PlayingMixID = mixID;
     }
 
-    mixService.GetAllPlaylists = function() {
+    mixService.GetAllPlaylists = function(collection) {
+      collection = collection || 'weekly';
       var self = this;
-
-      return this.wl.getCollectionMixtapes('weekly', {all: true, results: true})
+      mixService.CurrentCollection = collection;
+      return this.wl.getCollectionMixtapes(collection, {all: true, results: true})
         .then(function(mixtapes) {
           self.Mixes.addAll(mixtapes);
           $rootScope.$apply();

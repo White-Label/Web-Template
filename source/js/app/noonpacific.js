@@ -1,27 +1,45 @@
 var NoonPacific = angular.module('NoonPacific', ['ngRoute', 'np.services']);
 
-NoonPacific.config(['$routeProvider', '$httpProvider',
-  function($routeProvider) {
+NoonPacific.config(['$routeProvider', '$locationProvider', '$httpProvider',
+  function($routeProvider, $locationProvider) {
     $routeProvider
     .when('/', {
       controller: 'PlaylistCtrl',
       templateUrl: '/views/playlist.html',
     })
-    .when('/mix/:mixID', {
+    .when('/:collection', {
       controller: 'PlaylistCtrl',
       templateUrl: '/views/playlist.html'
-    })
-    .when('/mix/:mixID/track/:trackSlug', {
+    }).when('/:collection/:mix', {
+      controller: 'PlaylistCtrl',
+      templateUrl: '/views/playlist.html'
+    }).when('/:collection/:mix/:track', {
       controller: 'PlaylistCtrl',
       templateUrl: '/views/playlist.html'
     });
+    // $locationProvider.html5Mode(true);
   }
 ]);
 
-NoonPacific.run(['$rootScope', 'audio', function($rootScope, audio) {
+NoonPacific.run(['$rootScope', '$route', '$location', 'audio', function($rootScope, $route, $location, audio) {
   $rootScope.currentTrack = null;
   $rootScope.fresh = true;
   $rootScope.volume = 100;
+
+  // Little trick to add option to prevent reload on path change
+  // http://joelsaupe.com/programming/angularjs-change-path-without-reloading/
+  var original = $location.path;
+  $location.path = function (path, reload) {
+    if (reload === undefined) reload = true;
+    if (reload === false) {
+      var lastRoute = $route.current;
+      var un = $rootScope.$on('$locationChangeSuccess', function () {
+        $route.current = lastRoute;
+        un();
+      });
+    }
+    return original.apply($location, [path]);
+  };
 
   $rootScope.play = function() {
     if(!$rootScope.fresh) {

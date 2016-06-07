@@ -1,10 +1,10 @@
 angular.module('NoonPacific').controller('PlaylistCtrl',
-  ['$rootScope', '$scope', '$q', '$routeParams', 'mixService', 'audio',
-  function($rootScope, $scope, $q, $routeParams, mixService, audio) {
+  ['$rootScope', '$scope', '$location', '$q', '$routeParams', 'mixService', 'audio',
+  function($rootScope, $scope, $location, $q, $routeParams, mixService, audio) {
     $scope.mixService = mixService;
 
-    $scope.mixService.SelectMix($routeParams.mixID).then(function(mix) {
-        var track = $scope.mixService.getTrackFromSlug($routeParams.trackSlug);
+    $scope.mixService.SelectMix($routeParams.mix).then(function(mix) {
+        var track = $scope.mixService.getTrackFromSlug($routeParams.track);
         if (track) $scope.PlayTrack(track);
     });
 

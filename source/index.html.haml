@@ -11,7 +11,7 @@
      .main__archive.ng-cloak.animatedLong.fadeIn
           %ul.main__archive-grid{"ng-controller" => "MixListCtrl"}
                %li.currentMix.mix{"ng-repeat" => "mix in Mix.Mixes.array"}
-                    %a{"data-content" => "{{mix.title}}", :href => "#/mix/{{mix.id}}", "ng-class" => "{'mixtapes': true, 'playing': mix.id === Mix.PlayingMixID}"}
+                    %a{"data-content" => "{{mix.title}}", :href => "#/{{Mix.CurrentCollection}}/{{mix.slug}}", "ng-class" => "{'mixtapes': true, 'playing': mix.id === Mix.PlayingMixID}"}
                          %img.lazy.animated.fadeIn{:alt => "{{mix.title}}", "data-original" => "{{mix.artwork_url}}?h=250&w=250", :height => "250", :src => "/img/grey.jpg", :width => "250"}
 
 = partial 'partials/mobile-player'

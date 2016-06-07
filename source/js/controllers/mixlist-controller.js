@@ -1,6 +1,6 @@
 angular.module('NoonPacific')
-.controller('MixListCtrl', ['$scope', '$location', 'mixService', 'audio',
-  function($scope, $location, mixService, audio) {
+.controller('MixListCtrl', ['$scope', '$location', '$routeParams', 'mixService', 'audio',
+  function($scope, $location, $routeParams, mixService, audio) {
     $scope.audio = audio;
     $scope.MixList = null;
     $scope.Mix = mixService;
@@ -20,8 +20,10 @@ angular.module('NoonPacific')
         });
     }
 
-    mixService.GetAllPlaylists().then(function(mixtapes) {
-        lazyLoad();
+    $scope.$on('$routeChangeSuccess', function() {
+        mixService.GetAllPlaylists($routeParams.collection).then(function(mixtapes) {
+            lazyLoad();
+        });
     });
   }
 ]);
