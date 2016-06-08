@@ -133,6 +133,7 @@ GEM
     rack (1.6.4)
     rack-livereload (0.3.16)
       rack
+    rack-rewrite (1.5.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rb-fsevent (0.9.6)
@@ -172,5 +173,9 @@ DEPENDENCIES
   middleman (~> 3.4.0)
   middleman-livereload (~> 3.1.0)
   middleman-s3_sync
+  rack-rewrite (~> 1.5.0)
   tzinfo-data
   wdm (~> 0.1.0)
+
+BUNDLED WITH
+   1.12.4

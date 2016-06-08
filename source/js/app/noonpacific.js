@@ -17,7 +17,7 @@ NoonPacific.config(['$routeProvider', '$locationProvider', '$httpProvider',
       controller: 'PlaylistCtrl',
       templateUrl: '/views/playlist.html'
     });
-    // $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
   }
 ]);
 
