@@ -92,7 +92,7 @@ angular.module('np.services').service('mixService', ['$rootScope', '$location', 
       var track = this.GetPlayingMix().Tracks.MoveUpDownSong(trackID, increment);
 
       if (!track) {
-        var mix = this.Mixes.MoveUpDownMix(this.PlayingMixID, increment*-1);
+        var mix = this.Mixes.MoveUpDownMix(this.CurrentMix, increment);
         self.GetMixTracks(mix)
         .then(function(mix) {
           self.CurrentMix = mix;

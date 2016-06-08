@@ -7,11 +7,15 @@ angular.module('np.services')
       return _.findWhere(MixCollection.array, {slug: playlistNumber});
     };
 
-    MixCollection.MoveUpDownMix = function(mixID, amount) {
+    MixCollection.MoveUpDownMix = function(mix, amount) {
       if (this.length === 0) { return; }
 
-      var number = this.get(mixID).id
-      return this.GetPlaylistNumber(number + amount);
+      var number = this.array.indexOf(mix) + amount;
+      if (number >= 0 && number < this.array.length) {
+        return this.array[number];
+      } else {
+        return null;
+      }
     };
 
     MixCollection.AddTracks = function(mixID, rawTracks) {
