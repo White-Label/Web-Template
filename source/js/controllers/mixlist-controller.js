@@ -1,6 +1,6 @@
 angular.module('NoonPacific')
-.controller('MixListCtrl', ['$scope', '$location', '$routeParams', 'mixService', 'audio',
-  function($scope, $location, $routeParams, mixService, audio) {
+.controller('MixListCtrl', ['$scope', '$location', '$routeParams', 'GENERAL_CONFIG', 'mixService', 'audio',
+  function($scope, $location, $routeParams, Config, mixService, audio) {
     $scope.audio = audio;
     $scope.MixList = null;
     $scope.Mix = mixService;

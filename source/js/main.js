@@ -17,3 +17,4 @@
 //= require controllers/mixlist-controller
 //= require controllers/audio-controller
 //= require app/misc
+//= require app/config

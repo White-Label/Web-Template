@@ -1,5 +1,6 @@
-angular.module('np.services').service('mixService', ['$rootScope', '$location', '$q', 'MixCollection', 'TrackCollection',
-  function($rootScope, $location, $q, MixCollection, TrackCollection) {
+angular.module('np.services')
+.service('mixService', ['$rootScope', '$location', '$q', 'GENERAL_CONFIG', 'MixCollection', 'TrackCollection',
+  function($rootScope, $location, $q, Config, MixCollection, TrackCollection) {
     var mixService = {
       Mixes: MixCollection,
       CurrentMixID: null,
@@ -7,7 +8,7 @@ angular.module('np.services').service('mixService', ['$rootScope', '$location', 
       PlayingMixID: null,
       PlayingTrackID: null,
       PlayingTrack: null,
-      wl: new WhiteLabel('***REMOVED***')
+      wl: new WhiteLabel(Config.WHITE_LABEL_TOKEN)
     }
 
     mixService.SelectMix = function(playlistID) {
@@ -122,7 +123,7 @@ angular.module('np.services').service('mixService', ['$rootScope', '$location', 
     }
 
     mixService.GetAllPlaylists = function(collection) {
-      collection = collection || 'weekly';
+      collection = collection || Config.DEFAULT_COLLECTION;
       var self = this;
       mixService.CurrentCollection = collection;
       return this.wl.getCollectionMixtapes(collection, {all: true, results: true})

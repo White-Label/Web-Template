@@ -1,7 +1,8 @@
-var NoonPacific = angular.module('NoonPacific', ['ngRoute', 'np.services']);
 
-NoonPacific.config(['$routeProvider', '$locationProvider', '$httpProvider',
-  function($routeProvider, $locationProvider) {
+var NoonPacific = angular.module('NoonPacific', ['ngRoute', 'np.config', 'np.services']);
+
+NoonPacific.config(['$routeProvider', '$locationProvider', '$httpProvider', 'GENERAL_CONFIG',
+  function($routeProvider, $locationProvider, $httpProvider, Config) {
     $routeProvider
     .when('/', {
       controller: 'PlaylistCtrl',
@@ -17,7 +18,7 @@ NoonPacific.config(['$routeProvider', '$locationProvider', '$httpProvider',
       controller: 'PlaylistCtrl',
       templateUrl: '/views/playlist.html'
     });
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(Config.HTML_5_MODE);
   }
 ]);
 
