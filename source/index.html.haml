@@ -1,19 +1,18 @@
-= partial 'partials/sidebar-toggle'
-= partial 'partials/sidebar'
-
 .main
+     .logo.col-5.mx-auto.mt4
+          %a{href: "/"}
+               %img.fit{alt: "Noon Pacific", src: "#{image_path("white_label_logo.svg")}"}
+          %h2.center White Label Template
 
      %ng-view
 
-     .main__archive-hint.ng-cloak.animated.fadeIn
-          %p.m0.grey.animated.fadeIn archive
-          %i.fa.fa-angle-down.grey.animated.fadeIn
      .main__archive.ng-cloak.animatedLong.fadeIn
           %ul.main__archive-grid{"ng-controller" => "MixListCtrl"}
                %li.currentMix.mix{"ng-repeat" => "mix in Mix.Mixes.array"}
-                    %a{"data-content" => "{{mix.title}}", :href => "#/{{Mix.CurrentCollection}}/{{mix.slug}}", "ng-class" => "{'mixtapes': true, 'playing': mix.id === Mix.PlayingMixID}"}
+                    %a{:href => "#/{{Mix.CurrentCollection}}/{{mix.slug}}", "ng-class" => "{'mixtapes': true, 'playing': mix.id === Mix.PlayingMixID}"}
                          %img.lazy.animated.fadeIn{:alt => "{{mix.title}}", "data-original" => "{{mix.artwork_url}}?h=250&w=250", :height => "250", :src => "/img/grey.jpg", :width => "250"}
+                         %span {{mix.title}}
 
-= partial 'partials/mobile-player'
+= partial 'partials/footer-player'
 = partial 'partials/footer'
 

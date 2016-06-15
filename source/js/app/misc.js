@@ -17,21 +17,7 @@ $(function(){
     $('body, html').animate({scrollTop: "0px"}, 700);
   });
 
-  // Lazy Load
-  // setTimeout(function() {
-  //   $("img.lazy").lazyload({
-  //       threshold : 100,
-  //       effect : "fadeIn",
-  //   });
-  // }, 1000);
-
   // volume slider
   $('.vslider').slider();
 
-});
-
-
-/** Active link checker **/
-$(function() {
-  $('.sidebar__nav a[href$="/' + location.pathname.split("/")[1] + '"]').addClass('active');
 });

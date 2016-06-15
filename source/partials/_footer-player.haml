@@ -1,13 +1,4 @@
-.sidebar.clearfix
-     .logo.col-3.mx-auto.mt4
-          %a{href: "/"}
-               %img.fit{alt: "Noon Pacific", src: "#{image_path("noonpacific.svg")}"}
-     / .sidebar__nav
-     /      %ul.list-reset.center
-     /           %li
-     /                %a{href: "/"}
-     /                     mixtapes
-
+.footer-player
      .audio-player{'ng-controller' => 'AudioCtrl'}
           .audio-player__track-info.center.ng-cloak
                .audio-player__artist.animatedMed.fadeIn

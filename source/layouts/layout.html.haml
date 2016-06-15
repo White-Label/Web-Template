@@ -7,7 +7,7 @@
 /[if !IE]>
 %html
     -# <![endif]
-    %head{prefix: "og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# noon-pacific: http://ogp.me/ns/noon-pacific#"}
+    %head
         %title WHITE LABEL TEMPLATE
         %base{href: "/"}
         %link{:href => "", :rel => "canonical"}
@@ -50,10 +50,9 @@
         -# Stylesheets
         = stylesheet_link_tag 'main'
         = stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'
+        = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Open+Sans'
 
         %body{"ng-app" => "NoonPacific"}
-            / .announcement.fixed.top-0.left-0.right-0.p1.center
-            /     Announcement 
             = yield
 
         %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"}
@@ -69,5 +68,5 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-            ga('create', 'UA-34584471-1', 'auto');
+            ga('create', 'XX-XXXXXXXX-X', 'auto');
             ga('send', 'pageview');

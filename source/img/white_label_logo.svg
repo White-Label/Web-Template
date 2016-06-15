@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="330px" height="330px" viewBox="0 0 330 330" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
-    <title>white_label_logo</title>
+<svg width="145px" height="145px" viewBox="0 0 145 145" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.1 (29687) - http://www.bohemiancoding.com/sketch -->
+    <title>white_label_logo-68392916</title>
     <desc>Created with Sketch.</desc>
-    <defs>
-        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
-            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="12" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0.252099277   0 0 0 0 0.252099277   0 0 0 0 0.252099277  0 0 0 0.35 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
-            <feMerge>
-                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
-                <feMergeNode in="SourceGraphic"></feMergeNode>
-            </feMerge>
-        </filter>
-    </defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="white_label_logo" sketch:type="MSArtboardGroup" fill="#FFFFFF">
-            <g sketch:type="MSLayerGroup" transform="translate(35.000000, 35.000000)">
-                <g id="Group" filter="url(#filter-1)" sketch:type="MSShapeGroup">
-                    <g id="Shape">
-                        <path d="M129.25,0.657 C58.73,0.827 0.747,58.862 0.686,129.789 C0.625,201.352 58.463,259.322 129.948,259.345 C200.349,259.421 260.203,202.37 259.304,128.276 C258.441,57.068 200.165,0.486 129.25,0.657 L129.25,0.657 Z M130.387,179.224 C103.383,179.638 81.13,157.714 80.767,130.339 C80.409,103.314 102.326,81.125 129.723,80.775 C156.74,80.43 178.934,102.398 179.234,129.78 C179.529,156.707 157.697,178.805 130.387,179.224 L130.387,179.224 Z M86.953,129.767 C87.09,105.866 106.373,86.839 130.358,86.938 C154.183,87.037 173.165,106.392 173.047,130.466 C172.93,154.203 153.612,173.178 129.68,173.062 C105.971,172.947 86.817,153.538 86.953,129.767 L86.953,129.767 Z M156.865,129.618 C156.639,113.81 143.456,102.645 129.198,103.148 C114.338,103.673 102.58,116.16 103.17,130.596 C103.787,145.688 116.238,157.493 130.883,156.87 C145.66,156.241 157.471,143.853 156.865,129.618 L156.865,129.618 Z"></path>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-1" transform="translate(-58.000000, -86.000000)" stroke-width="2" stroke="#3863FF" fill="#FFFFFF">
+            <g id="white_label_logo-68392916" transform="translate(59.000000, 87.000000)">
+                <g id="Artboard-1">
+                    <g id="white_label_logo">
+                        <g id="Group">
+                            <g id="Shape">
+                                <path d="M70.8638434,0.36135 C32.1998725,0.45485 0.409557377,32.3741 0.376112933,71.38395 C0.342668488,110.7436 32.0534845,142.6271 71.2465355,142.63975 C109.845262,142.68155 142.66139,111.3035 142.168495,70.5518 C141.695339,31.3874 109.744381,0.2673 70.8638434,0.36135 L70.8638434,0.36135 L70.8638434,0.36135 L70.8638434,0.36135 Z M47.6736849,71.37185 C47.7487978,58.2263 58.3210801,47.76145 71.471326,47.8159 C84.5338488,47.87035 94.941102,58.5156 94.8764062,71.7563 C94.8122587,84.81165 84.2207869,95.2479 71.0995993,95.1841 C58.1006758,95.12085 47.5991202,84.4459 47.6736849,71.37185 L47.6736849,71.37185 L47.6736849,71.37185 L47.6736849,71.37185 Z M86.0043078,71.2899 C85.8803989,62.5955 78.652561,56.45475 70.8353333,56.7314 C62.6880474,57.02015 56.2414936,63.888 56.5649727,71.8278 C56.903255,80.1284 63.7297596,86.62115 71.7591676,86.2785 C79.8609472,85.93255 86.3365592,79.11915 86.0043078,71.2899 L86.0043078,71.2899 L86.0043078,71.2899 L86.0043078,71.2899 Z"></path>
+                            </g>
+                        </g>
                     </g>
                 </g>
-                <path d="M179.234,129.779 C179.528,156.707 157.697,178.805 130.387,179.224 C103.383,179.638 81.13,157.714 80.767,130.339 C80.409,103.314 102.326,81.125 129.723,80.775 C156.74,80.429 178.935,102.397 179.234,129.779 L179.234,129.779 Z M86.921,129.763 C86.785,153.535 105.938,172.943 129.648,173.058 C153.58,173.174 172.898,154.2 173.015,130.462 C173.134,106.388 154.151,87.033 130.326,86.934 C106.341,86.835 87.058,105.862 86.921,129.763 L86.921,129.763 Z" id="Shape" opacity="0.6" sketch:type="MSShapeGroup"></path>
             </g>
         </g>
     </g>
