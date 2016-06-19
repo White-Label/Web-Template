@@ -86,6 +86,7 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
+# Required to use html5mode locally
 middleman_sitemap = sitemap
 use Rack::Rewrite do
   rewrite %r{^[^.]*$}, -> (_, rack_env) do
