@@ -8,7 +8,7 @@
 //= require lib/angular-route.min
 //= require lib/WhiteLabel.min.js
 //= require angular-collection/angular-collection.min.js
-//= require app/noonpacific
+//= require app/app
 //= require services/api-service
 //= require services/audio-service
 //= require services/mix-service

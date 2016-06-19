@@ -1,4 +1,4 @@
-angular.module('np.services').service('audio', ['$http', '$rootScope', '$location', 'GENERAL_CONFIG', 'mixService',
+angular.module('app.services').service('audio', ['$http', '$rootScope', '$location', 'GENERAL_CONFIG', 'mixService',
   function($http, $rootScope, $location, Config, mixService) {
 
     var constant = {

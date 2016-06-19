@@ -1,4 +1,4 @@
-angular.module('np.services')
+angular.module('app.services')
 .service('mixService', ['$rootScope', '$location', '$q', 'GENERAL_CONFIG', 'MixCollection', 'TrackCollection',
   function($rootScope, $location, $q, Config, MixCollection, TrackCollection) {
     var mixService = {

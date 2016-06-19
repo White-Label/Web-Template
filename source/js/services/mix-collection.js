@@ -1,4 +1,4 @@
-angular.module('np.services')
+angular.module('app.services')
 .service('MixCollection', ['$collection', 'TrackCollection',
   function($collection, TrackCollection) {
     var MixCollection = $collection.getInstance({comparator: '-release'});

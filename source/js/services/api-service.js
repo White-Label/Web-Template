@@ -1,12 +1,10 @@
-angular.module('np.services', ['ngCollection']);
-angular.module('np.services').service('api', ['$http',
+angular.module('app.services', ['ngCollection']);
+angular.module('app.services').service('api', ['$http',
     function($http) {
 
         function request(config) {
 
             config.headers = config.headers || {};
-            //config.headers['Client-ID'] = 'kyoLKwkERixYf8Zotk3YFoacsvXXM';
-            config.url = 'https://api.colormyx.com/v1' + config.url;
 
             return $http(config);
         }
@@ -44,8 +42,6 @@ angular.module('np.services').service('api', ['$http',
                 method: 'DELETE'
             }));
         }
-
-
 
         return request;
     }

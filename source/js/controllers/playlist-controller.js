@@ -1,4 +1,4 @@
-angular.module('NoonPacific').controller('PlaylistCtrl',
+angular.module('App').controller('PlaylistCtrl',
   ['$rootScope', '$scope', '$location', '$q', '$routeParams', 'mixService', 'audio',
   function($rootScope, $scope, $location, $q, $routeParams, mixService, audio) {
     $scope.mixService = mixService;

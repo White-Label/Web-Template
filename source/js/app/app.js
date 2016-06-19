@@ -1,7 +1,7 @@
 
-var NoonPacific = angular.module('NoonPacific', ['ngRoute', 'np.config', 'np.services']);
+var App = angular.module('App', ['ngRoute', 'app.config', 'app.services']);
 
-NoonPacific.config(['$routeProvider', '$locationProvider', '$httpProvider', 'GENERAL_CONFIG',
+App.config(['$routeProvider', '$locationProvider', '$httpProvider', 'GENERAL_CONFIG',
   function($routeProvider, $locationProvider, $httpProvider, Config) {
     $routeProvider
     .when('/', {
@@ -22,7 +22,7 @@ NoonPacific.config(['$routeProvider', '$locationProvider', '$httpProvider', 'GEN
   }
 ]);
 
-NoonPacific.run(['$rootScope', '$route', '$location', 'audio', function($rootScope, $route, $location, audio) {
+App.run(['$rootScope', '$route', '$location', 'audio', function($rootScope, $route, $location, audio) {
   $rootScope.currentTrack = null;
   $rootScope.fresh = true;
   $rootScope.volume = 100;
@@ -51,7 +51,7 @@ NoonPacific.run(['$rootScope', '$route', '$location', 'audio', function($rootSco
   };
 }]);
 
-function NoonPacific($scope, $location, $window) {
+function App($scope, $location, $window) {
   $scope.$on('$viewContentLoaded', function(event) {
     $window.ga('send', 'pageview', { page: $location.url() });
   });

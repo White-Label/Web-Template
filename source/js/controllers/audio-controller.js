@@ -1,9 +1,9 @@
-angular.module('NoonPacific')
+angular.module('App')
 .controller('AudioCtrl', ['$rootScope', '$scope', '$document', 'audio',
   function($rootScope, $scope, $document, audio) {
     $scope.audio = audio;
     $scope.muteActive = false;
-    
+
 
     $scope.playing = function() {
       if($rootScope.currentTrack) {
