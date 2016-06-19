@@ -37,16 +37,9 @@ angular.module('np.services')
       }
       return deferred.promise;
 
-      // This should never happen
       if (!mixID) {
         deferred.resolve();
       }
-
-      return this.wl.getMixtape(mixID).then(function(mixtape) {
-        self.Mixes.add(mixtape);
-        return self.Mixes.get(mixtape.id);
-      });
-
       return deferred.promise;
     }
 

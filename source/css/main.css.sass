@@ -1,85 +1,76 @@
 @import "normalize"
 @import "slider"
 @import "animate"
-
-$black: #333
-$grey: #adadad
-$white: #fff
-$facebook: #3b5998
-$twitter: #55acee
-$soundcloud: #ff8800
-$instagram: #3f729b
-$amazon: #FF9900 
-$spotify: #24CF5F
+@import "_variables"
 
 /************ GLOBAL STYLES *************/
 *
   box-sizing: border-box
 
-html, body 
+html, body
   height: 100%
 
 html, button, input, select, textarea
-  color: #333
+  color: $text
 
 body
   font-size: 1em
   line-height: 1.4
-  font-family: 'Open Sans', sans-serif
+  font-family: $font
   font-size-adjust: 0.508
   font-weight: normal
   font-style: normal
-  color: #333
-  margin: 0 
+  color: $text
+  margin: 0
   padding: 0
 
-h1 
+h1
   font-size-adjust: 0.508
-  font-family: 'Open Sans', sans-serif
+  font-family: $font
   font-weight: bold
   font-style: normal
   font-size: 2em
 
 h3
   font-size-adjust: 0.5
-  font-family: 'Open Sans', sans-serif
+  font-family: $font
   font-weight: normal
   font-style: normal
   font-size: 1em
 
 p
   font-size-adjust: 0.508
-  font-family: 'Open Sans', sans-serif
+  font-family: $font
   font-weight: normal
   font-style: normal
 
-a 
+a
   color: #000
-  font-family: 'Open Sans', sans-serif
+  font-family: $font
   text-decoration: none
   transition: 0.3s all
 
 ::-moz-selection, ::selection
-  background: #333
+  background: $text
   text-shadow: none
 
-.active 
-  color: #333
+.active
+  color: $text
 
 .grey
-  color: #adadad
+  color: $grey
 
-.truncate 
+.truncate
   width: 100%
   white-space: nowrap
   overflow: hidden
   text-overflow: ellipsis
 
-.logo 
+.logo
   margin-bottom: 50px
-  img 
+  img
     max-width: 75px
-    margin: 0 auto 
+    margin: 0 auto
     display: block
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak
@@ -91,11 +82,11 @@ a
 .wrapper
   width: 100%
 
-.footer-player 
+.footer-player
   position: fixed
   bottom: 0
-  height: 100px 
-  background: #fff 
+  height: 100px
+  background: $footer
   width: 100%
   z-index: 9999
 
@@ -108,20 +99,20 @@ a
   padding: 100px
 
 
-footer 
+footer
   padding: 20px 0
   ul
     a
-      color: #adadad
-      &.active 
-        color: #333
-      &:hover 
-        color: #333
+      color: $grey
+      &.active
+        color: $text
+      &:hover
+        color: $text
 
 
 .audio-player
   position: absolute
-  background: #fff
+  background: $player
   bottom: 0
   height: 125px
   width: 100%
@@ -134,18 +125,18 @@ footer
 
   .audio-player__controls
     position: relative
-    margin: 0 auto 
+    margin: 0 auto
     width: 200px
     .fa-play, .fa-pause
       vertical-align: sub
       font-size: 28px
-    .audio-player__share 
+    .audio-player__share
       display: none
 
   #progress-bar
     width: 100%
     background: #e0e0e0
-    height: 5px  
+    height: 5px
     bottom: 0
     position: absolute
 
@@ -155,7 +146,7 @@ footer
     position: absolute
     top: 0px
     z-index: 999
-    background: #adadad
+    background: $grey
 
   // volume
   .volume
@@ -178,31 +169,31 @@ footer
       margin-top: 20px
       width: 45.5%
       position: relative
-      img 
+      img
         width: 550px
         max-width: 100%
 
     .main__tracklist
       margin-top: 20px
       width: 54.5%
-      ol 
+      ol
         margin-top: 0
         position: relative
         z-index: 1
         > li
           > div
             display: block
-          margin-bottom: 17px  
-          margin-left: 50px 
-          
+          margin-bottom: 17px
+          margin-left: 50px
+
           position: relative
-        
+
         li.current-track
           color: #3863FF
-        p 
+        p
           font-size: 14px
 
-        .main__track-info 
+        .main__track-info
           margin-left: 40px
 
         .main__track-info
@@ -210,16 +201,16 @@ footer
 
         .song, .artist
           cursor: pointer
-        .artist 
-          color: #adadad
-        
+        .artist
+          color: $grey
+
 
   .main__archive
     .main__archive-grid
       list-style: none
       padding: 0
-      display: flex 
-      flex-wrap: wrap 
+      display: flex
+      flex-wrap: wrap
       align-content: flex-start
       justify-content: space-between
       text-align: center
@@ -245,9 +236,9 @@ footer
             opacity: 0
           img[data-original]
             opacity: 1
-          img 
+          img
             opacity: 1
-  
+
     .mixtapes
       position: relative
       cursor: pointer
@@ -270,34 +261,34 @@ footer
 /** RESPONSIVE STUFF **/
 
 @media screen and (max-width: 768px)
-    
-  .main 
-    .main__mixtape 
-      .main__cover 
+
+  .main
+    .main__mixtape
+      .main__cover
         margin: 80px auto 0 auto
-        img 
+        img
           max-width: 90%
-      .main__tracklist 
-        ol 
+      .main__tracklist
+        ol
           .main__track-social
             margin-right: 10px
-            .dropdown-content 
+            .dropdown-content
               right: 8px
-  footer 
+  footer
     margin-bottom: 150px
     ul
       li
         display: block !important
         margin: 20px auto
 
-@media screen and (max-width: 1235px)   
-  .main 
-    .main__mixtape 
-      .main__cover 
+@media screen and (max-width: 1235px)
+  .main
+    .main__mixtape
+      .main__cover
         margin-top: 100px
         width: 90%
         float: none
-        img 
+        img
           display: block
           margin: 0 auto
       .main__tracklist
@@ -306,9 +297,9 @@ footer
         clear: both
 
 @media screen and (min-width: 768px) and (max-width: 1235px)
-  .main 
+  .main
     .main__mixtape
-      .main__cover 
+      .main__cover
         margin-top: 50px
 
 
