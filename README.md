@@ -58,14 +58,14 @@ Noon-Pacific-Web-WL/
     js/
       app/
       controllers/
-      lib/ # Third party dependencies
+      lib/
       services/
-      vendor/ # jQuery and Modenizer
+      vendor/
     layouts/
     partials/
     views/
-  Gemfile # Defines Ruby dependencies
-  package.json # Defines JavaScript dependencies
+  Gemfile
+  package.json
 ```
 
 All of the source files for the website are located in `source/`.
