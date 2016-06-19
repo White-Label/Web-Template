@@ -12,6 +12,8 @@
   },
   "devDependencies": {},
   "scripts": {
+    "dev": "bundle exec middleman",
+    "build": "bundle exec middleman build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
