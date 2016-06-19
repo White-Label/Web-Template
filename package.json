@@ -1,0 +1,51 @@
+{
+  "name": "white-label-template",
+  "version": "1.0.0",
+  "description": "A starter website to use with the White Label API",
+  "main": "index.js",
+  "dependencies": {
+    "angular-collection": "^0.5.1",
+    "jquery-lazyload": "^1.9.5",
+    "soundmanager2": "^2.97.20140901",
+    "jquery": "^2.1.3",
+    "underscore": "^1.8.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoonPacific/Noon-Pacific-Web-WL.git"
+  },
+  "keywords": [
+    "white",
+    "label",
+    "white",
+    "label",
+    "noon",
+    "pacific",
+    "template",
+    "api",
+    "angular"
+  ],
+  "contributors": [
+    {
+      "name": "Jake Runzer",
+      "url": "https://github.com/coffee-cup"
+    },
+    {
+      "name": "Clark Dinnison",
+      "url": "https://github.com/cdinnison"
+    },
+    {
+      "name": "Alex Givens",
+      "url": "https://github.com/AlexGivens"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NoonPacific/Noon-Pacific-Web-WL/issues"
+  },
+  "homepage": "https://github.com/NoonPacific/Noon-Pacific-Web-WL#readme"
+}
