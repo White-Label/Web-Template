@@ -61,9 +61,9 @@ Noon-Pacific-Web-WL/
       lib/ # Third party dependencies
       services/
       vendor/ # jQuery and Modenizer
-      layouts/
-      partials/
-      views/
+    layouts/
+    partials/
+    views/
   Gemfile # Defines Ruby dependencies
   package.json # Defines JavaScript dependencies
 ```
