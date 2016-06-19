@@ -26,7 +26,6 @@ angular.module('np.services')
       var deferred = $q.defer();
       var self = this;
 
-      console.log('fetching mix for id ' + mixID);
       var mix = this.Mixes.GetPlaylistNumber(mixID);
       if (mix) {
         deferred.resolve(mix);

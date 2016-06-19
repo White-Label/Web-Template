@@ -9,7 +9,6 @@ angular.module('NoonPacific').controller('PlaylistCtrl',
             if (track) $scope.PlayTrack(track);
         });
     }
-    console.log('playlist controller');
     $rootScope.$on('AllPlaylists', function(event) {
         selectMix($routeParams.mix, $routeParams.track);
     });
