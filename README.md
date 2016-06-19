@@ -36,7 +36,7 @@ Now that you have Ruby, Node, API keys, and the template downloaded, you are rea
 1. Open a terminal and navigate to the cloned repo. `cd Noon-Pacific-Web-WL`
 2. Install all Node dependencies. `npm install`
 3. Install all Ruby dependencies. `bundle install`
-4. Open `source/js/app/config.js` in your favorite editor and replace '`YOUR_WHITE_LABEL_CLIENT_ID_HERE` and `YOUR_SOUNDCLOUD_CLIENT_ID_HERE` ' with your White Label and Souncloud client id's respectively.
+4. Open `source/js/app/config.js` in your favorite editor and replace `YOUR_WHITE_LABEL_CLIENT_ID_HERE` and `YOUR_SOUNDCLOUD_CLIENT_ID_HERE` with your White Label and Souncloud client id's respectively.
 5. Replace `YOUR_DEFAULT_COLLECTION_HERE` with the collection you want to load when you visit the root of the website. `http://YOUR_DOMAIN_NAME/`
 6. Run the website locally with the command `npm run dev`.
 7. Open [localhost:4567](http://localhost:4567) in a browser. You should see default collection mixtapes and be able to play tracks right in the browser.
@@ -54,40 +54,21 @@ Noon-Pacific-Web-WL/
   node_modules/
   source/
     css/
-      main.css.sass # Main layout for the website
-      _variables.sass # Colours and fonts
     img/
     js/
       app/
-        config.js # Website configuration
-        misc.js
-        noonpacific.js # Main Angular applicaiton
       controllers/
-        audio-controller.js # Controls playback of tracks
-        mixlist-controller.js # Controls grid of mixtapes
-        playlist-controller # Controllers currently playing mixtape and track
-        lib/ # Third party dependencies
-        services/
-          api-service.js # Service to make api calls
-          audio-service.js # Communicates with Soundcloud to stream audio
-          mix-collection.js # Angular collection for mixtapes and tracks
-          mix-service.js # Communicates with the White Label API
-        vendor/ # jQuery and Modenizer
-        main.js # Requires all JavaScript files
+      lib/ # Third party dependencies
+      services/
+      vendor/ # jQuery and Modenizer
       layouts/
-        layout.html.haml # Head of html
       partials/
-        _footer-player.haml
-        _footer.haml
       views/
-        playlist.html # View for currently playing mixtape and tracks
-      404.html
-      index.html.haml # View for grid of mixtapes
   Gemfile # Defines Ruby dependencies
   package.json # Defines JavaScript dependencies
 ```
 
-The main files you may want to edit have a comment beside them. As you can see, all of the source files for the website are located in `source/`.
+All of the source files for the website are located in `source/`.
 
 - `source/js/app`
   + Main Angular app and configuration
@@ -117,6 +98,22 @@ $font: 'Taviraj', serif
 
 All main colours can be found in `source/css/_variables.sass` and edited to match your brand.
 
+```sass
+$black: #333
+$grey: #adadad
+$white: #fff
+$facebook: #3b5998
+$twitter: #55acee
+$soundcloud: #ff8800
+$instagram: #3f729b
+$amazon: #FF9900
+$spotify: #24CF5F
+
+$text: $black
+$footer: $white
+$player: $white
+```
+
 ##### Layout
 
 The css for the main page layout is in `source/css/main.css.sass`
@@ -145,9 +142,9 @@ If you do not already have a server setup and ready to use, an easy to get your 
 
 ## JavaScript Library
 
-If you do not want to use the Angular template, or want to incorporate White Label into your already existing website, there is a JavaScript library you can use to easily communicate with the White Label API, without having to worry about Network requests or pagination.
+If you do not want to use the Angular template, or want to incorporate White Label into your already existing website, there is a JavaScript library you can use to easily communicate with the White Label API. This way you do not have to worry about Network requests or pagination.
 
-The library can be downloaded from [here]() and added to your website through a `<script>` tag.
+The library [can be downloaded from here](https://raw.githubusercontent.com/NoonPacific/White-Label-JS/master/lib/WhiteLabel.min.js?token=AC519TUaE8deF_cKY94Qudv--3LhEB9Dks5Xb0iVwA%3D%3D) and added to your website through a `<script>` tag.
 
 ```html
 <script src="WhiteLabel.min.js"></script>
