@@ -1,5 +1,5 @@
-angular.module('np.services').service('audio', ['$http', '$rootScope', '$location', 'mixService',
-  function($http, $rootScope, $location, mixService) {
+angular.module('np.services').service('audio', ['$http', '$rootScope', '$location', 'GENERAL_CONFIG', 'mixService',
+  function($http, $rootScope, $location, Config, mixService) {
 
     var constant = {
       STOPPED: 'stopped',
@@ -67,11 +67,11 @@ angular.module('np.services').service('audio', ['$http', '$rootScope', '$locatio
         currentTrack.destruct();
       }
 
-      var url = song.stream_url + '?client_id=***REMOVED***';
+      var url = song.stream_url + '?client_id=' + Config.SOUNDCLOUD_CLIENT_ID;
       currentTrack = soundManager.createSound({
         id: song.id,
         url: url,
-        consumer_key: '***REMOVED***',
+        consumer_key: Config.SOUNDCLOUD_CLIENT_ID,
         whileplaying: progress
       });
       soundManager.setVolume(currentTrack.id, $rootScope.volume);

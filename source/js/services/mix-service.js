@@ -8,7 +8,7 @@ angular.module('np.services')
       PlayingMixID: null,
       PlayingTrackID: null,
       PlayingTrack: null,
-      wl: new WhiteLabel(Config.WHITE_LABEL_TOKEN)
+      wl: new WhiteLabel(Config.WHITE_LABEL_CLIENT_ID)
     }
 
     mixService.SelectMix = function(playlistID) {
@@ -26,14 +26,21 @@ angular.module('np.services')
       var deferred = $q.defer();
       var self = this;
 
-      var mix = this.Mixes.get(mixID);
+      console.log('fetching mix for id ' + mixID);
+      var mix = this.Mixes.GetPlaylistNumber(mixID);
       if (mix) {
         deferred.resolve(mix);
       }
 
-      // TODO
+
+      if (!mixID && this.Mixes.array.length > 0) {
+        deferred.resolve(this.Mixes.array[0]);
+      }
+      return deferred.promise;
+
+      // This should never happen
       if (!mixID) {
-        mixID = 296;
+        deferred.resolve();
       }
 
       return this.wl.getMixtape(mixID).then(function(mixtape) {

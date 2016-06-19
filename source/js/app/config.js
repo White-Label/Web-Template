@@ -4,7 +4,8 @@ var config_data = {
     'GENERAL_CONFIG': {
         'APP_NAME': 'Noon Pacific',
         'APP_VERSION': '1.0',
-        'WHITE_LABEL_TOKEN': '***REMOVED***',
+        'WHITE_LABEL_CLIENT_ID': '***REMOVED***',
+        'SOUNDCLOUD_CLIENT_ID': '***REMOVED***',
         'HTML_5_MODE': false,
         'DEFAULT_COLLECTION': 'weekly'
     }

@@ -3,9 +3,19 @@ angular.module('NoonPacific').controller('PlaylistCtrl',
   function($rootScope, $scope, $location, $q, $routeParams, mixService, audio) {
     $scope.mixService = mixService;
 
-    $scope.mixService.SelectMix($routeParams.mix).then(function(mix) {
-        var track = $scope.mixService.getTrackFromSlug($routeParams.track);
-        if (track) $scope.PlayTrack(track);
+    var selectMix = function(mixSlug, trackSlug) {
+        $scope.mixService.SelectMix(mixSlug).then(function(mix) {
+            var track = $scope.mixService.getTrackFromSlug(trackSlug);
+            if (track) $scope.PlayTrack(track);
+        });
+    }
+    console.log('playlist controller');
+    $rootScope.$on('AllPlaylists', function(event) {
+        selectMix($routeParams.mix, $routeParams.track);
+    });
+
+    $rootScope.$on('MixChanged', function(event, mix) {
+      selectMix(mix.slug)
     });
 
     $scope.tweetSong = function(track) {
@@ -55,12 +65,12 @@ angular.module('NoonPacific').controller('PlaylistCtrl',
     }
 
     $scope.amazonURL = function(track) {
-    var baseUrl, searchStr;
-    if (track) {
-      searchStr = encodeURIComponent(track.artist + " " + track.title);
-      baseUrl = "https://www.amazon.com/s/?_encoding=UTF8&camp=1789&creative=390957&linkCode=ur2&tag=noonpaci-20&url=search-alias%3Ddigital-music&field-keywords=";
-      return baseUrl + searchStr;
-    }
+      var baseUrl, searchStr;
+      if (track) {
+        searchStr = encodeURIComponent(track.artist + " " + track.title);
+        baseUrl = "https://www.amazon.com/s/?_encoding=UTF8&camp=1789&creative=390957&linkCode=ur2&tag=noonpaci-20&url=search-alias%3Ddigital-music&field-keywords=";
+        return baseUrl + searchStr;
+      }
     };
 
     $scope.PlayTrack = function(song) {
