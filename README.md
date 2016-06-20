@@ -13,7 +13,7 @@ Before we start, you need to have a few things already installed, Ruby and NodeJ
 
 1. Ruby is a programming language which runs Middleman, the static site generator we use. Download and install the latest version of Ruby for your platform by following the instructions [here](https://www.ruby-lang.org/en/documentation/installation/). Once you have Ruby set up, install the Ruby dependency manager bundler with `gem install bundler`.
 2. NodeJS is a way to run JavaScript code locally. We use Node and its package manager, npm, to install some frontend dependencies. Download and install the latest stable release of NodeJS [here](https://nodejs.org/en/download/).
-3. Clone this repo by running the following command in a terminal. `git clone https://github.com/NoonPacific/Noon-Pacific-Web-WL.git`.
+3. Clone this repo by running the following command in a terminal. `git clone https://github.com/NoonPacific/White-Label-Web-Template`.
 
 ### API Keys
 
@@ -33,7 +33,7 @@ A Soundcloud API key is needed to play your mixtape tracks in the browser. You c
 
 Now that you have Ruby, Node, API keys, and the template downloaded, you are ready to start running the website locally.
 
-1. Open a terminal and navigate to the cloned repo. `cd Noon-Pacific-Web-WL`
+1. Open a terminal and navigate to the cloned repo. `cd White-Label-Web-Template`
 2. Install all Node dependencies. `npm install`
 3. Install all Ruby dependencies. `bundle install`
 4. Open `source/js/app/config.js` in your favorite editor and replace `YOUR_WHITE_LABEL_CLIENT_ID_HERE` and `YOUR_SOUNDCLOUD_CLIENT_ID_HERE` with your White Label and Soundcloud client id's respectively.
@@ -50,7 +50,7 @@ This template is only meant to serve as a starting point for your website. We en
 Before we start to customize your website, let's first go over how the project is structured.
 
 ```
-Noon-Pacific-Web-WL/
+White-Label-Web-Template/
   node_modules/
   source/
     css/
@@ -90,8 +90,8 @@ To change the logo that appears at the top of the website, simply replace `sourc
 [Google fonts](https://fonts.google.com) are open source and really easy to setup in this template. To change the font, open `source/css/_variables.sass` and edit these lines to your desired font.
 
 ```sass
-@import 'https://fonts.googleapis.com/css?family=Taviraj'
-$font: 'Taviraj', serif
+@import 'https://fonts.googleapis.com/css?family=Open+Sans'
+$font: 'Open Sans', serif
 ```
 
 ##### Colours
