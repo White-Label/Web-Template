@@ -1,7 +1,7 @@
 
 # Getting Started Guide
 
-Welcome to the getting start guide for the White Label website template. This guide and repo is meant to serve as a simple and easy way for you to get a up website up and running connected to the White Label and Soundcloud API.
+Welcome to the getting start guide for the White Label website template. This guide and repo is meant to serve as a simple and easy way for you to get a website up and running connected to the White Label and Soundcloud API. 
 
 ## Template
 
@@ -9,9 +9,9 @@ This open source template is a [Middleman](https://middlemanapp.com/) web app wh
 
 ### Installation
 
-Before we start, you need to have a few things already installed, Ruby and NodeJS. If you already have these you are free to skip to step 3. 
+Before we start, you need to have a few things already installed, Ruby and NodeJS. If you already have these, feel free to skip to step 3. 
 
-1. Ruby is a programming language which runs Middleman, the static site generator we use. Download and install the latest version of Ruby for you platform by following the instructions [here](https://www.ruby-lang.org/en/documentation/installation/). Once you have ruby setup, install the Ruby dependency manager bundler with `gem install bundler`.
+1. Ruby is a programming language which runs Middleman, the static site generator we use. Download and install the latest version of Ruby for your platform by following the instructions [here](https://www.ruby-lang.org/en/documentation/installation/). Once you have Ruby set up, install the Ruby dependency manager bundler with `gem install bundler`.
 2. NodeJS is a way to run JavaScript code locally. We use Node and its package manager, npm, to install some frontend dependencies. Download and install the latest stable release of NodeJS [here](https://nodejs.org/en/download/).
 3. Clone this repo by running the following command in a terminal. `git clone https://github.com/NoonPacific/Noon-Pacific-Web-WL.git`.
 
@@ -21,11 +21,11 @@ This template requires you to have 2 API keys, White Label and Soundcloud.
 
 #### White Label
 
-The White Label API is key is used to connect to the White Label server to fetch your collections, mixtapes, and tracks. If you do not already have a WL client id, [please sign up](http://beta.whitelabel.cool/dashboard/join/).
+The White Label API key is needed to connect to the White Label server to fetch your collections, mixtapes, and tracks. If you do not already have a WL client id, [please sign up](http://beta.whitelabel.cool/dashboard/join/).
 
 #### Soundcloud
 
-A Soundcloud API key is used to play your mixtape tracks in the browser. You can get a Soundcloud API key by [registering a new application](http://soundcloud.com/you/apps/). You will need the _*Client ID*_.
+A Soundcloud API key is needed to play your mixtape tracks in the browser. You can get a Soundcloud API key by [registering a new application](http://soundcloud.com/you/apps/). You will need the _*Client ID*_.
 
 ![Souncloud Client ID](http://i.imgur.com/yYbd0Y4.png)
 
@@ -36,18 +36,18 @@ Now that you have Ruby, Node, API keys, and the template downloaded, you are rea
 1. Open a terminal and navigate to the cloned repo. `cd Noon-Pacific-Web-WL`
 2. Install all Node dependencies. `npm install`
 3. Install all Ruby dependencies. `bundle install`
-4. Open `source/js/app/config.js` in your favorite editor and replace `YOUR_WHITE_LABEL_CLIENT_ID_HERE` and `YOUR_SOUNDCLOUD_CLIENT_ID_HERE` with your White Label and Souncloud client id's respectively.
-5. Replace `YOUR_DEFAULT_COLLECTION_HERE` with the collection you want to load when you visit the root of the website. `http://YOUR_DOMAIN_NAME/`
+4. Open `source/js/app/config.js` in your favorite editor and replace `YOUR_WHITE_LABEL_CLIENT_ID_HERE` and `YOUR_SOUNDCLOUD_CLIENT_ID_HERE` with your White Label and Soundcloud client id's respectively.
+5. Replace `YOUR_DEFAULT_COLLECTION_HERE` with the White Label collection you want to load when you visit the root of the website. `http://YOUR_DOMAIN_NAME/`
 6. Run the website locally with the command `npm run dev`.
-7. Open [localhost:4567](http://localhost:4567) in a browser. You should see default collection mixtapes and be able to play tracks right in the browser.
+7. Open [localhost:4567](http://localhost:4567) in a browser. You should see the default collection mixtapes and be able to play tracks right in the browser.
 
 ### Customization
 
-This template is only meant to serve as a starting point for your website. We encourage you to dig around and customize anything you want.
+This template is only meant to serve as a starting point for your website. We encourage you to dig around and customize anything you want. Create something rad, then [email us](mailto:api@noonpacific.com) and we'll help promote it.
 
 #### Project Structure
 
-Before we start to customize your website, lets first go over how the project is structured.
+Before we start to customize your website, let's first go over how the project is structured.
 
 ```
 Noon-Pacific-Web-WL/
@@ -146,9 +146,9 @@ Now if you have `HTML_5_MODE` set to `true`, you will need to copy the `index.ht
 
 ## JavaScript Library
 
-If you do not want to use the Angular template, or want to incorporate White Label into your already existing website, there is a JavaScript library you can use to easily communicate with the White Label API. This way you do not have to worry about Network requests or pagination.
+If you do not want to use the Angular template, or want to incorporate White Label into your already existing website, there is a JavaScript library you can use to easily communicate with the White Label API. This way you do not have to worry about network requests or pagination.
 
-The library [can be downloaded from here](https://raw.githubusercontent.com/NoonPacific/White-Label-JS/master/lib/WhiteLabel.min.js?token=AC519TUaE8deF_cKY94Qudv--3LhEB9Dks5Xb0iVwA%3D%3D) and added to your website through a `<script>` tag.
+The library [can be downloaded here](https://raw.githubusercontent.com/NoonPacific/White-Label-JS/master/lib/WhiteLabel.min.js?token=AC519TUaE8deF_cKY94Qudv--3LhEB9Dks5Xb0iVwA%3D%3D) and added to your website through a `<script>` tag.
 
 ```html
 <script src="WhiteLabel.min.js"></script>
