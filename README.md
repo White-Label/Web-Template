@@ -135,6 +135,10 @@ To build the website for production, run `npm run build`. This will minify all J
 
 If you do not already have a server setup and ready to use, an easy way to get your website online so the world can listen to your mixtapes, is by using a service called [surge.sh](). The free tier of Surge allows you serve static websites with a custom domain and free SSL. If that doesn't already sound amazing, it is also ridiculously easy to setup.
 
+Now if you have `HTML_5_MODE` set to `true`, you will need to copy the `index.html` file to `200.html`. This ensures the Angular router picks up on all url paths.
+
+`cp build/index.html build/200.html`
+
 1. Install surge globally. `npm i -g surge`
 2. Run `surge -p build` and follow the steps to register/login and choose a domain name.
 
