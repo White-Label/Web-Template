@@ -70,11 +70,11 @@ Noon-Pacific-Web-WL/
 
 All of the source files for the website are located in `source/`.
 
-- `source/js/app`
+- `source/js/app/`
   + Main Angular app and configuration
-- `source/js/controllers`
+- `source/js/controllers/`
   + Angular controllers and logic to manage playback of audio, grid of mixtapes, and the currently playing mixtape and tracks
-- `source/js/services`
+- `source/js/services/`
   + Angular collections and services to communicate with the network and pull in data.
 
 The most important file is arguably `mix-service.js`. This service uses your `CLIENT_ID` to communicate with the White Label API to fetch your collections, mixtapes, and tracks.
@@ -133,7 +133,7 @@ To build the website for production, run `npm run build`. This will minify all J
 
 #### Surge
 
-If you do not already have a server setup and ready to use, an easy to get your website online so the world can listen to your mixtapes, is by using a service called [surge.sh](). The free tier of Surge allows you serve static websites with a custom domain and free SSL. If that doesn't already sound amazing, it is also ridiculously easy to setup.
+If you do not already have a server setup and ready to use, an easy way to get your website online so the world can listen to your mixtapes, is by using a service called [surge.sh](). The free tier of Surge allows you serve static websites with a custom domain and free SSL. If that doesn't already sound amazing, it is also ridiculously easy to setup.
 
 1. Install surge globally. `npm i -g surge`
 2. Run `surge -p build` and follow the steps to register/login and choose a domain name.
