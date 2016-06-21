@@ -58,8 +58,6 @@ angular.module('app.services')
         this.wl.getMixtapeTracks(slug, {results: true}).then(function(tracks) {
           self.Mixes.AddTracks(mix.id, tracks);
           deferred.resolve(self.Mixes.get(mix.id));
-        }).then(function() {
-          self.GetFirstTrack();
         });
       } else {
         deferred.resolve(mix);
