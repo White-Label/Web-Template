@@ -144,7 +144,7 @@ Now if you have `HTML_5_MODE` set to `true`, you will need to copy the `index.ht
 1. Install surge globally. `npm i -g surge`
 2. Run `surge -p build` and follow the steps to register/login and choose a domain name.
 
-[An example of the template running on surge](http://whitelabel-template.surge.sh/)
+[An example of the template running on surge](http://white-label-template.surge.sh/)
 
 ## JavaScript Library
 
