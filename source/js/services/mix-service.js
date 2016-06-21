@@ -136,6 +136,17 @@ angular.module('app.services')
         });
     }
 
+    mixService.GetTrackURL = function(collection, mixtape, track) {
+      if (!collection) collection = this.CurrentCollection;
+      if (!mixtape) mixtape = this.CurrentMix.slug;
+      var pathArray = location.href.split( '/' );
+      var protocol = pathArray[0];
+      var host = pathArray[2];
+      var url = protocol + '//' + host + '/';
+      if (!Config.HTML_5_MODE) url += '#/';
+      return url + collection + '/' + mixtape + '/' + track;
+    }
+
     return mixService
   }
-  ]);
+]);
