@@ -3,6 +3,8 @@
 
 Welcome to the getting start guide for the White Label website template. This guide and repo is meant to serve as a simple and easy way for you to get a website up and running connected to the White Label and Soundcloud APIs. 
 
+**This template is currently in Alpha and under active development. Feel free to contribute with any optimizations/features/bug fixes via pull request**
+
 ## Template
 
 This open source template is a [Middleman](https://middlemanapp.com/) web app which uses the AngularJS framework. It comes configured with a live reloading development environment and a way to build a static website for production. This guide will show you how to quickly connect the website to the White Label API using your _client id_ and play your mixtape tracks through Soundcloud.
