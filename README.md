@@ -23,6 +23,8 @@ This template requires you to have 2 API keys, White Label and Soundcloud.
 
 The White Label API key is needed to connect to the White Label server to fetch your collections, mixtapes, and tracks. If you do not already have a WL client id, [please sign up](http://beta.whitelabel.cool/dashboard/join/).
 
+[White Label API Documentation](http://whitelabel.cool/docs)
+
 #### Soundcloud
 
 A Soundcloud API key is needed to play your mixtape tracks in the browser. You can get a Soundcloud API key by [registering a new application](http://soundcloud.com/you/apps/). You will need the _*Client ID*_.
