@@ -3,7 +3,7 @@
 
 Welcome to the getting start guide for the White Label website template. This guide and repo is meant to serve as a simple and easy way for you to get a website up and running connected to the White Label and Soundcloud APIs. 
 
-**This template is currently in Alpha and under active development. Feel free to contribute with any optimizations/features/bug fixes via pull request**
+**This template is currently in Alpha and under active development. Feel free to contribute with any optimizations/features/bug fixes via pull request.**
 
 ## Template
 
