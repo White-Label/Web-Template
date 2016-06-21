@@ -1,7 +1,7 @@
 
 # Getting Started Guide
 
-Welcome to the getting start guide for the White Label website template. This guide and repo is meant to serve as a simple and easy way for you to get a website up and running connected to the White Label and Soundcloud API. 
+Welcome to the getting start guide for the White Label website template. This guide and repo is meant to serve as a simple and easy way for you to get a website up and running connected to the White Label and Soundcloud APIs. 
 
 ## Template
 
@@ -13,7 +13,7 @@ Before we start, you need to have a few things already installed, Ruby and NodeJ
 
 1. Ruby is a programming language which runs Middleman, the static site generator we use. Download and install the latest version of Ruby for your platform by following the instructions [here](https://www.ruby-lang.org/en/documentation/installation/). Once you have Ruby set up, install the Ruby dependency manager bundler with `gem install bundler`.
 2. NodeJS is a way to run JavaScript code locally. We use Node and its package manager, npm, to install some frontend dependencies. Download and install the latest stable release of NodeJS [here](https://nodejs.org/en/download/).
-3. Clone this repo by running the following command in a terminal. `git clone https://github.com/NoonPacific/White-Label-Web-Template`.
+3. Clone this repo by running the following command in a terminal. `git clone https://github.com/NoonPacific/White-Label-Web-Template.git`.
 
 ### API Keys
 
@@ -102,6 +102,8 @@ All main colours can be found in `source/css/_variables.sass` and edited to matc
 $black: #333
 $grey: #adadad
 $white: #fff
+$selected: #3863FF
+
 $facebook: #3b5998
 $twitter: #55acee
 $soundcloud: #ff8800
