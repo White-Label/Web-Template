@@ -86,5 +86,9 @@ angular.module('App').controller('PlaylistCtrl',
     $scope.PlayPauseClick = function() {
       audio.TogglePlayState();
     };
+
+    $scope.Shuffle = function(shouldShuffle) {
+        $scope.mixService.Shuffle = shouldShuffle;
+    }
   }
 ]);

@@ -4,6 +4,11 @@ directory_index: false
 <div class="main__mixtape clearfix">
   <div class="main__cover left animatedLong fadeIn">
     <img class="" ng-click="PlayPauseClick()" ng-src="{{mixService.CurrentMix.artwork_url}}" src="/img/grey.jpg"/>
+    <p class="shuffle">
+        Shuffle:
+        <span class="pointer" ng-class="{selected: mixService.Shuffle}" ng-click="Shuffle(true)">On</span> /
+        <span class="pointer" ng-class="{selected: !mixService.Shuffle}" ng-click="Shuffle(false)">Off</span>
+    </p>
   </div>
   <div class="main__tracklist left">
     <ol>

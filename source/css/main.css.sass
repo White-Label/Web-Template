@@ -66,6 +66,9 @@ a
   overflow: hidden
   text-overflow: ellipsis
 
+.pointer
+  cursor: pointer
+
 .logo
   margin-bottom: 50px
   img
@@ -189,7 +192,7 @@ footer
           position: relative
 
         li.current-track
-          color: #3863FF
+          color: $selected
         p
           font-size: 14px
 
@@ -257,6 +260,12 @@ footer
         width: 250px
         height: 250px
 
+/** SHUFFLE */
+.shuffle
+  span
+    color: lightgray
+  .selected
+    color: $selected
 
 /** RESPONSIVE STUFF **/
 
@@ -291,6 +300,8 @@ footer
         img
           display: block
           margin: 0 auto
+        .shuffle
+          margin-left: 1rem
       .main__tracklist
         margin-top: 6%
         width: 90%

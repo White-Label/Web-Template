@@ -18,6 +18,14 @@ angular.module('app.services')
       }
     };
 
+    MixCollection.GetRandomMix = function() {
+      if (this.array.length > 0) {
+        return this.array[Math.floor(Math.random() * this.array.length)];
+      } else {
+        return null;
+      }
+    };
+
     MixCollection.AddTracks = function(mixID, rawTracks) {
       tracks = TrackCollection.Init(rawTracks);
       this.update({id: mixID, Tracks: tracks});

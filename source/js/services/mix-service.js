@@ -90,7 +90,12 @@ angular.module('app.services')
       var track = this.GetPlayingMix().Tracks.MoveUpDownSong(trackID, increment);
 
       if (!track) {
-        var mix = this.Mixes.MoveUpDownMix(this.CurrentMix, increment);
+        var mix;
+        if (this.Shuffle) {
+          mix = this.Mixes.GetRandomMix();
+        } else {
+          mix = this.Mixes.MoveUpDownMix(this.CurrentMix, increment);
+        }
         self.GetMixTracks(mix)
         .then(function(mix) {
           self.CurrentMix = mix;
