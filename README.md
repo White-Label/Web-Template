@@ -157,7 +157,7 @@ If you do not want to use the Angular template, or want to incorporate White Lab
 The library [can be downloaded here](https://raw.githubusercontent.com/NoonPacific/White-Label-JS/master/lib/whitelabel.min.js?token=AC519Rk8Ddna52N3zw7kB7zY73G24LVDks5XjamrwA%3D%3D) and added to your website through a `<script>` tag.
 
 ```html
-<script src="whiteLabel.min.js"></script>
+<script src="whitelabel.min.js"></script>
 ```
 
 This will expose the global class `WhiteLabel`. After the page has been loaded, initialize an instance providing your White Label **client id**.
