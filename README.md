@@ -154,10 +154,10 @@ Now if you have `HTML_5_MODE` set to `true`, you will need to copy the `index.ht
 
 If you do not want to use the Angular template, or want to incorporate White Label into your already existing website, there is a JavaScript library you can use to easily communicate with the White Label API. This way you do not have to worry about network requests or pagination.
 
-The library [can be downloaded here](https://raw.githubusercontent.com/NoonPacific/White-Label-JS/master/lib/WhiteLabel.min.js?token=AC519TUaE8deF_cKY94Qudv--3LhEB9Dks5Xb0iVwA%3D%3D) and added to your website through a `<script>` tag.
+The library [can be downloaded here](https://raw.githubusercontent.com/NoonPacific/White-Label-JS/master/lib/whitelabel.min.js?token=AC519Rk8Ddna52N3zw7kB7zY73G24LVDks5XjamrwA%3D%3D) and added to your website through a `<script>` tag.
 
 ```html
-<script src="WhiteLabel.min.js"></script>
+<script src="whiteLabel.min.js"></script>
 ```
 
 This will expose the global class `WhiteLabel`. After the page has been loaded, initialize an instance providing your White Label **client id**.
