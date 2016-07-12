@@ -1,12 +1,12 @@
 //= require underscore/underscore-min.js
 //= require jquery/dist/jquery.min.js
-//= require SoundManager2/script/soundmanager2.js
+//= require soundManager2/script/soundmanager2.js
 //= require lib/bootstrap.min
 //= require lib/slider
 //= require lib/jquery.lazyload
 //= require lib/angular.min
 //= require lib/angular-route.min
-//= require lib/WhiteLabel.min.js
+//= require lib/whitelabel.min.js
 //= require angular-collection/angular-collection.min.js
 //= require app/app
 //= require services/api-service
