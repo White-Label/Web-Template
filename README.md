@@ -168,19 +168,50 @@ var wl = new WhiteLabel(CLIENT_ID);
 
 ### Example Usage
 
-Getting all mixtapes in the collection with slug "collection-slug"
+Getting array of all Mixtape objects in the collection with slug "collection-slug"
 
 ```javascript
-wl.getCollectionMixtapes("collection-slug", {all: true, results: true}).then(function(mixtapes) {
+wl.getCollectionMixtapes("collection-slug", {
+    all: true, 
+    results: true
+}).then(function(mixtapes) {
   // Do something with array of mixtapes
 });
 ```
 
-Get tracks for mixtape with slug "mixtape-slug"
+Get array of Track objects for mixtape with slug "mixtape-slug"
 
 ```javascript
-wl.getMixtapeTracks("mixtape-slug", {results: true}).then(function(tracks) {
+wl.getMixtapeTracks("mixtape-slug", {
+    results: true
+}).then(function(tracks) {
   // Do something with array of tracks
+});
+```
+
+Get all mixtapes for a collection with slug "collection-slug" ordered by mixtape title descending.
+
+```javascript
+wl.getCollectionMixtapes("collection-slug", {
+    all: true, 
+    results: true, 
+    filters: {
+        ordering: "-title"
+    }
+}).then(function(mixtapes) {
+    // Do something with array of mixtapes
+});
+```
+
+Get array of all tracks from artist "Cool Artist"
+
+```javascript
+wl.getAllTracks({
+    results: true,
+    all: true,
+    filters: {
+        search: "Cool Artist"
+    } 
 });
 ```
 
